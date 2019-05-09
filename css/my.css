@@ -1,0 +1,14 @@
+
+.bg {
+    position: center;
+    background: url('../src/1.jpg') center;
+    background-color: #FFF7;
+    background-repeat: no-repeat; 
+}
+
+.bg2 {
+    position: center;
+    background: url('../src/2.jpg') center;
+    background-color: #FFF7;
+    background-repeat: no-repeat; 
+}
