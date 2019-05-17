@@ -26,11 +26,18 @@
   <nav class="site-header py-1">
     <div class="container d-flex flex-column flex-md-row justify-content-end">
       <a class="py-2 px-2 d-none d-md-inline-block" href="#">Inicio</a>
+      <!--Ejecuta un model para ingresar las credenciales-->
       <a class="py-2 px-2 d-none1 d-md-inline-block" href="#modal-login" data-toggle="modal" id="modal-34228">Iniciar Sesion</a>
       <a class="py-2 px-2 d-none d-md-inline-block" href="#servicios">Servicios</a>
       <a class="py-2 px-2 d-none1 d-md-inline-block" href="https://fezvrasta.github.io/bootstrap-material-design/docs/4.0/examples/product/#">Acerca de nosotros</a>
     </div>
   </nav>
+  <?php
+  if(isset($_GET["fallopass"]) && $_GET["fallopass"]=='true'){
+    echo "<script>alert('Contraseña incorrecta')</script>";
+  }
+  ?>
+
   <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg" style="	background-image: url(&quot;src/1.jpg&quot;);	background-position: center center;	background-size: 80%;	background-repeat: no-repeat;">
     <div class="col-md-5 p-lg-5 mx-auto my-5" style="	background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.1));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
       <h1 class="font-weight-normal display-4 border border-top border-dark rounded-0 text-white bg-dark">Clinica Dolores</h1>
@@ -57,6 +64,8 @@
       </div>
     </div>
   </div>
+
+  <!--Modal de login-->
   <div class="modal fade" id="modal-login">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -64,33 +73,35 @@
           <h5 class="modal-title" id="myModalLabel">Iniciar Sesion</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="">
+          <form id="c_form-h" method="GET" action="login.php">
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" id="inputmailh" placeholder="Nombre de Usuario"> </div>
+                <input type="text" class="form-control" name="inputuser" placeholder="Nombre de Usuario"> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Contraseña"> </div>
+                <input type="password" class="form-control" name="inputpass" placeholder="Contraseña"> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <select class="form-control">
-                  <option>Médico</option>
-                  <option>Enfermero(a)</option>
-                  <option>Paciente</option>
+                <select name="type"class="form-control">
+                  <option value="1">Médico</option>
+                  <option value="2">Enfermero(a)</option>
+                  <option value="3">Paciente</option>
                 </select>
               </div>
             </div>
-          </form>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Iniciar sesion</button>
           <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
         </div>
+      </form>
       </div>
     </div>
-  </div>
+  </div><!--Modal Login-->
+
+
   <!-- Bootstrap core JavaScript
     ================================================== -->
   <!-- JQuery -->
