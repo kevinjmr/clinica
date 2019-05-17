@@ -25,7 +25,7 @@
 <nav class="site-header py-1">
     	<div class="col-12 container d-flex flex-column flex-md-row">
     		<div class="col-7 container d-flex flex-column flex-md-row">
-    			<a class="py-2 px-2 d-none d-md-inline-block" >Paciente</a>
+    			<h2 class="py-2 px-2 d-none d-md-inline-block" >Paciente</h2>
     		</div>
     		<div class="col-5 container d-flex flex-column flex-md-row">
     		</div>
@@ -36,7 +36,7 @@
   
   	<div class="col-12 container d-flex flex-column flex-md-row">
   		<div class="col-7 container  flex-md-row">
-    	<a class="py-2 px-2 d-none d-md-inline-block" >Ultima Receta</a>		
+    	<h4 class="py-2 px-2 d-none d-md-inline-block" >Ultima Receta</h4>		
     <div class="card">
     
     	<div class="box" id="ultima-receta">asoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd j
@@ -47,7 +47,7 @@
 
     		</div>
     		<div class="col-5 container flex-md-row">
-    			<a class="py-2 px-2 d-none d-md-inline-block" >Citas</a>
+    			<h4 class="py-2 px-2 d-none d-md-inline-block" >Citas</h4>
     			<div class="card">
     				<div class="box" id="ultima-cita"> 
 
