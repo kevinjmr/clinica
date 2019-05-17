@@ -50,7 +50,7 @@
     		<div class="col-5 container flex-md-row">
     			<h4 class="py-2 px-2 d-none d-md-inline-block" >Citas</h4>
     			<div class="card">
-    				<div class="box" id="ultima-cita"> 
+    				<div class="box" id="ultima-cita"> asoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd
 
     				</div>
 				</div>
