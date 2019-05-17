@@ -47,7 +47,7 @@
 
 
     		</div>
-    		<div class="col-5 container flex-md-row">
+    		<div class="col-4 container flex-md-row">
     			<h4 class="py-2 px-2 d-none d-md-inline-block" >Citas</h4>
     			<div class="card">
     				<div class="box" id="ultima-cita"> asoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd
@@ -56,6 +56,7 @@
 				</div>
 				<a class="btn btn-blue " href="#modal-insert-medico" data-toggle="modal">Agendar cita</a>
     		</div>
+        <div class="col-1 container flex-md-row"></div>
   	</div>
   </nav>
 
