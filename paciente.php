@@ -35,7 +35,8 @@
   <nav>
   
   	<div class="col-12 container d-flex flex-column flex-md-row">
-  		<div class="col-7 container  flex-md-row">
+    <div class="col-1 container d-flex flex-column flex-md-row"></div>
+  		<div class="col-6 container  flex-md-row">
     	<h4 class="py-2 px-2 d-none d-md-inline-block" >Ultima Receta</h4>		
     <div class="card">
     
@@ -49,7 +50,7 @@
     		<div class="col-5 container flex-md-row">
     			<h4 class="py-2 px-2 d-none d-md-inline-block" >Citas</h4>
     			<div class="card">
-    				<div class="box" id="ultima-cita"> 
+    				<div class="box" id="ultima-cita"> asoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd
 
     				</div>
 				</div>
