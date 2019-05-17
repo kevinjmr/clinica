@@ -35,7 +35,8 @@
   <nav>
   
   	<div class="col-12 container d-flex flex-column flex-md-row">
-  		<div class="col-7 container  flex-md-row">
+    <div class="col-1 container d-flex flex-column flex-md-row"></div>
+  		<div class="col-6 container  flex-md-row">
     	<h4 class="py-2 px-2 d-none d-md-inline-block" >Ultima Receta</h4>		
     <div class="card">
     
