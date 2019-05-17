@@ -22,7 +22,7 @@ class Connection {
  
         // read parameters in the ini configuration file
         $params;
-        if($rol==="Admin"){
+        if($rol==="admin"){
             $params = parse_ini_file('databaseAdm.ini');
             if ($params === false) {
                 throw new \Exception("Error reading database configuration file");

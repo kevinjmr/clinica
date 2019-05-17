@@ -34,7 +34,7 @@ class Funcion{
             ':c' => $condicion
         ]);
         return $stmt->fetchColumn(0);
-    }*/
+    }
     
     public function eliminarCliente($cnombre,$cpaterno,$cmaterno){
         $seleccion ="select borrarcliente(':a',':b',':c')";
@@ -55,6 +55,21 @@ class Funcion{
             echo "No funciono, error al ejecutar la sentencia: (".$pdo->error_log.")";
         }
     }
+    public function getDietas() {
+        
+        $q='select * from verdietase()';
+        $stmt = $this->pdo->query($q);
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result[] = [
+                'nombred' => $row['nombred'],
+                'fechad' => $row['fechad'],
+                'creadord' => $row['creadord']
+            ];
+        }
+        return $result;
+    }*/
+
     public function getDietas() {
         
         $q='select * from verdietase()';
