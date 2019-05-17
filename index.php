@@ -23,7 +23,7 @@
 </head>
 
 <body>
-  <nav class="site-header py-1">
+  <nav class="grey site-header py-1">
     <div class="container d-flex flex-column flex-md-row justify-content-end">
       <a class="py-2 px-2 d-none d-md-inline-block" href="#">Inicio</a>
       <!--Ejecuta un model para ingresar las credenciales-->
