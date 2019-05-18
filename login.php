@@ -29,6 +29,10 @@
                 $row = $resultado->fetch(PDO::FETCH_ASSOC);
                 $real = $row['pass'];    
                 if(trim($real)==trim($pass)) {
+
+                    session_start();
+                    $_SESSION['nombre']= $user;
+                    $_SESSION['contrasenia']= $pass;
                     header("location:medico.php");
                 }else{
                     echo"<script>alert('Contraseña incorrecta')</script>";
@@ -45,7 +49,10 @@
                 $row = $resultado->fetch(PDO::FETCH_ASSOC);
                 $real = $row['pass'];    
                 if(trim($real)==trim($pass)) {
-                    header("location:secretaria.php");
+                    session_start();
+                    $_SESSION['nombre']= $user;
+                    $_SESSION['contrasenia']= $pass;
+                    header("location:asistente.php");
                 }else{
                     echo"<script>alert('Contraseña incorrecta')</script>";
                     header("location:index.php?fallopass=true");
@@ -61,6 +68,9 @@
                 $row = $resultado->fetch(PDO::FETCH_ASSOC);
                 $real = $row['pass'];    
                 if(trim($real)==trim($pass)) {
+                    session_start();
+                    $_SESSION['nombre']= $user;
+                    $_SESSION['contrasenia']= $pass;
                     header("location:paciente.php");
                 }else{
                     echo"<script>alert('Contraseña incorrecta')</script>";
