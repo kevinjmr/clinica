@@ -36,6 +36,7 @@
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Paciente</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Administradores</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Consultorios</a>
+            <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Cerrar Session</a>
     		</div>
     	</div>
   </nav>
