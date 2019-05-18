@@ -40,13 +40,10 @@
     	</div>
   </nav>
 
- <nav>
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
  		<div class="col-9 container flex-md-row" id="tabla-medicos">
-
- 		
  			  <h4 class="py-2">Medicos</h4>
             <table class="table table-sm table-bordered" cellspacing="0">
                 <thead>
@@ -62,14 +59,48 @@
                       <td>Kevin Jesus Martinez Rico</td>
                       <td>3230727</td>
                     </tr>
+                    <?php
+                      require_once __DIR__.'/../database/Connection.php';
+                      require_once __DIR__.'/../database/Funcion.php'; 
+
+                      use PostgreSQLPHPconnect\Connection as Connection;
+                      use PostgreSQLPHPconnect\Funcion as Funcion;
+
+                      try{
+                          // create a PostgreSQL database connection
+                          $pdo = Connection::get()->connect("Admin");
+                          
+                          $funcion = new Funcion($pdo);
+                          
+                          // get all stocks data
+                          $result = $funcion->getClientes();  
+
+                      }catch (PDOException $e){
+                          // report error message
+                          echo $e->getMessage();
+                      }
+
+                      foreach ($result as $res) :
+                    ?>
+                      <tr>
+                        <td>
+                          <?php echo htmlspecialchars(ucwords(strtolower($res['nombrec']))); ?>
+                        </td>
+                        <td>
+                          <?php echo htmlspecialchars(ucwords(strtolower($res['nombree']))); ?>
+                        </td>
+                        <td>
+                          <?php echo htmlspecialchars($res['status']); ?>
+                        </td>
+                        <td>
+                          <?php echo htmlspecialchars($res['fechaIngreso']); ?>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+
                 </tbody>
             </table>
-      
-
-
-
  		</div>
-
  		<div class="col-2 container d-flex flex-column">
  			<div class="col-1">
  			<a class="btn btn-outline-blue " href="#modal-insert-medico" data-toggle="modal">&#10010</a>
@@ -77,12 +108,9 @@
  			<div class="col-1">
  			</div>
  		</div>
-
  	</div>
 
- </nav>
 
- <nav>
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -114,9 +142,7 @@
  		</div>		
  	</div>
 
- </nav>
 
-  <nav>
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -148,9 +174,7 @@
  		</div>		
  	</div>
 
- </nav>
 
-  <nav>
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -182,9 +206,7 @@
  		</div>		
  	</div>
 
- </nav>
-
- <nav>
+   
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -215,9 +237,6 @@
  			</div>
  		</div>		
  	</div>
-
- </nav>
-
 
 
 <
