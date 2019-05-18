@@ -72,18 +72,19 @@ class Funcion{
 
     public function getMedico($id) {
         
-        $q='select * from medico where "Ced_prof"=$id';
-        $stmt = $this->pdo->query($q);
+        $q='select * from medico where "Ced_prof"= :id';
+        $stmt=$this->pdo->prepare($q);	        
+        $stmt->execute(array(":id"=>$id));
         $result = [];
         while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
             $result[] = [
-                'Nombre' => $row['Nombre'],
-                'APaterno' => $row['APaterno'],
-                'AMaterno' => $row['AMaterno'],
-                'Telefono' => $row['Telefono'],
-                'Direccion' => $row['Direccion'],
-                'Especialidad' => $row['Especialidad'],
-                'Escuela' => $row['Escuela']
+            $row['Nombre'], //0
+            $row['APaterno'],//1
+            $row['AMaterno'],//2
+            $row['Telefono'],//3
+            $row['Direccion'],//4
+            $row['Especialidad'],//5
+            $row['Escuela']//6
             ];
         }
         return $result;

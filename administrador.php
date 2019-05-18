@@ -9,10 +9,6 @@ if( $varcomparacion == null || $varcomparacion == ''){
 }
 ?>
 
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,10 +37,10 @@ if( $varcomparacion == null || $varcomparacion == ''){
 
 <nav class="light-blue site-header py-1">
     	<div class="col-12 container d-flex flex-column flex-md-row">
-    		<div class="col-7 container d-flex flex-column flex-md-row">
+    		<div class="col-6 container d-flex flex-column flex-md-row">
     			<a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >Bienvenido: <?php echo $_SESSION['nombre'] ?>  </a>
     		</div>
-    		<div class="col-5 container d-flex flex-column flex-md-row">
+    		<div class="col-6 container d-flex flex-column flex-md-row">
     			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Medicos</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Asistentes</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Paciente</a>
@@ -88,7 +84,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
                       foreach ($result as $res) :
                     ?>
                       <tr>
-                        <td><a href="func/editar.php?cedprof=<?php echo $res[0]; ?>">
+                        <td><a href="editar.php?cedprof=<?php echo $res[0]; ?>">
                           <?php echo $res[0]; ?></a>
                         </td>
                         <td>
@@ -567,6 +563,8 @@ if( $varcomparacion == null || $varcomparacion == ''){
       </div>
     </div>
   </div>
+  
+    <!--Script alertas-->
     <?php
       if(isset($_GET["exitoinsmedico"])){
         if( $_GET["exitoinsmedico"]=='true'){echo "
@@ -598,7 +596,6 @@ if( $varcomparacion == null || $varcomparacion == ''){
         <small class="d-block mb-3 text-muted">© 2019</small>
       </div>
     </div>
-    <!--Script alertas-->
     
   </footer>
 
