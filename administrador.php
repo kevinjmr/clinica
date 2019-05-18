@@ -27,87 +27,50 @@
 
 <nav class="light-blue site-header py-1">
     	<div class="col-12 container d-flex flex-column flex-md-row">
-<<<<<<< HEAD
-    		<div class="col-7 container d-flex flex-column flex-md-row">
-    			<a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >ADMINISTRACION</a>
-    		</div>
-    		<div class="col-5 container d-flex flex-column flex-md-row">
-<<<<<<< HEAD
-    			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Medicos</a>
-      			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Asistentes</a>
-      			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Paciente</a>
-      			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Administradores</a>
-      			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Consultorios</a>
-      			<a class="py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar Sesion</a>
-=======
     		<div class="col-6 container d-flex flex-column flex-md-row">
     			<a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >ADMINISTRACION</a>
     		</div>
     		<div class="col-6 container d-flex flex-column flex-md-row">
-=======
->>>>>>> parent of d2350b7... Merge remote-tracking branch 'origin/AxelGonzalez97-patch-1'
     			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Medicos</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Asistentes</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Paciente</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Administradores</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Consultorios</a>
-<<<<<<< HEAD
             <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Cerrar Session</a>
->>>>>>> cesar-part
-=======
->>>>>>> parent of d2350b7... Merge remote-tracking branch 'origin/AxelGonzalez97-patch-1'
     		</div>
     	</div>
   </nav>
 
+ <nav>
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
  		<div class="col-9 container flex-md-row" id="tabla-medicos">
+
+ 		
  			  <h4 class="py-2">Medicos</h4>
             <table class="table table-sm table-bordered" style=" background-color: white " cellspacing="0">
                 <thead>
                     <tr>
-                      <th>Cedula Profesional</th>
+                      <th>Cedula Profecional</th>
                       <th>Nombre</th>
                       <th>Telefono</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                      require_once __DIR__.'..\database\Connection.php';
-                      require_once __DIR__.'..\database\Funcion.php'; 
-                      use PostgreSQLPHPconnect\Connection as Connection;
-                      use PostgreSQLPHPconnect\Funcion as Funcion;
-                      try{
-                          // create a PostgreSQL database connection
-                          $pdo = Connection::get()->connect("admin");
-                          $funcion = new Funcion($pdo);
-                          // get all stocks data
-                          $result = $funcion->getMedicos();  
-
-                      }catch (PDOException $e){
-                          // report error message
-                          echo $e->getMessage();
-                      }
-                      foreach ($result as $res) :
-                    ?>
-                      <tr>
-                        <td><a href="func/editar.php?cedprof=<?php echo $res[0]; ?>">
-                          <?php echo $res[0]; ?></a>
-                        </td>
-                        <td>
-                          <?php echo $res[1]; echo $res[2]; echo $res[3] ?>
-                        </td>
-                        <td>
-                          <?php echo $res[4]; ?>
-                        </td>
-                      </tr>
-                    <?php endforeach; ?>
-
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">kasi12n3iss</a></td>
+                      <td>Kevin Jesus Martinez Rico</td>
+                      <td>3230727</td>
+                    </tr>
                 </tbody>
             </table>
+      
+
+
+
  		</div>
+
  		<div class="col-2 container d-flex flex-column">
  			<div class="col-1">
  			<a class="btn btn-outline-blue " href="#modal-insert-medico" data-toggle="modal">&#10010</a>
@@ -115,9 +78,12 @@
  			<div class="col-1">
  			</div>
  		</div>
+
  	</div>
 
+ </nav>
 
+ <nav>
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -149,7 +115,9 @@
  		</div>		
  	</div>
 
+ </nav>
 
+  <nav>
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -181,7 +149,9 @@
  		</div>		
  	</div>
 
+ </nav>
 
+  <nav>
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -213,7 +183,9 @@
  		</div>		
  	</div>
 
-   
+ </nav>
+
+ <nav>
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -244,6 +216,9 @@
  			</div>
  		</div>		
  	</div>
+
+ </nav>
+
 
 
 <
@@ -606,9 +581,4 @@
     <!--Script alertas-->
     
   </footer>
-
-
-
-
-
 </html>
