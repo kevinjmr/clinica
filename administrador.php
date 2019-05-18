@@ -42,15 +42,15 @@ if( $varcomparacion == null || $varcomparacion == ''){
 <nav class="light-blue site-header py-1">
     	<div class="col-12 container d-flex flex-column flex-md-row">
     		<div class="col-7 container d-flex flex-column flex-md-row">
-    			<a class="py-2 px-2 d-none d-md-inline-block" >ADMINISTRACION; Bienvenido: <?php echo $_SESSION['nombre'] ?>  </a>
+    			<a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >Bienvenido: <?php echo $_SESSION['nombre'] ?>  </a>
     		</div>
     		<div class="col-5 container d-flex flex-column flex-md-row">
-    			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Medicos</a>
-      			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Asistentes</a>
-      			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Paciente</a>
-      			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Administradores</a>
-      			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Consultorios</a>
-      			<a class="py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar Sesion</a>
+    			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Medicos</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Asistentes</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Paciente</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Administradores</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Consultorios</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar Sesion</a>
     		</div>
     	</div>
   </nav>
