@@ -1,3 +1,17 @@
+<!-- Continua con los valores de la sesión correspondiente -->
+<?php
+SESSION_START();
+
+$varcomparacion = $_SESSION['nombre'];
+
+if( $varcomparacion == null || $varcomparacion == ''){
+  header("location:index.php");
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +42,13 @@
     			<h2 class="py-2 px-2 d-none d-md-inline-block" href="#modal-select-paciente" data-toggle="modal" >Paciente</h2>
           <button type="button" class="btn btn-info" style="max-width: 40%; max-height:  50%;" data-dismiss="modal">info</button>
     		</div>
-    		<div class="col-5 container d-flex flex-column flex-md-row">
+    		<div class="col-6 container d-flex flex-column flex-md-row">
+          <div class="col-4 container d-flex flex-column flex-md-row"></div>
+          <div class="col-2 container d-flex flex-column flex-md-row">
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Bienvenido: <?php echo $_SESSION['nombre'] ?> </a>
+            <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">cerrar session</a>
+
+            </div>
     		</div>
     	</div>
   </nav>

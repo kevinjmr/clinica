@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="icon" href="https://fezvrasta.github.io/bootstrap-material-design/favicon.ico">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
@@ -107,6 +109,7 @@
     </div>
   </div><!--Modal Login-->
 
+  </body>
 
   <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -132,6 +135,5 @@
       </div>
     </div>
   </footer>
-</body>
 
 </html>

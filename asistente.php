@@ -10,6 +10,8 @@ if( $varcomparacion == null || $varcomparacion == ''){
 ?>
 
 
+
+
 <!DOCTYPE html>
   <html>
   <head>
@@ -38,11 +40,11 @@ if( $varcomparacion == null || $varcomparacion == ''){
       <nav class="light-blue site-header py-1">
       <div class="col-12 container d-flex flex-column flex-md-row">
         <div class="col-10 container d-flex flex-column flex-md-row">
-          <h2 class="py-2 px-2 d-none d-md-inline-block" href="#modal-select-paciente" data-toggle="modal" >Medico</h2>
+          <h2 class="py-2 px-2 d-none d-md-inline-block" href="#modal-select-paciente" data-toggle="modal" >Asistente</h2>
           <button type="button" class="btn btn-info" style="max-width: 40%; max-height:  50%;" data-dismiss="modal">info</button>
         </div>
         <div class="col-3 container d-flex flex-column flex-md-row">
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Agenda</a>
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Bienvenido: <?php echo $_SESSION['nombre'] ?> </a>
             <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar session</a>
         </div>
       </div>
@@ -50,42 +52,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
 <br>
 <br>
 
-  <div class="col-12 container d-flex flex-column flex-md-row">
-    <div class="col-2 container d-flex flex-column flex-md-row">
-    </div>
-    <div class="col-8 container flex-md-row">
-    <div class="col-3 container flex-md-row"></div>
-    <div class="col-4 container flex-md-row">
-      <h3>Citas de la semana</h3>
-    </div>
-    <div class="col-3 container flex-md-row"></div>
-        <table class="table table-sm table-bordered" style=" background-color: white " cellspacing="0">
-                <thead>
-                    <tr>
-                      <th>Fecha</th>
-                      <th>Paciente</th>
-                      <th>Medico</th>
-                      <th>Descripcion</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                      <td><a onclick="editarmedico('Work1')">1996/10/19 9:30</a></td>
-                      <td>Mariana leal sandoval</td>
-                      <td>Cesar Reynel Ortiz</td>
-                      <td>♥</td>
-                    </tr>
-                </tbody>
-            </table>
-    
-    </div>
-    <div class="col-2 container d-flex flex-column flex-md-row">
-    </div>    
-    
-  </div>
-
-
-
+<h1> Esta es la página del Asistente XDXDXDXDXDXDDXDXDXD</h1>
 
   </body>
   </html>
