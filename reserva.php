@@ -25,13 +25,13 @@
   <!--Barra de navegacion, Inicio, Login, Servicios, Acerca de... -->
 </head>
 
-<body>
-  <nav class="site-header py-1">
+<body background="src/fondo.jpg">
+  <nav class="ligth-blue site-header py-1">
     <div class="container d-flex flex-column flex-md-row justify-content-end">
-      <a class="py-2 px-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 px-2 d-none1 d-md-inline-block" href="#modal-login" data-toggle="modal" id="modal-34228">Iniciar Sesion</a>
-      <a class="py-2 px-2 d-none d-md-inline-block" href="index.html#servicios">Servicios</a>
-      <a class="py-2 px-2 d-none1 d-md-inline-block" href="https://fezvrasta.github.io/bootstrap-material-design/docs/4.0/examples/product/#">Acerca de nosotros</a>
+      <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="index.php">Inicio</a>
+      <a class="text-dark py-2 px-2 d-none1 d-md-inline-block" href="#modal-login" data-toggle="modal" id="modal-34228">Iniciar Sesion</a>
+      <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="index.php#servicios">Servicios</a>
+      <a class="text-dark py-2 px-2 d-none1 d-md-inline-block" href="https://fezvrasta.github.io/bootstrap-material-design/docs/4.0/examples/product/#">Acerca de nosotros</a>
     </div>
   </nav>
   <div class="row text-center">
