@@ -53,16 +53,16 @@
             <table class="table table-sm table-bordered" cellspacing="0">
                 <thead>
                     <tr>
-                      <th>Project Name</th>
-                      <th>Employer</th>
-                      <th>Awards</th>
+                      <th>Cedula Profecional</th>
+                      <th>Nombre</th>
+                      <th>Telefono</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">Work 1</a></td>
-                      <td>Doe</td>
-                      <td>john@example.com</td>
+                      <td><a onclick="editarmedico('Work1')">kasi12n3iss</a></td>
+                      <td>Kevin Jesus Martinez Rico</td>
+                      <td>3230727</td>
                     </tr>
                 </tbody>
             </table>
@@ -89,8 +89,24 @@
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
- 		<div class="col-9 container d-flex flex-column flex-md-row" id="tabla-Asistentes">
+ 		<div class="col-9 container flex-md-row" id="tabla-Asistentes">
  		<h4>Asistentes</h4>
+        <table class="table table-sm table-bordered" cellspacing="0">
+                <thead>
+                    <tr>
+                      <th>RFC</th>
+                      <th>Nombre</th>
+                      <th>Telefono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">masidonpiasd</a></td>
+                      <td>Mariana leal noseque</td>
+                      <td>llamame ♥</td>
+                    </tr>
+                </tbody>
+            </table>
  		</div>	
  		<div class="col-2 container d-flex flex-column flex-md-row">
  			<div class="col-1">
@@ -107,8 +123,24 @@
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
- 		<div class="col-9 container d-flex flex-column flex-md-row" id="tabla-pacientes">
+ 		<div class="col-9 container flex-md-row" id="tabla-pacientes">
  		<h4>Pacientes</h4>
+        <table class="table table-sm table-bordered" cellspacing="0">
+                <thead>
+                    <tr>
+                      <th>CURP</th>
+                      <th>Nombre</th>
+                      <th>Telefono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">LMfoo23h8he</a></td>
+                      <td>Luis mario Aguilar Guzman</td>
+                      <td>3230727</td>
+                    </tr>
+                </tbody>
+            </table>
  		</div>	
  		<div class="col-2 container d-flex flex-column flex-md-row">
  			<div class="col-1">
@@ -125,8 +157,24 @@
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
- 		<div class="col-9 container d-flex flex-column flex-md-row" id="tabla-administrador">
+ 		<div class="col-9 container flex-md-row" id="tabla-administrador">
  		<h4>Administrador</h4>
+        <table class="table table-sm table-bordered" cellspacing="0">
+                <thead>
+                    <tr>
+                      <th>RFC</th>
+                      <th>Nombre</th>
+                      <th>Telefono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">Paid3fgaog98daw</a></td>
+                      <td>Paquito de la O</td>
+                      <td>3212322</td>
+                    </tr>
+                </tbody>
+            </table>
  		</div>	
  		<div class="col-2 container d-flex flex-column flex-md-row">
  			<div class="col-1">
@@ -143,8 +191,24 @@
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
- 		<div class="col-9 container d-flex flex-column flex-md-row" id="tabla-consultorio">
+ 		<div class="col-9 container flex-md-row" id="tabla-consultorio">
  		<h4>Consultorios</h4>
+        <table class="table table-sm table-bordered" cellspacing="0">
+                <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Medico</th>
+                      <th>Secretaria</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">♥</a></td>
+                      <td>Cesar Reynel Ortiz</td>
+                      <td>Mariana Leal noseque</td>
+                    </tr>
+                </tbody>
+            </table>
  		</div>	
  		<div class="col-2 container d-flex flex-column flex-md-row">
  			<div class="col-1">
