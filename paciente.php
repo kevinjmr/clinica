@@ -26,6 +26,7 @@
     	<div class="col-12 container d-flex flex-column flex-md-row">
     		<div class="col-7 container d-flex flex-column flex-md-row">
     			<h2 class="py-2 px-2 d-none d-md-inline-block" href="#modal-select-paciente" data-toggle="modal" >Paciente</h2>
+          <button type="button" class="btn btn-info" style="max-width: 40%; max-height:  50%;" data-dismiss="modal">info</button>
     		</div>
     		<div class="col-5 container d-flex flex-column flex-md-row">
     		</div>
