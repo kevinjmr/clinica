@@ -27,98 +27,67 @@
 
 <nav class="light-blue site-header py-1">
     	<div class="col-12 container d-flex flex-column flex-md-row">
-    		<div class="col-6 container d-flex flex-column flex-md-row">
+    		<div class="col-7 container d-flex flex-column flex-md-row">
     			<a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >ADMINISTRACION</a>
     		</div>
-    		<div class="col-6 container d-flex flex-column flex-md-row">
+    		<div class="col-5 container d-flex flex-column flex-md-row">
     			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Medicos</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Asistentes</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Paciente</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Administradores</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Consultorios</a>
-            <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Cerrar Session</a>
     		</div>
     	</div>
   </nav>
 
- <nav>
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
  		<div class="col-9 container flex-md-row" id="tabla-medicos">
-
- 		
  			  <h4 class="py-2">Medicos</h4>
             <table class="table table-sm table-bordered" style=" background-color: white " cellspacing="0">
                 <thead>
                     <tr>
-                      <th>Cedula Profecional</th>
+                      <th>Cedula Profesional</th>
                       <th>Nombre</th>
                       <th>Telefono</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                      <td><a onclick="editarmedico('Work1')">kasi12n3iss</a></td>
-                      <td>Kevin Jesus Martinez Rico</td>
-                      <td>3230727</td>
-                    </tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 4e8e746... v3.8
-=======
->>>>>>> parent of 4e8e746... v3.8
                     <?php
-                      require_once __DIR__.'/../database/Connection.php';
-                      require_once __DIR__.'/../database/Funcion.php'; 
-
+                      require_once __DIR__.'..\database\Connection.php';
+                      require_once __DIR__.'..\database\Funcion.php'; 
                       use PostgreSQLPHPconnect\Connection as Connection;
                       use PostgreSQLPHPconnect\Funcion as Funcion;
-
                       try{
                           // create a PostgreSQL database connection
-                          $pdo = Connection::get()->connect("Admin");
-                          
+                          $pdo = Connection::get()->connect("admin");
                           $funcion = new Funcion($pdo);
-                          
                           // get all stocks data
-                          $result = $funcion->getClientes();  
+                          $result = $funcion->getMedicos();  
 
                       }catch (PDOException $e){
                           // report error message
                           echo $e->getMessage();
                       }
-
                       foreach ($result as $res) :
                     ?>
                       <tr>
-                        <td>
-                          <?php echo htmlspecialchars(ucwords(strtolower($res['nombrec']))); ?>
+                        <td><a href="func/editar.php?cedprof=<?php echo $res[0]; ?>">
+                          <?php echo $res[0]; ?></a>
                         </td>
                         <td>
-                          <?php echo htmlspecialchars(ucwords(strtolower($res['nombree']))); ?>
+                          <?php echo $res[1]; echo $res[2]; echo $res[3] ?>
                         </td>
                         <td>
-                          <?php echo htmlspecialchars($res['status']); ?>
-                        </td>
-                        <td>
-                          <?php echo htmlspecialchars($res['fechaIngreso']); ?>
+                          <?php echo $res[4]; ?>
                         </td>
                       </tr>
                     <?php endforeach; ?>
 
->>>>>>> parent of 4e8e746... v3.8
                 </tbody>
             </table>
-      
-
-
-
  		</div>
-
  		<div class="col-2 container d-flex flex-column">
  			<div class="col-1">
  			<a class="btn btn-outline-blue " href="#modal-insert-medico" data-toggle="modal">&#10010</a>
@@ -126,12 +95,9 @@
  			<div class="col-1">
  			</div>
  		</div>
-
  	</div>
 
- </nav>
 
- <nav>
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -163,9 +129,7 @@
  		</div>		
  	</div>
 
- </nav>
 
-  <nav>
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -197,9 +161,7 @@
  		</div>		
  	</div>
 
- </nav>
 
-  <nav>
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -231,9 +193,7 @@
  		</div>		
  	</div>
 
- </nav>
-
- <nav>
+   
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -264,9 +224,6 @@
  			</div>
  		</div>		
  	</div>
-
- </nav>
-
 
 
 <
@@ -629,4 +586,9 @@
     <!--Script alertas-->
     
   </footer>
+
+
+
+
+
 </html>
