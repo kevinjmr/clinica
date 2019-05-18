@@ -239,35 +239,35 @@
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" name="inputnombre" placeholder="Nombre"  required> </div>
+                <input type="text" class="form-control" name="inputnombre" placeholder="Nombre"  required> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" name="inputapaterno" placeholder="Apellido Paterno" required> </div>
+                <input type="text" class="form-control" name="inputapaterno" placeholder="Apellido Paterno" required> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" name="inputamaterno" placeholder="Apellido Materno" required> </div>
+                <input type="text" class="form-control" name="inputamaterno" placeholder="Apellido Materno" required> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" name="inputtelefono" placeholder="Telefono" required> </div>
+                <input type="numer" class="form-control" name="inputtelefono" placeholder="Telefono" required> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" name="inputespecialidad" placeholder="Especialidad" required> </div>
+                <input type="text" class="form-control" name="inputespecialidad" placeholder="Especialidad" required> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" name="inputdireccion" placeholder="Direccion" required> </div>
+                <input type="text" class="form-control" name="inputdireccion" placeholder="Direccion" required> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" name="inputescuela" placeholder="Escuela" required> </div>
+                <input type="text" class="form-control" name="inputescuela" placeholder="Escuela" required> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpass" placeholder="Contraseña" required> </div>
+                <input type="password" class="form-control" name="inputpass" placeholder="Contraseña" required> </div>
             </div>   
         </div>
         <div class="modal-footer">
@@ -549,7 +549,14 @@
       </div>
     </div>
   </div>
-
+    <?php
+      if(isset($_GET["exitoinsmedico"])){
+        if( $_GET["exitoinsmedico"]=='true'){echo "
+          <script > alert('Medico ingresado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Medico no ingresado, revise su informacion.'); </script>";}
+      }
+    ?>
 
 </body>
 <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
@@ -573,6 +580,8 @@
         <small class="d-block mb-3 text-muted">© 2019</small>
       </div>
     </div>
+    <!--Script alertas-->
+    
   </footer>
 
 

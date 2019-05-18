@@ -10,7 +10,7 @@
     $escuela=$_POST["inputescuela"];
     $pass=$_POST["inputpass"];
 
-    require_once __DIR__.'/database/Connection.php'; 
+    require_once __DIR__.'\..\database\Connection.php'; 
 
         use PostgreSQLPHPconnect\Connection as Connection;
 
@@ -29,17 +29,15 @@
                                     ":apaterno"=>$apaterno,
                                     ":amaterno"=>$amaterno,
                                     ":telefono"=>$telefono,
-                                    ":direccion"=$direccion,
-                                    ":especialidad"=$especialidad,
+                                    ":direccion"=>$direccion,
+                                    ":especialidad"=>$especialidad,
                                     ":escuela"=>$escuela,
                                     ":pass"=>$pass));
 
         $row = $resultado->fetch(PDO::FETCH_ASSOC);  
-        if(trim($real)==trim($pass)) {
-            header("location:medico.php");
-        }else{
-            echo"<script>alert('Contraseña incorrecta')</script>";
-            header("location:index.php?fallopass=true");
+        if(!$row){
+            echo "Funcionó la sentencia";
+            header("Location: ../administrador.php?exitoinsmedico=true");
         }
         $resultado->closeCursor();             
             
@@ -48,6 +46,7 @@
         echo "Error en la ejecución de la consulta<br>".$e;
             echo "Mensaje: " . $e->GetMessage() . "<br>";
             echo "Línea: " . $e->getLine();
+        header("Location: ../administrador.php?exitoinsmedico=false");    
     }
 
 ?>
