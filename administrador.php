@@ -168,62 +168,52 @@
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo Medico</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="">
-            
+          <form id="c_form-h" action="func/insertarmedico.php" method="POST">
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" id="inputmailh" placeholder="Cedula Profecional"> </div>
+                <input type="text" class="form-control" name="inputcedprof" placeholder="Cedula Profecional" required> </div>
             </div>
-
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Nombre"> </div>
+                <input type="password" class="form-control" name="inputnombre" placeholder="Nombre"  required> </div>
             </div>
-
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Apellido Paterno"> </div>
+                <input type="password" class="form-control" name="inputapaterno" placeholder="Apellido Paterno" required> </div>
             </div>
-
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Apellido Materno"> </div>
+                <input type="password" class="form-control" name="inputamaterno" placeholder="Apellido Materno" required> </div>
             </div>
-
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Telefono"> </div>
+                <input type="password" class="form-control" name="inputtelefono" placeholder="Telefono" required> </div>
             </div>
-
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Especialidad"> </div>
+                <input type="password" class="form-control" name="inputespecialidad" placeholder="Especialidad" required> </div>
             </div>
-
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Direccion"> </div>
+                <input type="password" class="form-control" name="inputdireccion" placeholder="Direccion" required> </div>
             </div>
-
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Escuela"> </div>
+                <input type="password" class="form-control" name="inputescuela" placeholder="Escuela" required> </div>
             </div>
-
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Contraseña"> </div>
-            </div>
-
-            
-          </form>
+                <input type="password" class="form-control" id="inputpass" placeholder="Contraseña" required> </div>
+            </div>   
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Guardar</button>
           <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
         </div>
+      </form>
+
       </div>
-    </div>
+    </div><!--modal-dialog-->
   </div>
 
 
@@ -511,43 +501,6 @@
       fg: '#eceeef',
       text: 'Thumbnail'
     });
-  </script>
-  <script >
-  	function editarmedico(id){
-  	  //document.getElementById('inputmailh').placeholder=id;
-      <?php
-        require_once __DIR__.'database/Connection.php'; 
-        
-        use PostgreSQLPHPconnect\Connection as Connection;
-
-        try{
-            // create a PostgreSQL database connection
-            $pdo = Connection::get()->connect("admin");
-            
-            $funcion = new Funcion($pdo);
-            
-            // get all stocks data
-            $result = $funcion->getMedico(id);  
-        
-        }catch (PDOException $e){
-              // report error message
-              echo $e->getMessage();
-        }
-
-        foreach ($result as $res) :
-    ?>
-        <?php echo htmlspecialchars(ucwords(strtolower($res['nombrec']))); ?>
-          
-            <?php echo htmlspecialchars(ucwords(strtolower($res['nombree']))); ?>
-          
-            <?php echo htmlspecialchars($res['status']); ?>
-          
-            <?php echo htmlspecialchars($res['fechaIngreso']); ?>
-          
-        <?php endforeach; ?>
-      $('#modal-insert-medico').modal('show')
-  	} 
-
   </script>
 
   <footer class="container py-5">
