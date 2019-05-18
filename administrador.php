@@ -63,6 +63,48 @@
                       <td>Kevin Jesus Martinez Rico</td>
                       <td>3230727</td>
                     </tr>
+<<<<<<< HEAD
+=======
+                    <?php
+                      require_once __DIR__.'/../database/Connection.php';
+                      require_once __DIR__.'/../database/Funcion.php'; 
+
+                      use PostgreSQLPHPconnect\Connection as Connection;
+                      use PostgreSQLPHPconnect\Funcion as Funcion;
+
+                      try{
+                          // create a PostgreSQL database connection
+                          $pdo = Connection::get()->connect("Admin");
+                          
+                          $funcion = new Funcion($pdo);
+                          
+                          // get all stocks data
+                          $result = $funcion->getClientes();  
+
+                      }catch (PDOException $e){
+                          // report error message
+                          echo $e->getMessage();
+                      }
+
+                      foreach ($result as $res) :
+                    ?>
+                      <tr>
+                        <td>
+                          <?php echo htmlspecialchars(ucwords(strtolower($res['nombrec']))); ?>
+                        </td>
+                        <td>
+                          <?php echo htmlspecialchars(ucwords(strtolower($res['nombree']))); ?>
+                        </td>
+                        <td>
+                          <?php echo htmlspecialchars($res['status']); ?>
+                        </td>
+                        <td>
+                          <?php echo htmlspecialchars($res['fechaIngreso']); ?>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+
+>>>>>>> parent of 4e8e746... v3.8
                 </tbody>
             </table>
       
