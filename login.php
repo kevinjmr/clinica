@@ -14,8 +14,13 @@
 		$pdo = Connection::get()->connect("admin");
 
 		if($user==="admin" && $pass==="admin123"){
+            session_start();
+            $_SESSION['nombre']= $user;
+            $_SESSION['contrasenia']= $pass;
             header("location:administrador.php");
-        }else{
+
+
+        }else if($user!="" || $pass!=""){
             if($logintype==="1"){
                 
                 $sql='select * from medico where medico."Ced_prof"= :user';
@@ -65,6 +70,10 @@
                 }
                 $resultado->closeCursor();      
             }
+        }else{
+            echo"<script>alert('Contraseña incorrecta')</script>";
+            header("location:index.php?fallopass=true");
+                
         }
 
 	}catch(Exception $e){

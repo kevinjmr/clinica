@@ -22,16 +22,22 @@
   </style>
 </head>
 
-<body>
-  <nav class="site-header py-1">
+<body background="src/fondo.jpg">
+  <nav class="light-blue site-header py-1">
     <div class="container d-flex flex-column flex-md-row justify-content-end">
-      <a class="py-2 px-2 d-none d-md-inline-block" href="#">Inicio</a>
+      <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Inicio</a>
       <!--Ejecuta un model para ingresar las credenciales-->
-      <a class="py-2 px-2 d-none1 d-md-inline-block" href="#modal-login" data-toggle="modal" id="modal-34228">Iniciar Sesion</a>
-      <a class="py-2 px-2 d-none d-md-inline-block" href="#servicios">Servicios</a>
-      <a class="py-2 px-2 d-none1 d-md-inline-block" href="https://fezvrasta.github.io/bootstrap-material-design/docs/4.0/examples/product/#">Acerca de nosotros</a>
+      <a class="text-dark py-2 px-2 d-none1 d-md-inline-block" href="#modal-login" data-toggle="modal" id="modal-34228">Iniciar Sesion</a>
+      <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#servicios">Servicios</a>
+      <a class="text-dark py-2 px-2 d-none1 d-md-inline-block" href="https://fezvrasta.github.io/bootstrap-material-design/docs/4.0/examples/product/#">Acerca de nosotros</a>
     </div>
   </nav>
+
+
+
+
+
+
   <?php
   if(isset($_GET["fallopass"]) && $_GET["fallopass"]=='true'){
     echo "<script>alert('Contraseña incorrecta')</script>";
@@ -51,14 +57,14 @@
           <h1 class="font-weight-normal text-white" style="	background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.2));	background-position: top left;	background-size: 100%;	background-repeat: repeat;" id="servicios">Servicios</h1>
         </div>
       </div>
-      <div class="container" style="background-color: #fff">
+      <div class="container">
         <div class="row">
           <div class="col-4">
             <img alt="Bootstrap Image Preview" src="src/3.jpg">
           </div>
           <div class="col-8">
             <h4 class="py-4">Reserva una cita con tu medico de cabecera.</h4>
-            <a class="btn btn-outline-blue" href="reserva.html">RESERVAR</a>
+            <a class="btn btn-outline-blue" href="reserva.php">RESERVAR</a>
           </div>  
         </div>
       </div>
@@ -76,11 +82,11 @@
           <form id="c_form-h" method="GET" action="login.php">
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="inputuser" placeholder="Nombre de Usuario"> </div>
+                <input type="text" class="form-control" name="inputuser" placeholder="Nombre de Usuario" required title="Ingrese el nombre de usuario (RFC, CURP o CedProf)"> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" name="inputpass" placeholder="Contraseña"> </div>
+                <input type="password" class="form-control" name="inputpass" placeholder="Contraseña" required title="Ingrese la contraseña"> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">

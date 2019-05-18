@@ -1,3 +1,18 @@
+<!-- Continua con los valores de la sesión correspondiente -->
+<?php
+SESSION_START();
+
+$varcomparacion = $_SESSION['nombre'];
+
+if( $varcomparacion == null || $varcomparacion == ''){
+  header("location:index.php");
+}
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html>
@@ -23,11 +38,13 @@
   </style>
 </head>
 <body>
+ 
+
 
 <nav class="site-header py-1">
     	<div class="col-12 container d-flex flex-column flex-md-row">
     		<div class="col-7 container d-flex flex-column flex-md-row">
-    			<a class="py-2 px-2 d-none d-md-inline-block" >ADMINISTRCION</a>
+    			<a class="py-2 px-2 d-none d-md-inline-block" >ADMINISTRACION; Bienvenido: <?php echo $_SESSION['nombre'] ?>  </a>
     		</div>
     		<div class="col-5 container d-flex flex-column flex-md-row">
     			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Medicos</a>
@@ -35,6 +52,7 @@
       			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Paciente</a>
       			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Administradores</a>
       			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Consultorios</a>
+      			<a class="py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar Sesion</a>
     		</div>
     	</div>
   </nav>
