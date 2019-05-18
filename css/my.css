@@ -12,3 +12,7 @@
     background-color: #FFF7;
     background-repeat: no-repeat; 
 }
+
+.modal-lg{
+	max-width: 70%;
+}
