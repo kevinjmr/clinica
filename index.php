@@ -34,6 +34,12 @@
       <a class="text-dark py-2 px-2 d-none1 d-md-inline-block" href="https://fezvrasta.github.io/bootstrap-material-design/docs/4.0/examples/product/#">Acerca de nosotros</a>
     </div>
   </nav>
+
+
+
+
+
+
   <?php
   if(isset($_GET["fallopass"]) && $_GET["fallopass"]=='true'){
     echo "<script>alert('Contraseña incorrecta')</script>";

@@ -14,6 +14,9 @@
 		$pdo = Connection::get()->connect("admin");
 
 		if($user==="admin" && $pass==="admin123"){
+            session_start();
+            $_SESSION['nombre']= $user;
+            $_SESSION['contrasenia']= $pass;
             header("location:administrador.php");
         }else if($user!="" || $pass!=""){
             if($logintype==="1"){
