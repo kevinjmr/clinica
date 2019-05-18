@@ -31,7 +31,7 @@
         </div>
         <div class="col-3 container d-flex flex-column flex-md-row">
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Agenda</a>
-            <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Cerrar session</a>
+            <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Cerrar sesion</a>
         </div>
       </div>
   </nav>

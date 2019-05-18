@@ -31,7 +31,7 @@
     		<div class="col-6 container d-flex flex-column flex-md-row">
           <div class="col-4 container d-flex flex-column flex-md-row"></div>
           <div class="col-2 container d-flex flex-column flex-md-row">
-            <a class="text-dark" href="">cerrar session</a>
+            <a class="text-dark" href="">cerrar sesion</a>
             </div>
     		</div>
     	</div>
