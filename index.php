@@ -76,11 +76,11 @@
           <form id="c_form-h" method="GET" action="login.php">
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="inputuser" placeholder="Nombre de Usuario"> </div>
+                <input type="text" class="form-control" name="inputuser" placeholder="Nombre de Usuario" required title="Ingrese el nombre de usuario (RFC, CURP o CedProf)"> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" name="inputpass" placeholder="Contraseña"> </div>
+                <input type="password" class="form-control" name="inputpass" placeholder="Contraseña" required title="Ingrese la contraseña"> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">

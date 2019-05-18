@@ -29,7 +29,6 @@
   <nav class="ligth-blue site-header py-1">
     <div class="container d-flex flex-column flex-md-row justify-content-end">
       <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="index.php">Inicio</a>
-      <a class="text-dark py-2 px-2 d-none1 d-md-inline-block" href="#modal-login" data-toggle="modal" id="modal-34228">Iniciar Sesion</a>
       <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="index.php#servicios">Servicios</a>
       <a class="text-dark py-2 px-2 d-none1 d-md-inline-block" href="https://fezvrasta.github.io/bootstrap-material-design/docs/4.0/examples/product/#">Acerca de nosotros</a>
     </div>
@@ -59,6 +58,8 @@
       </div>
     </div>
   </div>
+
+  <!--Modal de login-->
   <div class="modal fade" id="modal-login">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -69,11 +70,11 @@
           <form id="c_form-h" class="">
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" id="inputmailh" placeholder="Nombre de Usuario"> </div>
+                <input type="text" class="form-control" id="inputmailh" placeholder="Nombre de Usuario" require> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Contraseña"> </div>
+                <input type="password" class="form-control" id="inputpasswordh" placeholder="Contraseña" require> </div>
             </div>
           </form>
         </div>
@@ -101,14 +102,7 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
-  <script>
-    Holder.addTheme('thumb', {
-      bg: '#55595c',
-      fg: '#eceeef',
-      text: 'Thumbnail'
-    });
-  </script>
-  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
-</body>
+  
+    </body>
 
 </html>
