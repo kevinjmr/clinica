@@ -53,16 +53,16 @@
             <table class="table table-sm table-bordered" cellspacing="0">
                 <thead>
                     <tr>
-                      <th>Project Name</th>
-                      <th>Employer</th>
-                      <th>Awards</th>
+                      <th>Cedula Profecional</th>
+                      <th>Nombre</th>
+                      <th>Telefono</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">Work 1</a></td>
-                      <td>Doe</td>
-                      <td>john@example.com</td>
+                      <td><a onclick="editarmedico('Work1')">kasi12n3iss</a></td>
+                      <td>Kevin Jesus Martinez Rico</td>
+                      <td>3230727</td>
                     </tr>
                 </tbody>
             </table>
