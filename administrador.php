@@ -44,12 +44,10 @@
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
- 		<div class="col-9 container d-flex flex-column flex-md-row" id="tabla-medicos">
+ 		<div class="col-9 container flex-md-row" id="tabla-medicos">
 
  		
- 			<div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active table-responsive" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-            <h4 class="py-2">Medicos</h4>
+ 			  <h4 class="py-2">Medicos</h4>
             <table class="table table-sm table-bordered" cellspacing="0">
                 <thead>
                     <tr>
@@ -66,8 +64,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
-    </div>
+      
 
 
 
@@ -303,38 +300,38 @@
             
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" id="inputmailh" placeholder="RFC"> </div>
+                <input type="text" class="form-control" name="" placeholder="RFC"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Nombre"> </div>
+                <input type="text" class="form-control" name="" placeholder="Nombre"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Apellido Paterno"> </div>
+                <input type="text" class="form-control" name="" placeholder="Apellido Paterno"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Apellido Materno"> </div>
+                <input type="text" class="form-control" name="" placeholder="Apellido Materno"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Telefono"> </div>
+                <input type="numeric" class="form-control" name="" placeholder="Telefono"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Direccion"> </div>
+                <input type="text" class="form-control" name="" placeholder="Direccion"> </div>
             </div>
 
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Contraseña"> </div>
+                <input type="password" class="form-control" name="" placeholder="Contraseña"> </div>
             </div>
 
             
@@ -360,67 +357,67 @@
             
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" id="inputmailh" placeholder="CURP"> </div>
+                <input type="text" class="form-control" name="" placeholder="CURP"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Nombre"> </div>
+                <input type="text" class="form-control" name="" placeholder="Nombre"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Apellido Paterno"> </div>
+                <input type="text" class="form-control" name="" placeholder="Apellido Paterno"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Apellido Materno"> </div>
+                <input type="text" class="form-control" name="" placeholder="Apellido Materno"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Telefono"> </div>
+                <input type="numeric" class="form-control" name="" placeholder="Telefono"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Direccion"> </div>
+                <input type="text" class="form-control" name="" placeholder="Direccion"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Edad"> </div>
+                <input type="numeric" class="form-control" name="" placeholder="Edad"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Estado Civil"> </div>
+                <input type="text" class="form-control" name="" placeholder="Estado Civil"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Ocupacion"> </div>
+                <input type="text" class="form-control" name="" placeholder="Ocupacion"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Escolaridad"> </div>
+                <input type="text" class="form-control" name="" placeholder="Escolaridad"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Lugar de origen"> </div>
+                <input type="text" class="form-control" name="" placeholder="Lugar de origen"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Lugar de residencia"> </div>
+                <input type="text" class="form-control" name="" placeholder="Lugar de residencia"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Contraseña"> </div>
+                <input type="password" class="form-control" name="" placeholder="Contraseña"> </div>
             </div>
 
             
@@ -448,37 +445,37 @@
             
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" id="inputmailh" placeholder="RFC"> </div>
+                <input type="text" class="form-control" name="" placeholder="RFC"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Nombre"> </div>
+                <input type="text" class="form-control" name="" placeholder="Nombre"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Apellido Paterno"> </div>
+                <input type="text" class="form-control" name="" placeholder="Apellido Paterno"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Apellido Materno"> </div>
+                <input type="text" class="form-control" name="" placeholder="Apellido Materno"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Telefono"> </div>
+                <input type="numeric" class="form-control" name="" placeholder="Telefono"> </div>
             </div>           
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Direccion"> </div>
+                <input type="text" class="form-control" name="" placeholder="Direccion"> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Contraseña"> </div>
+                <input type="password" class="form-control" name="" placeholder="Contraseña"> </div>
             </div>
 
             
@@ -506,7 +503,7 @@
             
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" id="inputmailh" placeholder="Cedula Profecional"> </div>
+                <input type="text" class="form-control" name="" placeholder="Cedula Profecional"> </div>
             </div>
 
             <div class="form-group row">
