@@ -88,5 +88,26 @@ class Funcion{
         }
         return $result;
     }
+
+    public function getMedicos() {
+        
+        $q='select * from medico';
+        $stmt = $this->pdo->query($q);
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result[] = [
+                $row['Ced_prof'],//0
+                $row['Nombre'],//1
+                $row['APaterno'],//2
+                $row['AMaterno'],//3
+                $row['Telefono'],//4
+                $row['Direccion'],//5
+                $row['Especialidad'],//6
+                $row['Escuela'],//7
+                $row['pass']//8
+            ];
+        }
+        return $result;
+    }
     
 }

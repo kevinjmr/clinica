@@ -48,52 +48,39 @@
             <table class="table table-sm table-bordered" style=" background-color: white " cellspacing="0">
                 <thead>
                     <tr>
-                      <th>Cedula Profecional</th>
+                      <th>Cedula Profesional</th>
                       <th>Nombre</th>
                       <th>Telefono</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                      <td><a onclick="editarmedico('Work1')">kasi12n3iss</a></td>
-                      <td>Kevin Jesus Martinez Rico</td>
-                      <td>3230727</td>
-                    </tr>
                     <?php
-                      require_once __DIR__.'/../database/Connection.php';
-                      require_once __DIR__.'/../database/Funcion.php'; 
-
+                      require_once __DIR__.'..\database\Connection.php';
+                      require_once __DIR__.'..\database\Funcion.php'; 
                       use PostgreSQLPHPconnect\Connection as Connection;
                       use PostgreSQLPHPconnect\Funcion as Funcion;
-
                       try{
                           // create a PostgreSQL database connection
-                          $pdo = Connection::get()->connect("Admin");
-                          
+                          $pdo = Connection::get()->connect("admin");
                           $funcion = new Funcion($pdo);
-                          
                           // get all stocks data
-                          $result = $funcion->getClientes();  
+                          $result = $funcion->getMedicos();  
 
                       }catch (PDOException $e){
                           // report error message
                           echo $e->getMessage();
                       }
-
                       foreach ($result as $res) :
                     ?>
                       <tr>
-                        <td>
-                          <?php echo htmlspecialchars(ucwords(strtolower($res['nombrec']))); ?>
+                        <td><a href="func/editar.php?cedprof=<?php echo $res[0]; ?>">
+                          <?php echo $res[0]; ?></a>
                         </td>
                         <td>
-                          <?php echo htmlspecialchars(ucwords(strtolower($res['nombree']))); ?>
+                          <?php echo $res[1]; echo $res[2]; echo $res[3] ?>
                         </td>
                         <td>
-                          <?php echo htmlspecialchars($res['status']); ?>
-                        </td>
-                        <td>
-                          <?php echo htmlspecialchars($res['fechaIngreso']); ?>
+                          <?php echo $res[4]; ?>
                         </td>
                       </tr>
                     <?php endforeach; ?>
