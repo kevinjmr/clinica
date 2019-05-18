@@ -64,7 +64,10 @@
                       <td>3230727</td>
                     </tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 4e8e746... v3.8
                     <?php
                       require_once __DIR__.'/../database/Connection.php';
                       require_once __DIR__.'/../database/Funcion.php'; 
