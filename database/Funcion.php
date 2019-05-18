@@ -70,16 +70,20 @@ class Funcion{
         return $result;
     }*/
 
-    public function getDietas() {
+    public function getMedico($id) {
         
-        $q='select * from verdietase()';
+        $q='select * from medico where "Ced_prof"=$id';
         $stmt = $this->pdo->query($q);
         $result = [];
         while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
             $result[] = [
-                'nombred' => $row['nombred'],
-                'fechad' => $row['fechad'],
-                'creadord' => $row['creadord']
+                'Nombre' => $row['Nombre'],
+                'APaterno' => $row['APaterno'],
+                'AMaterno' => $row['AMaterno'],
+                'Telefono' => $row['Telefono'],
+                'Direccion' => $row['Direccion'],
+                'Especialidad' => $row['Especialidad'],
+                'Escuela' => $row['Escuela']
             ];
         }
         return $result;

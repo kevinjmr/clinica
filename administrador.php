@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="icon" href="https://fezvrasta.github.io/bootstrap-material-design/favicon.ico">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
@@ -22,19 +23,19 @@
     }
   </style>
 </head>
-<body>
+<body background="src/fondo.jpg">
 
-<nav class="site-header py-1">
+<nav class="light-blue site-header py-1">
     	<div class="col-12 container d-flex flex-column flex-md-row">
     		<div class="col-7 container d-flex flex-column flex-md-row">
-    			<a class="py-2 px-2 d-none d-md-inline-block" >ADMINISTRCION</a>
+    			<a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >ADMINISTRACION</a>
     		</div>
     		<div class="col-5 container d-flex flex-column flex-md-row">
-    			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Medicos</a>
-      			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Asistentes</a>
-      			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Paciente</a>
-      			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Administradores</a>
-      			<a class="py-2 px-2 d-none d-md-inline-block" href="#">Consultorios</a>
+    			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Medicos</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Asistentes</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Paciente</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Administradores</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Consultorios</a>
     		</div>
     	</div>
   </nav>
@@ -47,92 +48,26 @@
 
  		
  			<div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                <h4>Medicos</h4>
-                                <table class="table" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Project Name</th>
-                                            <th>Employer</th>
-                                            <th>Awards</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><a href="#" onclick="editarmedico('Work1')">Work 1</a></td>
-                                            <td>Doe</td>
-                                            <td>john@example.com</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">Work 2</a></td>
-                                            <td>Moe</td>
-                                            <td>mary@example.com</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">Work 3</a></td>
-                                            <td>Dooley</td>
-                                            <td>july@example.com</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                <table class="table" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Project Name</th>
-                                            <th>Employer</th>
-                                            <th>Time</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><a href="#">Work 1</a></td>
-                                            <td>Doe</td>
-                                            <td>john@example.com</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">Work 2</a></td>
-                                            <td>Moe</td>
-                                            <td>mary@example.com</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">Work 3</a></td>
-                                            <td>Dooley</td>
-                                            <td>july@example.com</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                <table class="table" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Contest Name</th>
-                                            <th>Date</th>
-                                            <th>Award Position</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><a href="#">Work 1</a></td>
-                                            <td>Doe</td>
-                                            <td>john@example.com</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">Work 2</a></td>
-                                            <td>Moe</td>
-                                            <td>mary@example.com</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href="#">Work 3</a></td>
-                                            <td>Dooley</td>
-                                            <td>july@example.com</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+        <div class="tab-pane fade show active table-responsive" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <h4 class="py-2">Medicos</h4>
+            <table class="table table-sm table-bordered" cellspacing="0">
+                <thead>
+                    <tr>
+                      <th>Project Name</th>
+                      <th>Employer</th>
+                      <th>Awards</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">Work 1</a></td>
+                      <td>Doe</td>
+                      <td>john@example.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 
 
@@ -579,7 +514,38 @@
   </script>
   <script >
   	function editarmedico(id){
-  		alert(id);
+  	  //document.getElementById('inputmailh').placeholder=id;
+      <?php
+        require_once __DIR__.'database/Connection.php'; 
+        
+        use PostgreSQLPHPconnect\Connection as Connection;
+
+        try{
+            // create a PostgreSQL database connection
+            $pdo = Connection::get()->connect("admin");
+            
+            $funcion = new Funcion($pdo);
+            
+            // get all stocks data
+            $result = $funcion->getMedico(id);  
+        
+        }catch (PDOException $e){
+              // report error message
+              echo $e->getMessage();
+        }
+
+        foreach ($result as $res) :
+    ?>
+        <?php echo htmlspecialchars(ucwords(strtolower($res['nombrec']))); ?>
+          
+            <?php echo htmlspecialchars(ucwords(strtolower($res['nombree']))); ?>
+          
+            <?php echo htmlspecialchars($res['status']); ?>
+          
+            <?php echo htmlspecialchars($res['fechaIngreso']); ?>
+          
+        <?php endforeach; ?>
+      $('#modal-insert-medico').modal('show')
   	} 
 
   </script>

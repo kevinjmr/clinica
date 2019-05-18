@@ -2,7 +2,12 @@
 <html>
 
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="icon" href="https://fezvrasta.github.io/bootstrap-material-design/favicon.ico">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
@@ -17,22 +22,19 @@
       display: none !important;
     }
   </style>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="https://fezvrasta.github.io/bootstrap-material-design/favicon.ico">
+  
   <!--Barra de navegacion, Inicio, Login, Servicios, Acerca de... -->
 </head>
 
 <body background="src/fondo.jpg">
-  <nav class="ligth-blue site-header py-1">
+  <nav class="light-blue site-header py-1">
     <div class="container d-flex flex-column flex-md-row justify-content-end">
       <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="index.php">Inicio</a>
       <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="index.php#servicios">Servicios</a>
       <a class="text-dark py-2 px-2 d-none1 d-md-inline-block" href="https://fezvrasta.github.io/bootstrap-material-design/docs/4.0/examples/product/#">Acerca de nosotros</a>
     </div>
   </nav>
+
   <div class="row text-center">
     <div class="col-12">
       <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg2">
@@ -85,13 +87,8 @@
       </div>
     </div>
   </div>
-  <footer class="container py-5">
-    <div class="row">
-      <div class="col-12 col-md text-center">
-        <small class="d-block mb-3 text-muted">© 2019</small>
-      </div>
-    </div>
-  </footer>
+  </body>
+
   <!-- Bootstrap core JavaScript
     ================================================== -->
   <!-- JQuery -->
@@ -102,7 +99,21 @@
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script>
+    Holder.addTheme('thumb', {
+      bg: '#55595c',
+      fg: '#eceeef',
+      text: 'Thumbnail'
+    });
+  </script>
+  <footer class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md text-center">
+        <small class="d-block mb-3 text-muted">© 2019</small>
+      </div>
+    </div>
+  </footer>
   
-    </body>
-
+  
+    
 </html>
