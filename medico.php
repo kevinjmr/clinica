@@ -36,8 +36,20 @@
       </div>
   </nav>
 
+  <div class="col-12 container d-flex flex-column flex-md-row">
+    <div class="col-2 container d-flex flex-column flex-md-row">
+    </div>
+    <div class="col-8 container d-flex flex-column flex-md-row">
+        
+    
+    </div>
+    <div class="col-2 container d-flex flex-column flex-md-row">
+    </div>    
+    
+  </div>
 
 
-  
+
+
   </body>
   </html>
