@@ -51,6 +51,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
     	</div>
   </nav>
 
+  <!--Carga de la tabla de medicos desde la bd-->
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -108,7 +109,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
  		</div>
  	</div>
 
-
+<!--Carga de la tabla de asistentes desde la bd-->
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -123,11 +124,31 @@ if( $varcomparacion == null || $varcomparacion == ''){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                      <td><a onclick="editarmedico('Work1')">masidonpiasd</a></td>
-                      <td>Mariana leal noseque</td>
-                      <td>llamame ♥</td>
-                    </tr>
+                <?php
+                      
+                      try{
+                          // get all stocks data
+                          $result = $funcion->getAsistentes();  
+
+                      }catch (PDOException $e){
+                          // report error message
+                          echo $e->getMessage();
+                      }
+                      foreach ($result as $res) :
+                    ?>
+                      <tr>
+                        <td><a href="editarasistente.php?rfc=<?php echo $res[0]; ?>">
+                          <?php echo $res[0]; ?></a>
+                        </td>
+                        <td>
+                          <?php echo $res[1]; echo $res[2]; echo $res[3] ?>
+                        </td>
+                        <td>
+                          <?php echo $res[4]; ?>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+
                 </tbody>
             </table>
  		</div>	
@@ -236,8 +257,6 @@ if( $varcomparacion == null || $varcomparacion == ''){
  		</div>		
  	</div>
 
-
-<
   <!-- modal para insertar medico -->
 <div class="modal fade" id="modal-insert-medico">
     <div class="modal-dialog" role="document">
@@ -564,7 +583,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
     </div>
   </div>
   
-    <!--Script alertas-->exitodelmedico
+    <!--Script alertas-->
     <?php
       if(isset($_GET["exitoinsmedico"])){
         if( $_GET["exitoinsmedico"]=='true'){echo "
