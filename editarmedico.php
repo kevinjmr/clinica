@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Editar Medico</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -45,49 +45,55 @@
     		</div>
     	</div>
     </nav>
-
-    <form id="c_form-h" action="func/insertarmedico.php" method="POST">
-      <div class="col-8">
-        <div class="form-group row">
-          <div class="col-12">
+    <form id="c_form-h" action="func/updatemedico.php" method="POST">
+      
+      <div class="col-12">
+        
+        <div class="invisible form-group row">
+          <div class="col-8">
             <input value="<?php echo trim($cedprof); ?>" type="text" class="form-control" name="inputcedprof" placeholder="Cedula Profecional" required> </div>
         </div>
         <div class="form-group row">
-          <div class="col-12">
+          <div class="col-8">
             <input value="<?php echo trim($result[0][0]); ?>" type="text" class="form-control" name="inputnombre" placeholder="Nombre"  required> </div>
         </div>
         <div class="form-group row">
-          <div class="col-12">
+          <div class="col-8">
             <input value="<?php echo trim($result[0][1]); ?>" type="text" class="form-control" name="inputapaterno" placeholder="Apellido Paterno" required> </div>
         </div>
         <div class="form-group row">
-          <div class="col-12">
+          <div class="col-8">
             <input value="<?php echo trim($result[0][2]); ?>" type="text" class="form-control" name="inputamaterno" placeholder="Apellido Materno" required> </div>
         </div>
         <div class="form-group row">
-          <div class="col-12">
+          <div class="col-8">
             <input value="<?php echo trim($result[0][3]); ?>" type="numer" class="form-control" name="inputtelefono" placeholder="Telefono" required> </div>
         </div>
         <div class="form-group row">
-          <div class="col-12">
+          <div class="col-8">
             <input value="<?php echo trim($result[0][4]); ?>" type="text" class="form-control" name="inputespecialidad" placeholder="Especialidad" required> </div>
         </div>
         <div class="form-group row">
-          <div class="col-12">
+          <div class="col-8">
             <input value="<?php echo trim($result[0][5]); ?>" type="text" class="form-control" name="inputdireccion" placeholder="Direccion" required> </div>
         </div>
         <div class="form-group row">
-          <div class="col-12">
+          <div class="col-8">
             <input value="<?php echo trim($result[0][0]); ?>" type="text" class="form-control" name="inputescuela" placeholder="Escuela" required> </div>
         </div>
         <div class="form-group row">
-          <div class="col-12">
+          <div class="col-8">
             <input type="password" class="form-control" name="inputpass" placeholder="Contraseña"> </div>
-        </div>   
+        </div>  
+        <div class="form-group row">
+          <div class="col-8">
+            <span class="text-align-left badge badge-pill badge-light">Al hacer click en el boton de 'GUARDAR' o en el de 'ELIMINAR' se realizaran cambios irreversibles. Verifique su informacion antes.</span></div>
+        </div>  
       </div>
-      <div class="footer">
+      <div class="form-group row col-8 justify-content-end">
         <button type="submit" class="btn btn-primary">Guardar</button>
         <button type="button" class="btn btn-info" onclick="window.location.href='administrador.php'">Cancelar</button>
+        <button type="button" class="btn btn-secondary" onclick="window.location.href='func/eliminarmedico.php?cedprof=<?php echo trim($cedprof); ?>'">Eliminar</button>
       </div>
     </div>
   </form>  

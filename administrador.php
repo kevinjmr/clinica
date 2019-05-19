@@ -12,7 +12,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Pagina de administracion</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -37,10 +37,10 @@ if( $varcomparacion == null || $varcomparacion == ''){
 
 <nav class="light-blue site-header py-1">
     	<div class="col-12 container d-flex flex-column flex-md-row">
-    		<div class="col-6 container d-flex flex-column flex-md-row">
+    		<div class="col-4 container d-flex flex-column flex-md-row">
     			<a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >Bienvenido: <?php echo $_SESSION['nombre'] ?>  </a>
     		</div>
-    		<div class="col-6 container d-flex flex-column flex-md-row">
+    		<div class="col-8 container d-flex flex-column flex-md-row justify-content-end">
     			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Medicos</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Asistentes</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Paciente</a>
@@ -84,7 +84,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
                       foreach ($result as $res) :
                     ?>
                       <tr>
-                        <td><a href="editar.php?cedprof=<?php echo $res[0]; ?>">
+                        <td><a href="editarmedico.php?cedprof=<?php echo $res[0]; ?>">
                           <?php echo $res[0]; ?></a>
                         </td>
                         <td>
@@ -564,13 +564,25 @@ if( $varcomparacion == null || $varcomparacion == ''){
     </div>
   </div>
   
-    <!--Script alertas-->
+    <!--Script alertas-->exitodelmedico
     <?php
       if(isset($_GET["exitoinsmedico"])){
         if( $_GET["exitoinsmedico"]=='true'){echo "
           <script > alert('Medico ingresado con exito!'); </script>";}
         else{echo "
           <script > alert('Medico no ingresado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitoeditmedico"])){
+        if( $_GET["exitoeditmedico"]=='true'){echo "
+          <script > alert('Medico editado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Medico no editado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitodelmedico"])){
+        if( $_GET["exitodelmedico"]=='true'){echo "
+          <script > alert('Medico eliminado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Medico no eliminado, revise su informacion.'); </script>";}
       }
     ?>
 
