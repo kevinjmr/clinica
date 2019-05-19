@@ -15,7 +15,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Paciente</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -35,21 +35,19 @@ if( $varcomparacion == null || $varcomparacion == ''){
     }
   </style>
 </head>
+
 <body background="src/fondo.jpg">
 <nav class="light-blue site-header py-1">
-    	<div class="col-12 container d-flex flex-column flex-md-row">
-    		<div class="col-7 container d-flex flex-column flex-md-row">
-    			<h2 class="py-2 px-2 d-none d-md-inline-block" href="#modal-select-paciente" data-toggle="modal" >Paciente</h2>
-          <button type="button" class="btn btn-info" style="max-width: 40%; max-height:  50%;" data-dismiss="modal">info</button>
-    		</div>
-    		<div class="col-6 container d-flex flex-column flex-md-row">
-          <div class="col-4 container d-flex flex-column flex-md-row"></div>
-          <div class="col-2 container d-flex flex-column flex-md-row">
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Bienvenido: <?php echo $_SESSION['nombre'] ?> </a>
-            <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar Sesion</a>
-
+    	<div class="container d-flex flex-column flex-md-row">
+    		<div class="col-4 container d-flex flex-column flex-md-row">
+    			<a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >Bienvenido: <?php echo $_SESSION['nombre'] ?> </a>
+        </div>
+    		<div class="col-8 container d-flex flex-column flex-md-row">
+            <div class="col-12 justify-content-end container d-flex flex-column flex-md-row">
+              <button type="button" class="btn btn-sm btn-info" href="#modal-select-paciente" data-toggle="modal">INFO</button>
+              <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar Sesion</a>
             </div>
-    		</div>
+          </div>
     	</div>
   </nav>
 

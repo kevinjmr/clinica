@@ -69,24 +69,34 @@
           <h5 class="modal-title" id="myModalLabel">Iniciar Sesion</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="">
+          <form id="c_form-h" method="GET" action="login.php">
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" id="inputmailh" placeholder="Nombre de Usuario" require> </div>
+                <input type="text" class="form-control" name="inputuser" placeholder="Nombre de Usuario" required title="Ingrese el nombre de usuario (RFC, CURP o CedProf)"> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Contraseña" require> </div>
+                <input type="password" class="form-control" name="inputpass" placeholder="Contraseña" required title="Ingrese la contraseña"> </div>
             </div>
-          </form>
+            <div class="form-group row">
+              <div class="col-12">
+                <select name="type"class="form-control">
+                  <option value="1">Médico</option>
+                  <option value="2">Enfermero(a)</option>
+                  <option value="3">Paciente</option>
+                  <option value="4">Administrador</option>
+                </select>
+              </div>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Iniciar sesion</button>
           <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
         </div>
+      </form>
       </div>
     </div>
-  </div>
+  </div><!--Modal Login-->  
   </body>
 
   <!-- Bootstrap core JavaScript
