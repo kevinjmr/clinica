@@ -25,16 +25,13 @@
 <body>
 	<nav class="light-blue site-header py-1">
       <div class="col-12 container d-flex flex-column flex-md-row">
-        <div class="col-7 container d-flex flex-column flex-md-row">
+        <div class="col-9 container d-flex flex-column flex-md-row">
           <h2 class="py-2 px-2 d-none d-md-inline-block" href="#modal-select-paciente" data-toggle="modal" >Medico</h2>
           <button type="button" class="btn btn-info" style="max-width: 40%; max-height:  50%;" data-dismiss="modal">info</button>
         </div>
         <div class="col-5 container d-flex flex-column flex-md-row">
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Agenda</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Expediente</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#modal-receta" data-toggle="modal">Receta</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#modal-analisis" data-toggle="modal">Analisis</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Nueva Cita</a>
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Regresar</a>
             <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Cerrar sesion</a>
         </div>
       </div>
@@ -122,64 +119,83 @@
 <h3>Datos de la Cita</h3>
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="AP_No_P"> 
+    <h6>AP_No_P:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="APP"> 
-  	</div>
-  
-  <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="AHF"> 
-  	</div>
-   <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="AGO"> 
-  </div>
-  </div>
-  <br>
-  <div class="col-12 container d-flex flex-column flex-md-row">
+  <h6>APP:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	
-  
-  <div class="col-6 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="Menarca"> 
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="Ritmo"> 
+  <h6>AHF:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
    <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="IVSA"> 
+   <h6>AGO:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  </div>
+  </div>
+  <br>
+  <div class="col-12 container d-flex flex-column flex-md-row">
+  	<div class="col-3 container d-flex flex-column flex-md-row">
+    <h6>Fecha:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  	
+  	</div>
+  
+  <div class="col-3 container d-flex flex-column flex-md-row">
+  <h6>Menerca:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  	</div>
+  
+  <div class="col-3 container d-flex flex-column flex-md-row">
+  <h6>Ritmo:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  	</div>
+   <div class="col-3 container d-flex flex-column flex-md-row">
+   <h6>IVSA:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   </div>
   </div>
 <br>
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="Cesarea"> 
+    <h6>Cesarea:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="FUM"> 
+  <h6>FUM:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="FPP"> 
+  <h6>FPP:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
    <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="DIU"> 
+   <h6>DIU:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   </div>
   </div>
 <br>
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="Hormonales"> 
+    <h6>Hormonales:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
   <br>
   <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="Docma"> 
+  <h6>Docma:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a> 
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="Papamicolau"> 
+  <h6>Papamicolau:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
    <div class="col-3 container d-flex flex-column flex-md-row">
   </div>
@@ -187,61 +203,74 @@
 <br>
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-12 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="Padecimiento Actual:"> 
+    <h6>Padecimiento Actual:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
   </div>
 
   <br>
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="T/A"> 
+    <h6>T/A:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
   <br>
   <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="FC"> 
+  <h6>FC:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="FR"> 
+  <h6>FR:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
    <div class="col-3 container d-flex flex-column flex-md-row">
-   <input type="text" class="form-control" name="" placeholder="Temperatura"> 
+   <h6>Temperatura:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   </div>
   </div>
 <br>
 
 <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="Peso"> 
+    <h6>Peso:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
   <br>
   <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="Talla"> 
+  <h6>Talla:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="Cabeza"> 
+  <h6>Cabeza:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
    <div class="col-3 container d-flex flex-column flex-md-row">
-   <input type="text" class="form-control" name="" placeholder="Torax"> 
+   <h6>Torax:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   </div>
   </div>
 <br>
 
 <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="Abdomen"> 
+    <h6>Abdomen:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
   <br>
   <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="Extremidades"> 
+  <h6>Extremidades:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a> 
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  	<input type="text" class="form-control" name="" placeholder="Genitales"> 
+  <h6>Genitales:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   	</div>
    <div class="col-3 container d-flex flex-column flex-md-row">
-   <input type="text" class="form-control" name="" placeholder="Vascula_Perifericos"> 
+   <h6>Vascula Perifericos:</h6>
+    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
   </div>
   </div>
 <br>
@@ -256,11 +285,11 @@
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  	 <button type="button" class="btn btn-primary">Guardar</button>
+  	 
           
   	</div>
    <div class="col-3 container d-flex flex-column flex-md-row">
-   <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+   <button type="button" class="btn btn-info" data-dismiss="modal">regresar</button>
   </div>
   </div>
 <br>
@@ -268,100 +297,7 @@
 
  </div>
 
- <!-- modal para receta -->
-<div class="modal fade" id="modal-receta">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="myModalLabel">Crear Receta</h5>
-        </div>
-        <div class="modal-body">
-          <form id="c_form-h" class="">
-            
-            <div class="form-group">
-              <div class="col-12">
-                <a href="">Introduce los datos para le receta:</a>
-            </div>
-            </div>
-
-            
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="text" class="form-control" id="inputpasswordh" placeholder="Receta" required> 
-                </div>
-            </div>
-
-            
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Guardar</button>
-          <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!-- modal para analisis -->
-<div class="modal fade" id="modal-analisis">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="myModalLabel">Crear analisis medico</h5>
-        </div>
-        <div class="modal-body">
-          <form id="c_form-h" class="">
-            
-            <div class="form-group row">
-              <div class="col-12">
-                <a href="">Descripcion de analisis:</a>
-            </div>
-            </div>
-
-            
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="text" class="form-control" id="inputpasswordh" placeholder="analisis" required> 
-                </div>
-            </div>
-
-            
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Guardar</button>
-          <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-
 
 
 </body>
-<script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <script>
-    Holder.addTheme('thumb', {
-      bg: '#55595c',
-      fg: '#eceeef',
-      text: 'Thumbnail'
-    });
-  </script>
-
-  <footer class="container py-5">
-    <div class="row">
-      <div class="col-12 col-md text-center">
-        <small class="d-block mb-3 text-muted">© 2019</small>
-      </div>
-    </div>
-    
-  </footer>
-
 </html>
