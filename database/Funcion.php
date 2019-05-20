@@ -95,4 +95,28 @@ class Funcion{
         }
         return $result;
     }
+
+    public function getPaciente($id) {
+        $q='select * from paciente where "CURP"= :id';
+        $stmt=$this->pdo->prepare($q);	        
+        $stmt->execute(array(":id"=>$id));
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result = [
+            $row['Nombre'], //0
+            $row['APaterno'],//1
+            $row['AMaterno'],//2
+            $row['Telefono'],//3
+            $row['Direccion'],//4
+            $row['Edad'],//5
+            $row['Edo_civil'],//6
+            $row['Ocupacion'],//7
+            $row['Escolaridad'],//8
+            $row['Lugar_de_origen'],//9
+            $row['Lugar_de_residencia'],//10
+            $row['pass']//11
+            ];
+        }
+        return $result;
+    }
 }
