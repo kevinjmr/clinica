@@ -10,7 +10,8 @@
     $escuela=$_POST["inputescuela"];
     $pass=$_POST["inputpass"];
 
-    require_once __DIR__.'\..\database\Connection.php'; 
+    require_once __DIR__.'../../database/Connection.php';
+     
 
         use PostgreSQLPHPconnect\Connection as Connection;
 

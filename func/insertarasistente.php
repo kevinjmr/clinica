@@ -33,7 +33,7 @@
         $row = $resultado->fetch(PDO::FETCH_ASSOC);  
         if(!$row){
             echo "Funcionó la sentencia";
-            //header("Location: ../administrador.php?exitoinsasistente=true");
+            header("Location: ../administrador.php?exitoinsasistente=true");
         }
         $resultado->closeCursor();             
             
@@ -42,7 +42,7 @@
         echo "Error en la ejecución de la consulta<br>".$e;
             echo "Mensaje: " . $e->GetMessage() . "<br>";
             echo "Línea: " . $e->getLine();
-        //header("Location: ../administrador.php?exitoinsasistente=false");    
+        header("Location: ../administrador.php?exitoinsasistente=false");    
     }
 
 ?>

@@ -176,11 +176,37 @@ if( $varcomparacion == null || $varcomparacion == ''){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                      <td><a onclick="editarmedico('Work1')">LMfoo23h8he</a></td>
-                      <td>Luis mario Aguilar Guzman</td>
-                      <td>3230727</td>
-                    </tr>
+                    <?php
+                      require_once __DIR__.'/database/Connection.php';
+                      require_once __DIR__.'/database/Funcion.php'; 
+                      use PostgreSQLPHPconnect\Connection as Connection2;
+                      use PostgreSQLPHPconnect\Funcion as Funcion2;
+                      try{
+                          // create a PostgreSQL database connection
+                          $pdo = Connection::get()->connect("admin");
+                          $funcion = new Funcion($pdo);
+                          // get all stocks data
+                          $result = $funcion->getPacientes();  
+
+                      }catch (PDOException $e){
+                          // report error message
+                          echo $e->getMessage();
+                      }
+                      foreach ($result as $res) :
+                    ?>
+                      <tr>
+                        <td><a href="editarpaciente.php?RFC=<?php echo $res[0]; ?>">
+                          <?php echo $res[0]; ?></a>
+                        </td>
+                        <td>
+                          <?php echo $res[1]; echo $res[2]; echo $res[3] ?>
+                        </td>
+                        <td>
+                          <?php echo $res[4]; ?>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+
                 </tbody>
             </table>
  		</div>	
@@ -208,11 +234,37 @@ if( $varcomparacion == null || $varcomparacion == ''){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                      <td><a onclick="editarmedico('Work1')">Paid3fgaog98daw</a></td>
-                      <td>Paquito de la O</td>
-                      <td>3212322</td>
-                    </tr>
+                    <?php
+                      require_once __DIR__.'/database/Connection.php';
+                      require_once __DIR__.'/database/Funcion.php'; 
+                      use PostgreSQLPHPconnect\Connection as Connection3;
+                      use PostgreSQLPHPconnect\Funcion as Funcion3;
+                      try{
+                          // create a PostgreSQL database connection
+                          $pdo = Connection::get()->connect("admin");
+                          $funcion = new Funcion($pdo);
+                          // get all stocks data
+                          $result = $funcion->getAdmins();  
+
+                      }catch (PDOException $e){
+                          // report error message
+                          echo $e->getMessage();
+                      }
+                      foreach ($result as $res) :
+                    ?>
+                      <tr>
+                        <td><a href="editaradmin.php?RFC=<?php echo $res[0]; ?>">
+                          <?php echo $res[6]; ?></a>
+                        </td>
+                        <td>
+                          <?php echo $res[0]; echo $res[1]; echo $res[2] ?>
+                        </td>
+                        <td>
+                          <?php echo $res[3]; ?>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+
                 </tbody>
             </table>
  		</div>	
@@ -314,6 +366,30 @@ if( $varcomparacion == null || $varcomparacion == ''){
   </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- CHECA ESTE KEVIN -->
+
+
  <!-- modal para insertar asistente -->
 <div class="modal fade" id="modal-insert-asistente">
     <div class="modal-dialog" role="document">
@@ -362,6 +438,39 @@ if( $varcomparacion == null || $varcomparacion == ''){
     </div>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- modal para insertar paciente -->
 <div class="modal fade" id="modal-insert-Paciente">
     <div class="modal-dialog" role="document">
@@ -370,7 +479,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo Paciente</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="">
+          <form id="c_form-h" class="" action="../func/prueba">
             
             <div class="form-group row">
               <div class="col-12">
