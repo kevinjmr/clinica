@@ -1,12 +1,7 @@
 <?php
     //obtener datos para login
-    $rfc=$_POST["inputrfc"];
-    $nombre=$_POST["inputnombre"];
-    $apaterno=$_POST["inputapaterno"];
-    $amaterno=$_POST["inputamaterno"];
-    $telefono=$_POST["inputtelefono"];
-    $direccion=$_POST["inputdireccion"];
-    $pass=$_POST["inputpass"];
+    $medico=$_POST["inputmedico"];
+    $secretaria=$_POST["inputsecretaria"];
 
     require_once __DIR__.'\..\database\Connection.php'; 
 
@@ -22,18 +17,13 @@
             VALUES (:medico, :secretaria);';
         //Se crea la consulta preparada
         $resultado=$pdo->prepare($sql);	        
-        $resultado->execute(array(  ":rfc"=>$rfc,
-                                    ":nombre"=>$nombre,
-                                    ":apaterno"=>$apaterno,
-                                    ":amaterno"=>$amaterno,
-                                    ":telefono"=>$telefono,
-                                    ":direccion"=>$direccion,
-                                    ":pass"=>$pass));
+        $resultado->execute(array(  ":medico"=>$medico,
+                                    ":secretaria"=>$secretaria));
 
         $row = $resultado->fetch(PDO::FETCH_ASSOC);  
         if(!$row){
             echo "Funcionó la sentencia";
-            header("Location: ../administrador.php?exitoinsasistente=true");
+            header("Location: ../administrador.php?exitoinsconsultorio=true");
         }
         $resultado->closeCursor();             
             
@@ -42,7 +32,7 @@
         echo "Error en la ejecución de la consulta<br>".$e;
             echo "Mensaje: " . $e->GetMessage() . "<br>";
             echo "Línea: " . $e->getLine();
-        header("Location: ../administrador.php?exitoinsasistente=false");    
+        header("Location: ../administrador.php?exitoinsconsultorio=false");    
     }
 
 ?>

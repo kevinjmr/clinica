@@ -34,11 +34,11 @@ if( $varcomparacion == null || $varcomparacion == ''){
   <body>
       <nav class="light-blue site-header py-1">
       <div class="col-12 container d-flex flex-column flex-md-row">
-        <div class="col-10 container d-flex flex-column flex-md-row">
+        <div class="col-4 container d-flex flex-column flex-md-row">
           <h2 class="py-2 px-2 d-none d-md-inline-block" href="#modal-select-paciente" data-toggle="modal" >Asistente</h2>
           <button type="button" class="btn btn-info" style="max-width: 40%; max-height:  50%;" data-dismiss="modal">info</button>
         </div>
-        <div class="col-3 container d-flex flex-column flex-md-row">
+        <div class="col-8 container d-flex flex-column flex-md-row justify-content-end">
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Agenda</a>
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Nueva Cita</a>
             <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar sesion</a>

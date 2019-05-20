@@ -152,7 +152,7 @@ class Funcion{
         $stmt = $this->pdo->query($q);
         $result = [];
         while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-            $result = [
+            $result[] = [
                 $row['Id'],//0
                 $row['Medico'],//1
                 $row['Secretaria']//2

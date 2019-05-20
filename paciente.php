@@ -9,9 +9,6 @@ if( $varcomparacion == null || $varcomparacion == ''){
 }
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,7 +94,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
         <div class="modal-body">
           <form id="c_form-h" class="">
             <div class="form-group row">
-              <div class="col-6 d-flex flex-column">
+              <div class="col-6  flex-column">
                 <label>CURP      :</label>
                 <label  type="text" class="form-control" name="curp"><?php echo trim($curp); ?></label>
                 </div>
