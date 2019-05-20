@@ -87,7 +87,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
       // get all stocks data
       $result = $funcion->getPaciente($curp);  ?>
 
-<!-- modal para insertar administrador -->
+<!-- modal para ver datos del paciente -->
 <div class="modal fade" id="modal-select-paciente">
     <div class="modal-dialog modal-lg"  role="document">
       <div class="modal-content">
@@ -97,42 +97,52 @@ if( $varcomparacion == null || $varcomparacion == ''){
         <div class="modal-body">
           <form id="c_form-h" class="">
             <div class="form-group row">
-              <div class="col-6">
+              <div class="col-6 d-flex flex-column">
+                <label>CURP      :</label>
                 <label  type="text" class="form-control" name="curp"><?php echo trim($curp); ?></label>
                 </div>
-                <div class="col-6">
+                <div class="col-6 d-flex flex-column" >
+                <label>Nombre    :</label>
                 <label  type="text" class="form-control" name="Nombre"><?php echo $result[0]; echo $result[1]; echo $result[2];?></label>
                 </div>
             </div>
             <div class="form-group row">
-              <div class="col-6">
+              <div class="col-6 d-flex flex-column">
+              <label>Telefono  :</label>
                 <label type="text" class="form-control" name="Telefono"><?php echo $result[3]; ?></label>
                 </div>
-                <div class="col-6">
+                <div class="col-6 d-flex flex-column">
+                <label>Direccion :</label>
                 <label type="text" class="form-control" name="Direccion"><?php echo $result[4]; ?></label>
                 </div>
             </div>
             <div class="form-group row">
-              <div class="col-6">
+              <div class="col-6 d-flex flex-column">
+              <label>Edad       :</label>
                 <label type="text" class="form-control" name="Edad"><?php echo $result[5]; ?></label>
                 </div>
-                 <div class="col-6">
+                 <div class="col-6 d-flex flex-column">
+                 <label>Edo_civil  :</label>
                 <label type="text" class="form-control" name="Edo_civil"><?php echo $result[6]; ?></label>
                 </div> 
             </div>        
             <div class="form-group row">
-              <div class="col-6">
+              <div class="col-6 d-flex flex-column">
+              <label>Escolaridad:</label>
                 <label type="text" class="form-control" name="Escolaridad"><?php echo $result[8]; ?></label>
                 </div>
-                <div class="col-6">
+                <div class="col-6 d-flex flex-column">
+                <label>Ocupacion  :</label>
                 <label type="text" class="form-control" name="Ocupacion"><?php echo $result[7]; ?></label>
                 </div>
             </div>
             <div class="form-group row">
-              <div class="col-6">
+              <div class="col-6 d-flex flex-column">
+              <label>Origen     :</label>
                 <label type="text" class="form-control" name="Lugar_de_origen"><?php echo $result[9]; ?></label>
                 </div>
-                <div class="col-6">
+                <div class="col-6 d-flex flex-column">
+                <label>Residencia :</label>
                 <label type="text" class="form-control" name="Lugar_de_residencia"><?php echo $result[10]; ?></label>
                 </div>
             </div>
