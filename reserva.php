@@ -86,7 +86,7 @@
               <div class="col-12">
                 <select name="type"class="form-control">
                   <option value="1">Médico</option>
-                  <option value="2">Enfermero(a)</option>
+                  <option value="2">Asistente</option>
                   <option value="3">Paciente</option>
                   <option value="4">Administrador</option>
                 </select>

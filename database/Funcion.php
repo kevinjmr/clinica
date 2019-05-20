@@ -56,7 +56,7 @@ class Funcion{
         return $result;
     }
 
-    //Obtiene solo un asistente
+    //Obtiene solo un asistente especifico
     public function getAsistente($id) {
         $q='select * from secretaria where "RFC"= :id';
         $stmt=$this->pdo->prepare($q);	        
@@ -96,6 +96,7 @@ class Funcion{
         return $result;
     }
 
+    //Obtiene todos un paciente especifico
     public function getPaciente($id) {
         $q='select * from paciente where "CURP"= :id';
         $stmt=$this->pdo->prepare($q);	        
@@ -146,7 +147,7 @@ class Funcion{
         return $result;
     }
 
-    //Funcion para obtener a los Administradores de la aplicación
+    //Funcion para obtener a los consultorios
     public function getConsultorios() {
         $q='select * from consultorio';
         $stmt = $this->pdo->query($q);
@@ -162,6 +163,19 @@ class Funcion{
         return $result;
     }
 
+    //Obtiene un consultorio especifico
+    public function getConsultorio($id) {
+        $q='select * from consultorio where "Id"= :id';
+        $stmt=$this->pdo->prepare($q);	        
+        $stmt->execute(array(":id"=>$id));
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result = [
+                $row['Medico'], //0
+                $row['Secretaria'] //1
+            ];
+        }
+    }
 
 
     //Funcion para obtener a los Administradores de la aplicación

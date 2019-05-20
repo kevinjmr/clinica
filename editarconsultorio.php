@@ -37,54 +37,29 @@
         $pdo = Connection::get()->connect("admin");
         $funcion = new Funcion($pdo);
         // get all stocks data
-        $result = $funcion->getMedico($cedprof);  ?>
+        $result = $funcion->getConsultorio($id);  ?>
     <nav class="light-blue site-header py-1">
     	<div class="col-12 container d-flex flex-column flex-md-row">
     		<div class="col-12 container d-flex flex-column flex-md-row">
-    			<a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >Editar Consultorio: <?php echo $cedprof; ?>  </a>
+    			<a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >Editar Consultorio: <?php echo $id; ?>  </a>
     		</div>
     	</div>
     </nav>
-    <form id="c_form-h" action="func/updatemedico.php" method="POST">
+    <form id="c_form-h" action="func/updateconsultorio.php" method="POST">
       
       <div class="col-12">
-        
-        <div class="invisible form-group row">
+        <div class=" form-group row">
           <div class="col-8">
-            <input value="<?php echo trim($id); ?>" type="text" class="form-control" name="inputcedprof" placeholder="Cedula Profecional" required> </div>
+            <input value="<?php echo trim($id); ?>" type="text" class="form-control" name="inputid" placeholder="Id del consultorio" required> </div>
         </div>
         <div class="form-group row">
           <div class="col-8">
-            <input value="<?php echo trim($result[0][0]); ?>" type="text" class="form-control" name="inputnombre" placeholder="Nombre"  required> </div>
+            <input value="<?php echo trim($result[0]); ?>" type="text" class="form-control" name="inputmedico" placeholder="Medico" title="Ingresar la Cedula del Medico" required> </div>
         </div>
         <div class="form-group row">
           <div class="col-8">
-            <input value="<?php echo trim($result[0][1]); ?>" type="text" class="form-control" name="inputapaterno" placeholder="Apellido Paterno" required> </div>
+            <input value="<?php echo trim($result[1]); ?>" type="text" class="form-control" name="inputsecretaria" placeholder="Secretaria" title="Ingresar el RFC del Asistente" required> </div>
         </div>
-        <div class="form-group row">
-          <div class="col-8">
-            <input value="<?php echo trim($result[0][2]); ?>" type="text" class="form-control" name="inputamaterno" placeholder="Apellido Materno" required> </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-8">
-            <input value="<?php echo trim($result[0][3]); ?>" type="numer" class="form-control" name="inputtelefono" placeholder="Telefono" required> </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-8">
-            <input value="<?php echo trim($result[0][4]); ?>" type="text" class="form-control" name="inputespecialidad" placeholder="Especialidad" required> </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-8">
-            <input value="<?php echo trim($result[0][5]); ?>" type="text" class="form-control" name="inputdireccion" placeholder="Direccion" required> </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-8">
-            <input value="<?php echo trim($result[0][0]); ?>" type="text" class="form-control" name="inputescuela" placeholder="Escuela" required> </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-8">
-            <input type="password" class="form-control" name="inputpass" placeholder="Contraseña"> </div>
-        </div>  
         <div class="form-group row">
           <div class="col-8">
             <span class="text-align-left badge badge-pill badge-light">Al hacer click en el boton de 'GUARDAR' o en el de 'ELIMINAR' se realizaran cambios irreversibles. Verifique su informacion antes.</span></div>
@@ -93,7 +68,7 @@
       <div class="form-group row col-8 justify-content-end">
         <button type="submit" class="btn btn-primary">Guardar</button>
         <button type="button" class="btn btn-info" onclick="window.location.href='administrador.php'">Cancelar</button>
-        <button type="button" class="btn btn-secondary" onclick="window.location.href='func/eliminarmedico.php?cedprof=<?php echo trim($cedprof); ?>'">Eliminar</button>
+        <button type="button" class="btn btn-secondary" onclick="window.location.href='func/eliminarconsultorio.php?id=<?php echo trim($id); ?>'">Eliminar</button>
       </div>
     </div>
   </form>  
