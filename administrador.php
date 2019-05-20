@@ -67,8 +67,8 @@ if( $varcomparacion == null || $varcomparacion == ''){
                 </thead>
                 <tbody>
                     <?php
-                      require_once __DIR__.'..\database\Connection.php';
-                      require_once __DIR__.'..\database\Funcion.php'; 
+                      require_once __DIR__.'../database/Connection.php';
+                      require_once __DIR__.'../database/Funcion.php'; 
                       use PostgreSQLPHPconnect\Connection as Connection;
                       use PostgreSQLPHPconnect\Funcion as Funcion;
                       try{
