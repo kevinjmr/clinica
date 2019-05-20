@@ -35,10 +35,10 @@ if( $varcomparacion == null || $varcomparacion == ''){
       <nav class="light-blue site-header py-1">
       <div class="col-12 container d-flex flex-column flex-md-row">
         <div class="col-4 container d-flex flex-column flex-md-row">
-          <h2 class="py-2 px-2 d-none d-md-inline-block" href="#modal-select-paciente" data-toggle="modal" >Asistente</h2>
-          <button type="button" class="btn btn-info" style="max-width: 40%; max-height:  50%;" data-dismiss="modal">info</button>
+          <h2 class="py-2 px-2 d-none d-md-inline-block" data-toggle="modal" >Asistente</h2>
         </div>
         <div class="col-8 container d-flex flex-column flex-md-row justify-content-end">
+        <button type="button" class="btn btn-sm btn-info" href="#modal-select-Paciente" data-toggle="modal">INFO</button>
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Agenda</a>
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Nueva Cita</a>
             <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar sesion</a>
@@ -81,10 +81,68 @@ if( $varcomparacion == null || $varcomparacion == ''){
     </div>    
     
   </div>
+<!-- modal para ver datos del Medico -->
+<div class="modal fade" id="modal-select-paciente">
+    <div class="modal-dialog modal-lg"  role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalLabel">Datos del Paciente:</h5>
+        </div>
+        <div class="modal-body">
+          <form id="c_form-h" class="">
+            <div class="form-group row">
+              <div class="col-6 d-flex flex-column">
+                <label>RFC:</label>
+                <label  type="text" class="form-control" name="RFC"><?php echo trim($curp); ?></label>
+                </div>
+                <div class="col-6 d-flex flex-column" >
+                <label>Nombre    :</label>
+                <label  type="text" class="form-control" name="Nombre"><?php echo $result[0]; echo $result[1]; echo $result[2];?></label>
+                </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-6 d-flex flex-column">
+              <label>Telefono  :</label>
+                <label type="text" class="form-control" name="Telefono"><?php echo $result[3]; ?></label>
+                </div>
+                <div class="col-6 d-flex flex-column">
+                <label>Direccion :</label>
+                <label type="text" class="form-control" name="Direccion"><?php echo $result[4]; ?></label>
+                </div>
+            </div>        
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
 
 
   </body>
+  <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script>
+    Holder.addTheme('thumb', {
+      bg: '#55595c',
+      fg: '#eceeef',
+      text: 'Thumbnail'
+    });
+  </script>
+  <footer class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md text-center">
+        <small class="d-block mb-3 text-muted">© 2019</small>
+      </div>
+    </div>
+  </footer>
   </html>

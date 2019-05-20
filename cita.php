@@ -22,104 +22,102 @@
     }
   </style>
 </head>
-<body>
+<body background="src/fondo.jpg">
 	<nav class="light-blue site-header py-1">
       <div class="col-12 container d-flex flex-column flex-md-row">
-        <div class="col-7 container d-flex flex-column flex-md-row">
-          <h2 class="py-2 px-2 d-none d-md-inline-block" href="#modal-select-paciente" data-toggle="modal" >Medico</h2>
-          <button type="button" class="btn btn-info" style="max-width: 40%; max-height:  50%;" data-dismiss="modal">info</button>
+        <div class="col-4 container d-flex flex-column flex-md-row">
         </div>
-        <div class="col-5 container d-flex flex-column flex-md-row">
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Agenda</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Expediente</a>
+        <div class="col-8 container d-flex flex-column flex-md-row justify-content-end">
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="medico.php">Agenda</a>
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="expediente.php">Expediente</a>
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#modal-receta" data-toggle="modal">Receta</a>
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#modal-analisis" data-toggle="modal">Analisis</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Nueva Cita</a>
-            <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Cerrar sesion</a>
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="nuevacita.php">Nueva Cita</a>
+            <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="index.php">Cerrar sesion</a>
         </div>
       </div>
   </nav>
 
 <div class="col-12  flex-md-row">
-<h3>medico</h3>
+<h3 class="font-weight-bold px-2">medico</h3>
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-4 container d-flex flex-column flex-md-row">
-  	<h6>Nombre:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">medico Cesar Reynel Ortiz</a>
+  	<h6 class="font-weight-bold px-2">Nombre:</h6>
+  	<h6 name="">medico Cesar Reynel Ortiz</h6>
   </div>
   <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Especialidad:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">especialidad</a>
+  <h6 class="font-weight-bold px-2">Especialidad: </h6>
+  	<h6 name="">especialidad</h6>
   </div>
   <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Ced_Prof:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Ced_Profecional</a>
+  <h6 class="font-weight-bold px-2">Ced_Prof: </h6>
+  	<h6 name="">Ced_Profecional</h6>
   </div>
   </div>
 
-
-
-  <div class="col-12 container d-flex flex-column flex-md-row">
-  	<div class="col-4 container d-flex flex-column flex-md-row">
-  	<h6>Escuela:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">medico escuela</a>
-  </div>
-  <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Domicilio:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">medico domicilio</a>
-  </div>
-  <div class="col-4 container d-flex flex-column flex-md-row">
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#"></a>
-  </div>
-  </div>
-<h3>Paciente:</h3>
-  <div class="col-12 container d-flex flex-column flex-md-row">
-  	<div class="col-4 container d-flex flex-column flex-md-row">
-  	<h6>Nombre:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente kevin</a>
-  </div>
-  <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Edad:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente edad</a>
-  </div>
-  <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Sexo:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente sexo</a>
-  </div>
-  </div>
-
-  <div class="col-12 container d-flex flex-column flex-md-row">
-  	<div class="col-4 container d-flex flex-column flex-md-row">
-  	<h6>Est. Civil.:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente estado civil</a>
-  </div>
-  <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Domicilio:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente domicilio</a>
-  </div>
-  <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Ocupacion:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente ocupacion</a>
-  </div>
-  </div>
 
 
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-4 container d-flex flex-column flex-md-row">
-  	<h6>Escolaridad:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente escolaridad</a>
+  	<h6 class="font-weight-bold px-2">Escuela: </h6>
+  	<h6 name="">medico escuela</h6>
   </div>
   <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Origen:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente origen</a>
+  <h6 class="font-weight-bold px-2">Domicilio: </h6>
+  	<h6 name="">medico domicilio</h6>
   </div>
   <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Residencia:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  	<h6 name=""></a>
+  </div>
+  </div>
+<h3 class="font-weight-bold px-2">Paciente:</h3>
+  <div class="col-12 container d-flex flex-column flex-md-row">
+  	<div class="col-4 container d-flex flex-column flex-md-row">
+  	<h6 class="font-weight-bold px-2">Nombre: </h6>
+  	<h6 name="">paciente kevin</h6>
+  </div>
+  <div class="col-4 container d-flex flex-column flex-md-row">
+  <h6 class="font-weight-bold px-2">Edad: </h6>
+  	<h6 name="">paciente edad</h6>
+  </div>
+  <div class="col-4 container d-flex flex-column flex-md-row">
+  <h6 class="font-weight-bold px-2">Sexo: </h6>
+  	<h6 name="">paciente sexo</h6>
   </div>
   </div>
 
-<h3>Datos de la Cita</h3>
+  <div class="col-12 container d-flex flex-column flex-md-row">
+  	<div class="col-4 container d-flex flex-column flex-md-row">
+  	<h6 class="font-weight-bold px-2">Est. Civil.: </h6>
+  	<h6 name="">paciente estado civil</h6>
+  </div>
+  <div class="col-4 container d-flex flex-column flex-md-row">
+  <h6 class="font-weight-bold px-2">Domicilio: </h6>
+  	<h6 name="">paciente domicilio</h6>
+  </div>
+  <div class="col-4 container d-flex flex-column flex-md-row">
+  <h6 class="font-weight-bold px-2">Ocupacion: </h6>
+  	<h6 name="">paciente ocupacion</h6>
+  </div>
+  </div>
+
+
+  <div class="col-12 container d-flex flex-column flex-md-row">
+  	<div class="col-4 container d-flex flex-column flex-md-row">
+  	<h6 class="font-weight-bold px-2">Escolaridad: </h6>
+  	<h6 name="">paciente escolaridad</h6>
+  </div>
+  <div class="col-4 container d-flex flex-column flex-md-row">
+  <h6 class="font-weight-bold px-2">Origen: </h6>
+  	<h6 name="">paciente origen</h6>
+  </div>
+  <div class="col-4 container d-flex flex-column flex-md-row">
+  <h6 class="font-weight-bold px-2">Residencia: </h6>
+  	<h6 name="">paciente residencia</h6>
+  </div>
+  </div>
+
+<h3 class="font-weight-bold px-2">Datos de la Cita</h3>
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-3 container d-flex flex-column flex-md-row">
   	<input type="text" class="form-control" name="" placeholder="AP_No_P"> 
@@ -280,7 +278,7 @@
             
             <div class="form-group">
               <div class="col-12">
-                <a href="">Introduce los datos para le receta:</a>
+                <h6 href="">Introduce los datos para le receta:</h6>
             </div>
             </div>
 
@@ -314,7 +312,7 @@
             
             <div class="form-group row">
               <div class="col-12">
-                <a href="">Descripcion de analisis:</a>
+                <h6 href="">Descripcion de analisis:</h6>
             </div>
             </div>
 
