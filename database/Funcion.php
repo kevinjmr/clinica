@@ -119,4 +119,54 @@ class Funcion{
         }
         return $result;
     }
+    //Función para obtener a todos los pacientes de la clinica
+    public function getPacientes() {
+        
+        $q='select * from paciente';
+        $stmt = $this->pdo->query($q);
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result[] = [
+                $row['CURP'],//0
+                $row['Nombre'],//1
+                $row['APaterno'],//2
+                $row['AMaterno'],//3
+                $row['Telefono'],//4
+                $row['Direccion'],//5
+                $row['Edad'],//6
+                $row['Edo_civil'],//7
+                $row['Ocupacion'],//8
+                $row['Escolaridad'],//9
+                $row['Lugar_de_origen'],//10
+                $row['Lugar_de_residencia'],//11
+                $row['pass']//12
+
+            ];
+        }
+        return $result;
+    }
+
+
+
+
+
+    //Funcion para obtener a los Administradores de la aplicación
+    public function getAdmins() {
+        $q='select * from administracion';
+        $stmt = $this->pdo->query($q);
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result[] = [
+                $row['Nombre'],//1
+                $row['APaterno'],//2
+                $row['AMaterno'],//3
+                $row['Telefono'],//4
+                $row['Direccion'],//5
+                $row['pass'],//6
+                $row['RFC']//7
+
+            ];
+        }
+        return $result;
+    }
 }

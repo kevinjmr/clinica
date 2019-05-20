@@ -177,10 +177,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
                 </thead>
                 <tbody>
                     <?php
-                      require_once __DIR__.'/database/Connection.php';
-                      require_once __DIR__.'/database/Funcion.php'; 
-                      use PostgreSQLPHPconnect\Connection as Connection2;
-                      use PostgreSQLPHPconnect\Funcion as Funcion2;
+                      
                       try{
                           // create a PostgreSQL database connection
                           $pdo = Connection::get()->connect("admin");
@@ -235,10 +232,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
                 </thead>
                 <tbody>
                     <?php
-                      require_once __DIR__.'/database/Connection.php';
-                      require_once __DIR__.'/database/Funcion.php'; 
-                      use PostgreSQLPHPconnect\Connection as Connection3;
-                      use PostgreSQLPHPconnect\Funcion as Funcion3;
+                      
                       try{
                           // create a PostgreSQL database connection
                           $pdo = Connection::get()->connect("admin");
