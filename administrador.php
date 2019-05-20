@@ -311,7 +311,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo Medico</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" action="func/insertarmedico.php" method="POST">
+          <form autocomplete="off" id="c_form-h" action="func/insertarmedico.php" method="POST">
             <div class="form-group row">
               <div class="col-12">
                 <input type="text" class="form-control" name="inputcedprof" placeholder="Cedula Profecional" required> </div>
@@ -359,31 +359,6 @@ if( $varcomparacion == null || $varcomparacion == ''){
     </div><!--modal-dialog-->
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- CHECA ESTE KEVIN -->
-
-
  <!-- modal para insertar asistente -->
 <div class="modal fade" id="modal-insert-asistente">
     <div class="modal-dialog" role="document">
@@ -392,7 +367,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo Asistente</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" action="func/insertarasistente.php" method="POST">
+          <form autocomplete="off" id="c_form-h" action="func/insertarasistente.php" method="POST">
             <div class="form-group row">
               <div class="col-12">
                 <input type="text" class="form-control" name="inputrfc" placeholder="RFC" required> </div>
@@ -431,39 +406,6 @@ if( $varcomparacion == null || $varcomparacion == ''){
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   <!-- modal para insertar paciente -->
 <div class="modal fade" id="modal-insert-Paciente">
@@ -619,60 +561,21 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo Consultorio</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="">
-            
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Cedula Profecional" required> </div>
-            </div>
-
+          <form autocomplete="off" id="c_form-h" class="">
             <div class="form-group row">
               <div class="col-12">
                 <input type="password" class="form-control" id="inputpasswordh" placeholder="Nombre" required> </div>
             </div>
-
             <div class="form-group row">
               <div class="col-12">
                 <input type="password" class="form-control" id="inputpasswordh" placeholder="Apellido Paterno" required> </div>
             </div>
-
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Apellido Materno" required> </div>
-            </div>
-
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Telefono" required> </div>
-            </div>
-
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Especialidad" required> </div>
-            </div>
-
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Direccion" required> </div>
-            </div>
-
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Escuela" required> </div>
-            </div>
-
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Contraseña" required> </div>
-            </div>
-
-            
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Guardar</button>
-          <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
-        </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
