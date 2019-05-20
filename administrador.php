@@ -12,7 +12,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Pagina de administracion</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -37,21 +37,22 @@ if( $varcomparacion == null || $varcomparacion == ''){
 
 <nav class="light-blue site-header py-1">
     	<div class="col-12 container d-flex flex-column flex-md-row">
-    		<div class="col-6 container d-flex flex-column flex-md-row">
+    		<div class="col-4 container d-flex flex-column flex-md-row">
     			<a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >Bienvenido: <?php echo $_SESSION['nombre'] ?>  </a>
     		</div>
-    		<div class="col-6 container d-flex flex-column flex-md-row">
-    			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Medicos</a>
-      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Asistentes</a>
-      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Paciente</a>
-      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Administradores</a>
-      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Consultorios</a>
+    		<div class="col-8 container d-flex flex-column flex-md-row justify-content-end">
+    			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#medicos">Medicos</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#asistentes">Asistentes</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#pacientes">Paciente</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#administrador">Administradores</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#consultorios">Consultorios</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar Sesion</a>
     		</div>
     	</div>
   </nav>
 
- 	<div class="col-12 container d-flex flex-column flex-md-row">
+  <!--Carga de la tabla de medicos desde la bd-->
+ 	<div id="medicos" class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
  		<div class="col-9 container flex-md-row" id="tabla-medicos">
@@ -84,7 +85,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
                       foreach ($result as $res) :
                     ?>
                       <tr>
-                        <td><a href="editar.php?cedprof=<?php echo $res[0]; ?>">
+                        <td><a href="editarmedico.php?cedprof=<?php echo $res[0]; ?>">
                           <?php echo $res[0]; ?></a>
                         </td>
                         <td>
@@ -108,12 +109,12 @@ if( $varcomparacion == null || $varcomparacion == ''){
  		</div>
  	</div>
 
-
- 	<div class="col-12 container d-flex flex-column flex-md-row">
+<!--Carga de la tabla de asistentes desde la bd-->
+ 	<div id="asistentes" class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
  		<div class="col-9 container flex-md-row" id="tabla-Asistentes">
- 		<h4>Asistentes</h4>
+ 		<h4 >Asistentes</h4>
         <table class="table table-sm table-bordered" style=" background-color: white " cellspacing="0">
                 <thead>
                     <tr>
@@ -123,11 +124,31 @@ if( $varcomparacion == null || $varcomparacion == ''){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                      <td><a onclick="editarmedico('Work1')">masidonpiasd</a></td>
-                      <td>Mariana leal noseque</td>
-                      <td>llamame ♥</td>
-                    </tr>
+                <?php
+                      
+                      try{
+                          // get all stocks data
+                          $result = $funcion->getAsistentes();  
+
+                      }catch (PDOException $e){
+                          // report error message
+                          echo $e->getMessage();
+                      }
+                      foreach ($result as $res) :
+                    ?>
+                      <tr>
+                        <td><a href="editarasistente.php?rfc=<?php echo $res[0]; ?>">
+                          <?php echo $res[0]; ?></a>
+                        </td>
+                        <td>
+                          <?php echo $res[1]; echo $res[2]; echo $res[3] ?>
+                        </td>
+                        <td>
+                          <?php echo $res[4]; ?>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+
                 </tbody>
             </table>
  		</div>	
@@ -140,8 +161,8 @@ if( $varcomparacion == null || $varcomparacion == ''){
  		</div>		
  	</div>
 
-
- 	<div class="col-12 container d-flex flex-column flex-md-row">
+<!--Carga de la tabla de pacientes desde la bd-->
+ 	<div id="pacientes" class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
  		<div class="col-9 container flex-md-row" id="tabla-pacientes">
@@ -155,11 +176,34 @@ if( $varcomparacion == null || $varcomparacion == ''){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                      <td><a onclick="editarmedico('Work1')">LMfoo23h8he</a></td>
-                      <td>Luis mario Aguilar Guzman</td>
-                      <td>3230727</td>
-                    </tr>
+                    <?php
+                      
+                      try{
+                          // create a PostgreSQL database connection
+                          $pdo = Connection::get()->connect("admin");
+                          $funcion = new Funcion($pdo);
+                          // get all stocks data
+                          $result = $funcion->getPacientes();  
+
+                      }catch (PDOException $e){
+                          // report error message
+                          echo $e->getMessage();
+                      }
+                      foreach ($result as $res) :
+                    ?>
+                      <tr>
+                        <td><a href="editarpaciente.php?RFC=<?php echo $res[0]; ?>">
+                          <?php echo $res[0]; ?></a>
+                        </td>
+                        <td>
+                          <?php echo $res[1]; echo $res[2]; echo $res[3] ?>
+                        </td>
+                        <td>
+                          <?php echo $res[4]; ?>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+
                 </tbody>
             </table>
  		</div>	
@@ -172,12 +216,12 @@ if( $varcomparacion == null || $varcomparacion == ''){
  		</div>		
  	</div>
 
-
- 	<div class="col-12 container d-flex flex-column flex-md-row">
+<!--Carga de la tabla de administradores desde la bd-->
+ 	<div  id="administrador" class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
  		<div class="col-9 container flex-md-row" id="tabla-administrador">
- 		<h4>Administrador</h4>
+ 		<h4>Administradores</h4>
         <table class="table table-sm table-bordered" style=" background-color: white " cellspacing="0">
                 <thead>
                     <tr>
@@ -187,11 +231,34 @@ if( $varcomparacion == null || $varcomparacion == ''){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                      <td><a onclick="editarmedico('Work1')">Paid3fgaog98daw</a></td>
-                      <td>Paquito de la O</td>
-                      <td>3212322</td>
-                    </tr>
+                    <?php
+                      
+                      try{
+                          // create a PostgreSQL database connection
+                          $pdo = Connection::get()->connect("admin");
+                          $funcion = new Funcion($pdo);
+                          // get all stocks data
+                          $result = $funcion->getAdmins();  
+
+                      }catch (PDOException $e){
+                          // report error message
+                          echo $e->getMessage();
+                      }
+                      foreach ($result as $res) :
+                    ?>
+                      <tr>
+                        <td><a href="editaradmin.php?RFC=<?php echo $res[0]; ?>">
+                          <?php echo $res[6]; ?></a>
+                        </td>
+                        <td>
+                          <?php echo $res[0]; echo $res[1]; echo $res[2] ?>
+                        </td>
+                        <td>
+                          <?php echo $res[3]; ?>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+
                 </tbody>
             </table>
  		</div>	
@@ -204,8 +271,8 @@ if( $varcomparacion == null || $varcomparacion == ''){
  		</div>		
  	</div>
 
-   
- 	<div class="col-12 container d-flex flex-column flex-md-row">
+<!--Carga de la tabla de consultorios desde la bd-->
+ 	<div  id="consultorios" class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
  		<div class="col-9 container flex-md-row" id="tabla-consultorio">
@@ -236,8 +303,6 @@ if( $varcomparacion == null || $varcomparacion == ''){
  		</div>		
  	</div>
 
-
-<
   <!-- modal para insertar medico -->
 <div class="modal fade" id="modal-insert-medico">
     <div class="modal-dialog" role="document">
@@ -295,6 +360,30 @@ if( $varcomparacion == null || $varcomparacion == ''){
   </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- CHECA ESTE KEVIN -->
+
+
  <!-- modal para insertar asistente -->
 <div class="modal fade" id="modal-insert-asistente">
     <div class="modal-dialog" role="document">
@@ -303,54 +392,78 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo Asistente</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="">
-            
+          <form id="c_form-h" action="func/insertarasistente.php" method="POST">
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="RFC" required> </div>
+                <input type="text" class="form-control" name="inputrfc" placeholder="RFC" required> </div>
             </div>
-
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Nombre" required> </div>
+                <input type="text" class="form-control" name="inputnombre" placeholder="Nombre" required> </div>
             </div>
-
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Apellido Paterno" required> </div>
+                <input type="text" class="form-control" name="inputapaterno" placeholder="Apellido Paterno" required> </div>
             </div>
-
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Apellido Materno" required> </div>
+                <input type="text" class="form-control" name="inputamaterno" placeholder="Apellido Materno" required> </div>
             </div>
-
             <div class="form-group row">
               <div class="col-12">
-                <input type="numeric" class="form-control" name="" placeholder="Telefono" required> </div>
+                <input type="numeric" class="form-control" name="inputtelefono" placeholder="Telefono" required> </div>
             </div>
-
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Direccion" required> </div>
+                <input type="text" class="form-control" name="inputdireccion" placeholder="Direccion" required> </div>
             </div>
-
-
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" name="" placeholder="Contraseña" required> </div>
+                <input type="password" class="form-control" name="inputpass" placeholder="Contraseña" required> </div>
             </div>
-
-            
-          </form>
+          
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Guardar</button>
           <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
         </div>
+        </form>
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <!-- modal para insertar paciente -->
 <div class="modal fade" id="modal-insert-Paciente">
@@ -360,7 +473,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo Paciente</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="">
+          <form id="c_form-h" class="" action="../func/prueba">
             
             <div class="form-group row">
               <div class="col-12">
@@ -571,6 +684,36 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <script > alert('Medico ingresado con exito!'); </script>";}
         else{echo "
           <script > alert('Medico no ingresado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitoeditmedico"])){
+        if( $_GET["exitoeditmedico"]=='true'){echo "
+          <script > alert('Medico editado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Medico no editado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitodelmedico"])){
+        if( $_GET["exitodelmedico"]=='true'){echo "
+          <script > alert('Medico eliminado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Medico no eliminado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitoinsasistente"])){
+        if( $_GET["exitoinsasistente"]=='true'){echo "
+          <script > alert('Asistente ingresado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Asistente no ingresado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitoeditasistente"])){
+        if( $_GET["exitoeditasistente"]=='true'){echo "
+          <script > alert('Asistente editado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Asistente no editado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitodelasistente"])){
+        if( $_GET["exitodelasistente"]=='true'){echo "
+          <script > alert('Asistente eliminado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Asistente no eliminado, revise su informacion.'); </script>";}
       }
     ?>
 

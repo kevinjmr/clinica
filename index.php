@@ -41,9 +41,10 @@
   ?>
 
   <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg" style="	background-image: url(&quot;src/1.jpg&quot;);	background-position: center center;	background-size: 80%;	background-repeat: no-repeat;">
-    <div class="col-md-5 p-lg-5 mx-auto my-5" style="	background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.1));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+    <div class="col-md-6 p-lg-6 mx-auto my-5" style="	background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.1));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
       <h1 class="font-weight-normal display-4 border border-top border-dark rounded-0 text-white bg-dark">Clinica Dolores</h1>
-      <p class="lead font-weight-normal text-white" style="	background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple's marketing pages.</p>
+      <p class="lead font-weight-normal text-white" style="	background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+              Nosotros no tratamos temas de salud. Nosotros tratamos temas de salud mejor.</p>
     </div>
   </div>
   <div class="row text-center">

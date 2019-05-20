@@ -46,7 +46,11 @@
   </div>
   <div class="row text-center">
     <div class="col-6 text-right">
-      <img alt="Bootstrap Image Preview" src="src/4.jpg"  width="50%" class="img-thumbnail">
+      
+      <div id="map-container" class="map-container" >
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15022.808232539386!2d-101.18559908150638!3d19.72530496367456!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842d0e40be8f4d3b%3A0xf001c256ae856856!2sInstituto+Tecnol%C3%B3gico+de+Morelia!5e0!3m2!1ses-419!2smx!4v1558323241440!5m2!1ses-419!2smx"
+       width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
     </div>
     <div class="col-6">
       <div class="text-left">
@@ -69,24 +73,34 @@
           <h5 class="modal-title" id="myModalLabel">Iniciar Sesion</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="">
+          <form id="c_form-h" method="GET" action="login.php">
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" id="inputmailh" placeholder="Nombre de Usuario" require> </div>
+                <input type="text" class="form-control" name="inputuser" placeholder="Nombre de Usuario" required title="Ingrese el nombre de usuario (RFC, CURP o CedProf)"> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Contraseña" require> </div>
+                <input type="password" class="form-control" name="inputpass" placeholder="Contraseña" required title="Ingrese la contraseña"> </div>
             </div>
-          </form>
+            <div class="form-group row">
+              <div class="col-12">
+                <select name="type"class="form-control">
+                  <option value="1">Médico</option>
+                  <option value="2">Enfermero(a)</option>
+                  <option value="3">Paciente</option>
+                  <option value="4">Administrador</option>
+                </select>
+              </div>
+            </div>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Iniciar sesion</button>
           <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
         </div>
+      </form>
       </div>
     </div>
-  </div>
+  </div><!--Modal Login-->  
   </body>
 
   <!-- Bootstrap core JavaScript
