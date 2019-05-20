@@ -2,8 +2,8 @@
 <?php
 SESSION_START();
 
-//$varcomparacion = $_SESSION['nombre'];
-$varcomparacion = "cesar";
+$varcomparacion = $_SESSION['nombre'];
+
 if( $varcomparacion == null || $varcomparacion == ''){
   header("location:index.php");
 }
