@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,11 +33,6 @@
       <a class="text-dark py-2 px-2 d-none1 d-md-inline-block" href="https://fezvrasta.github.io/bootstrap-material-design/docs/4.0/examples/product/#">Acerca de nosotros</a>
     </div>
   </nav>
-
-
-
-
-
 
   <?php
   if(isset($_GET["fallopass"]) && $_GET["fallopass"]=='true'){
@@ -96,6 +90,7 @@
                   <option value="1">Médico</option>
                   <option value="2">Enfermero(a)</option>
                   <option value="3">Paciente</option>
+                  <option value="4">Administrador</option>
                 </select>
               </div>
             </div>

@@ -9,14 +9,10 @@ if( $varcomparacion == null || $varcomparacion == ''){
 }
 ?>
 
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Pagina de administracion</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -41,10 +37,10 @@ if( $varcomparacion == null || $varcomparacion == ''){
 
 <nav class="light-blue site-header py-1">
     	<div class="col-12 container d-flex flex-column flex-md-row">
-    		<div class="col-7 container d-flex flex-column flex-md-row">
+    		<div class="col-4 container d-flex flex-column flex-md-row">
     			<a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >Bienvenido: <?php echo $_SESSION['nombre'] ?>  </a>
     		</div>
-    		<div class="col-5 container d-flex flex-column flex-md-row">
+    		<div class="col-8 container d-flex flex-column flex-md-row justify-content-end">
     			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Medicos</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Asistentes</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Paciente</a>
@@ -55,6 +51,9 @@ if( $varcomparacion == null || $varcomparacion == ''){
     	</div>
   </nav>
 
+
+
+    <!--Tabla para mostrar a todos los medicos -->
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -88,7 +87,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
                       foreach ($result as $res) :
                     ?>
                       <tr>
-                        <td><a href="func/editar.php?cedprof=<?php echo $res[0]; ?>">
+                        <td><a href="editarmedico.php?cedprof=<?php echo $res[0]; ?>">
                           <?php echo $res[0]; ?></a>
                         </td>
                         <td>
@@ -113,6 +112,10 @@ if( $varcomparacion == null || $varcomparacion == ''){
  	</div>
 
 
+
+
+
+   <!--Consulta de todos los asistentes -->
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -127,11 +130,37 @@ if( $varcomparacion == null || $varcomparacion == ''){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                      <td><a onclick="editarmedico('Work1')">masidonpiasd</a></td>
-                      <td>Mariana leal noseque</td>
-                      <td>llamame ♥</td>
-                    </tr>
+                    <?php
+                      require_once __DIR__.'/database/Connection.php';
+                      require_once __DIR__.'/database/Funcion.php'; 
+                      use PostgreSQLPHPconnect\Connection as Connection1;
+                      use PostgreSQLPHPconnect\Funcion as Funcion1;
+                      try{
+                          // create a PostgreSQL database connection
+                          $pdo = Connection::get()->connect("admin");
+                          $funcion = new Funcion($pdo);
+                          // get all stocks data
+                          $result = $funcion->getAsistentes();  
+
+                      }catch (PDOException $e){
+                          // report error message
+                          echo $e->getMessage();
+                      }
+                      foreach ($result as $res) :
+                    ?>
+                      <tr>
+                        <td><a href="editarasistente.php?RFC=<?php echo $res[0]; ?>">
+                          <?php echo $res[0]; ?></a>
+                        </td>
+                        <td>
+                          <?php echo $res[1]; echo $res[2]; echo $res[3] ?>
+                        </td>
+                        <td>
+                          <?php echo $res[4]; ?>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+
                 </tbody>
             </table>
  		</div>	
@@ -145,6 +174,9 @@ if( $varcomparacion == null || $varcomparacion == ''){
  	</div>
 
 
+
+
+  <!--Tabla para mostrar a los pacientes de la clinica--> 
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -159,11 +191,37 @@ if( $varcomparacion == null || $varcomparacion == ''){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                      <td><a onclick="editarmedico('Work1')">LMfoo23h8he</a></td>
-                      <td>Luis mario Aguilar Guzman</td>
-                      <td>3230727</td>
-                    </tr>
+                    <?php
+                      require_once __DIR__.'/database/Connection.php';
+                      require_once __DIR__.'/database/Funcion.php'; 
+                      use PostgreSQLPHPconnect\Connection as Connection2;
+                      use PostgreSQLPHPconnect\Funcion as Funcion2;
+                      try{
+                          // create a PostgreSQL database connection
+                          $pdo = Connection::get()->connect("admin");
+                          $funcion = new Funcion($pdo);
+                          // get all stocks data
+                          $result = $funcion->getPacientes();  
+
+                      }catch (PDOException $e){
+                          // report error message
+                          echo $e->getMessage();
+                      }
+                      foreach ($result as $res) :
+                    ?>
+                      <tr>
+                        <td><a href="editarpaciente.php?RFC=<?php echo $res[0]; ?>">
+                          <?php echo $res[0]; ?></a>
+                        </td>
+                        <td>
+                          <?php echo $res[1]; echo $res[2]; echo $res[3] ?>
+                        </td>
+                        <td>
+                          <?php echo $res[4]; ?>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+
                 </tbody>
             </table>
  		</div>	
@@ -177,6 +235,10 @@ if( $varcomparacion == null || $varcomparacion == ''){
  	</div>
 
 
+
+
+
+<!-- Tabla para mostrar a los administradores -->
  	<div class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
@@ -191,11 +253,37 @@ if( $varcomparacion == null || $varcomparacion == ''){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                      <td><a onclick="editarmedico('Work1')">Paid3fgaog98daw</a></td>
-                      <td>Paquito de la O</td>
-                      <td>3212322</td>
-                    </tr>
+                    <?php
+                      require_once __DIR__.'/database/Connection.php';
+                      require_once __DIR__.'/database/Funcion.php'; 
+                      use PostgreSQLPHPconnect\Connection as Connection3;
+                      use PostgreSQLPHPconnect\Funcion as Funcion3;
+                      try{
+                          // create a PostgreSQL database connection
+                          $pdo = Connection::get()->connect("admin");
+                          $funcion = new Funcion($pdo);
+                          // get all stocks data
+                          $result = $funcion->getAdmins();  
+
+                      }catch (PDOException $e){
+                          // report error message
+                          echo $e->getMessage();
+                      }
+                      foreach ($result as $res) :
+                    ?>
+                      <tr>
+                        <td><a href="editaradmin.php?RFC=<?php echo $res[0]; ?>">
+                          <?php echo $res[6]; ?></a>
+                        </td>
+                        <td>
+                          <?php echo $res[0]; echo $res[1]; echo $res[2] ?>
+                        </td>
+                        <td>
+                          <?php echo $res[3]; ?>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+
                 </tbody>
             </table>
  		</div>	
@@ -241,7 +329,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
  	</div>
 
 
-<
+
   <!-- modal para insertar medico -->
 <div class="modal fade" id="modal-insert-medico">
     <div class="modal-dialog" role="document">
@@ -299,6 +387,30 @@ if( $varcomparacion == null || $varcomparacion == ''){
   </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- CHECA ESTE KEVIN -->
+
+
  <!-- modal para insertar asistente -->
 <div class="modal fade" id="modal-insert-asistente">
     <div class="modal-dialog" role="document">
@@ -307,42 +419,46 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo Asistente</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="">
+
+
+        <!-- AQUI XDXDXDXD --> 
+          <form id="c_form-h" action="prueba.php" method="POST">
+          
             
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="RFC" required> </div>
+                <input type="text" class="form-control" name="inputRFC" placeholder="RFC" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Nombre" required> </div>
+                <input type="text" class="form-control" name="inputNombre" placeholder="Nombre" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Apellido Paterno" required> </div>
+                <input type="text" class="form-control" name="inputAPaterno" placeholder="Apellido Paterno" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Apellido Materno" required> </div>
+                <input type="text" class="form-control" name="inputAMaterno" placeholder="Apellido Materno" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="numeric" class="form-control" name="" placeholder="Telefono" required> </div>
+                <input type="numeric" class="form-control" name="inputTelefono" placeholder="Telefono" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Direccion" required> </div>
+                <input type="text" class="form-control" name="inputDireccion" placeholder="Direccion" required> </div>
             </div>
 
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" name="" placeholder="Contraseña" required> </div>
+                <input type="password" class="form-control" name="inputPass" placeholder="Contraseña" required> </div>
             </div>
 
             
@@ -356,6 +472,39 @@ if( $varcomparacion == null || $varcomparacion == ''){
     </div>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- modal para insertar paciente -->
 <div class="modal fade" id="modal-insert-Paciente">
     <div class="modal-dialog" role="document">
@@ -364,7 +513,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo Paciente</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="">
+          <form id="c_form-h" class="" action="../func/prueba">
             
             <div class="form-group row">
               <div class="col-12">
@@ -567,12 +716,26 @@ if( $varcomparacion == null || $varcomparacion == ''){
       </div>
     </div>
   </div>
+  
+    <!--Script alertas-->exitodelmedico
     <?php
       if(isset($_GET["exitoinsmedico"])){
         if( $_GET["exitoinsmedico"]=='true'){echo "
           <script > alert('Medico ingresado con exito!'); </script>";}
         else{echo "
           <script > alert('Medico no ingresado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitoeditmedico"])){
+        if( $_GET["exitoeditmedico"]=='true'){echo "
+          <script > alert('Medico editado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Medico no editado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitodelmedico"])){
+        if( $_GET["exitodelmedico"]=='true'){echo "
+          <script > alert('Medico eliminado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Medico no eliminado, revise su informacion.'); </script>";}
       }
     ?>
 
@@ -598,7 +761,6 @@ if( $varcomparacion == null || $varcomparacion == ''){
         <small class="d-block mb-3 text-muted">© 2019</small>
       </div>
     </div>
-    <!--Script alertas-->
     
   </footer>
 

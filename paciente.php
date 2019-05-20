@@ -46,7 +46,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <div class="col-4 container d-flex flex-column flex-md-row"></div>
           <div class="col-2 container d-flex flex-column flex-md-row">
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Bienvenido: <?php echo $_SESSION['nombre'] ?> </a>
-            <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">cerrar session</a>
+            <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar Sesion</a>
 
             </div>
     		</div>

@@ -72,23 +72,27 @@ class Funcion{
 
     public function getMedico($id) {
         
-        $q='select * from medico where "Ced_prof"=$id';
-        $stmt = $this->pdo->query($q);
+        $q='select * from medico where "Ced_prof"= :id';
+        $stmt=$this->pdo->prepare($q);	        
+        $stmt->execute(array(":id"=>$id));
         $result = [];
         while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
             $result[] = [
-                'Nombre' => $row['Nombre'],
-                'APaterno' => $row['APaterno'],
-                'AMaterno' => $row['AMaterno'],
-                'Telefono' => $row['Telefono'],
-                'Direccion' => $row['Direccion'],
-                'Especialidad' => $row['Especialidad'],
-                'Escuela' => $row['Escuela']
+            $row['Nombre'], //0
+            $row['APaterno'],//1
+            $row['AMaterno'],//2
+            $row['Telefono'],//3
+            $row['Direccion'],//4
+            $row['Especialidad'],//5
+            $row['Escuela']//6
             ];
         }
         return $result;
     }
 
+
+
+     //Funcion para obtener todos los médicos en la página administrador
     public function getMedicos() {
         
         $q='select * from medico';
@@ -105,6 +109,83 @@ class Funcion{
                 $row['Especialidad'],//6
                 $row['Escuela'],//7
                 $row['pass']//8
+            ];
+        }
+        return $result;
+    }
+
+
+
+
+    //Función para obtener a todos los Asistentes o Secretarias disponibles
+    public function getAsistentes() {
+        
+        $q='select * from secretaria';
+        $stmt = $this->pdo->query($q);
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result[] = [
+                $row['RFC'],//0
+                $row['Nombre'],//1
+                $row['APaterno'],//2
+                $row['AMaterno'],//3
+                $row['Telefono'],//4
+                $row['Direccion'],//5
+                $row['pass']//6
+            ];
+        }
+        return $result;
+    }
+
+
+
+
+    //Función para obtener a todos los pacientes de la clinica
+    public function getPacientes() {
+        
+        $q='select * from paciente';
+        $stmt = $this->pdo->query($q);
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result[] = [
+                $row['CURP'],//0
+                $row['Nombre'],//1
+                $row['APaterno'],//2
+                $row['AMaterno'],//3
+                $row['Telefono'],//4
+                $row['Direccion'],//5
+                $row['Edad'],//6
+                $row['Edo_civil'],//7
+                $row['Ocupacion'],//8
+                $row['Escolaridad'],//9
+                $row['Lugar_de_origen'],//10
+                $row['Lugar_de_residencia'],//11
+                $row['pass']//12
+
+            ];
+        }
+        return $result;
+    }
+
+
+
+
+
+    //Funcion para obtener a los Administradores de la aplicación
+    public function getAdmins() {
+        $q='select * from administracion';
+        $stmt = $this->pdo->query($q);
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result[] = [
+                $row['Nombre'],//1
+                $row['APaterno'],//2
+                $row['AMaterno'],//3
+                $row['Telefono'],//4
+                $row['Direccion'],//5
+                $row['pass'],//6
+                $row['RFC']//7
+
             ];
         }
         return $result;
