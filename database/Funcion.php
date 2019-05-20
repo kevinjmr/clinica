@@ -146,7 +146,21 @@ class Funcion{
         return $result;
     }
 
+    //Funcion para obtener a los Administradores de la aplicación
+    public function getConsultorios() {
+        $q='select * from consultorio';
+        $stmt = $this->pdo->query($q);
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result = [
+                $row['Id'],//0
+                $row['Medico'],//1
+                $row['Secretaria']//2
 
+            ];
+        }
+        return $result;
+    }
 
 
 
@@ -157,13 +171,13 @@ class Funcion{
         $result = [];
         while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
             $result[] = [
-                $row['Nombre'],//1
-                $row['APaterno'],//2
-                $row['AMaterno'],//3
-                $row['Telefono'],//4
-                $row['Direccion'],//5
-                $row['pass'],//6
-                $row['RFC']//7
+                $row['Nombre'],//0
+                $row['APaterno'],//1
+                $row['AMaterno'],//2
+                $row['Telefono'],//3
+                $row['Direccion'],//4
+                $row['pass'],//5
+                $row['RFC']//6
 
             ];
         }

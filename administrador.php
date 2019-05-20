@@ -286,11 +286,33 @@ if( $varcomparacion == null || $varcomparacion == ''){
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                      <td><a onclick="editarmedico('Work1')">♥</a></td>
-                      <td>Cesar Reynel Ortiz</td>
-                      <td>Mariana Leal noseque</td>
-                    </tr>
+                  <?php
+                      
+                      try{
+                          // create a PostgreSQL database connection
+                          $pdo = Connection::get()->connect("admin");
+                          $funcion = new Funcion($pdo);
+                          // get all stocks data
+                          $result = $funcion->getConsultorios();  
+
+                      }catch (PDOException $e){
+                          // report error message
+                          echo $e->getMessage();
+                      }
+                      foreach ($result as $res) :
+                    ?>
+                      <tr>
+                        <td><a href="editarconsultorio.php?id=<?php echo $res[0]; ?>">
+                          <?php echo $res[0]; ?></a>
+                        </td>
+                        <td>
+                          <?php echo $res[1]; ?>
+                        </td>
+                        <td>
+                          <?php echo $res[2]; ?>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
  		</div>	
@@ -552,7 +574,6 @@ if( $varcomparacion == null || $varcomparacion == ''){
   </div>
 
 
-
  <!-- modal para insertar consultorio -->
 <div class="modal fade" id="modal-insert-consultorio">
     <div class="modal-dialog" role="document">
@@ -561,14 +582,14 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo Consultorio</h5>
         </div>
         <div class="modal-body">
-          <form autocomplete="off" id="c_form-h" class="">
+          <form autocomplete="off" id="c_form-h" action="func/insertarconsultorio.php" method="POST">
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Nombre" required> </div>
+                <input type="text" class="form-control" name="inputmedico" placeholder="Cedula profecional del Medico" required> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" id="inputpasswordh" placeholder="Apellido Paterno" required> </div>
+                <input type="text" class="form-control" name="inputsecretaria" placeholder="RFC del asistente" required> </div>
             </div>
           </div>
           <div class="modal-footer">
