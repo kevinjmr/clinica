@@ -237,6 +237,20 @@ if( $varcomparacion == null || $varcomparacion == ''){
   </div>
 
 
+<?php 
+    $cedprof = $varcomparacion;
+
+    require_once __DIR__.'..\database\Connection.php';
+    require_once __DIR__.'..\database\Funcion.php'; 
+    use PostgreSQLPHPconnect\Connection as Connection;
+    use PostgreSQLPHPconnect\Funcion as Funcion;
+    try{
+        // create a PostgreSQL database connection
+        $pdo = Connection::get()->connect("admin");
+        $funcion = new Funcion($pdo);
+        // get all stocks data
+        $result = $funcion->getMedico($cedprof);  ?>
+
 
   <!-- modal para ver datos del Medico -->
 <div class="modal fade" id="modal-select-Medico">
@@ -250,31 +264,31 @@ if( $varcomparacion == null || $varcomparacion == ''){
             <div class="form-group row">
               <div class="col-6 d-flex flex-column">
                 <label>Ced_Prof:</label>
-                <label  type="text" class="form-control" name="ced_prof"><?php echo trim($curp); ?></label>
+                <label  type="text" class="form-control" name="ced_prof"><?php echo $cedprof; ?></label>
                 </div>
                 <div class="col-6 d-flex flex-column" >
                 <label>Nombre    :</label>
-                <label  type="text" class="form-control" name="Nombre"><?php echo $result[0]; echo $result[1]; echo $result[2];?></label>
+                <label  type="text" class="form-control" name="Nombre"><?php echo trim($result[0][0]); ?><?php echo trim($result[0][1]); ?><?php echo trim($result[0][2]); ?></label>
                 </div>
             </div>
             <div class="form-group row">
               <div class="col-6 d-flex flex-column">
               <label>Telefono  :</label>
-                <label type="text" class="form-control" name="Telefono"><?php echo $result[3]; ?></label>
+                <label type="text" class="form-control" name="Telefono"><?php echo trim($result[0][3]); ?></label>
                 </div>
                 <div class="col-6 d-flex flex-column">
                 <label>Direccion :</label>
-                <label type="text" class="form-control" name="Direccion"><?php echo $result[4]; ?></label>
+                <label type="text" class="form-control" name="Direccion"><?php echo trim($result[0][5]); ?></label>
                 </div>
             </div>
             <div class="form-group row">
               <div class="col-6 d-flex flex-column">
               <label>Especialidad:</label>
-                <label type="text" class="form-control" name="Especialidad"><?php echo $result[5]; ?></label>
+                <label type="text" class="form-control" name="Especialidad"><?php echo trim($result[0][4]); ?></label>
                 </div>
                  <div class="col-6 d-flex flex-column">
                  <label>Escuela:</label>
-                <label type="text" class="form-control" name="Escuela"><?php echo $result[6]; ?></label>
+                <label type="text" class="form-control" name="Escuela"><?php echo trim($result[0][5]); ?></label>
                 </div> 
             </div>        
           </form>

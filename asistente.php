@@ -35,7 +35,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
       <nav class="light-blue site-header py-1">
       <div class="col-12 container d-flex flex-column flex-md-row">
         <div class="col-4 container d-flex flex-column flex-md-row">
-          <h2 class="py-2 px-2 d-none d-md-inline-block" data-toggle="modal" >Asistente</h2>
+          <a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >Bienvenido: <?php echo $_SESSION['nombre'] ?> </a>
         </div>
         <div class="col-8 container d-flex flex-column flex-md-row justify-content-end">
         <button type="button" class="btn btn-sm btn-info" href="#modal-select-asistente" data-toggle="modal">INFO</button>
@@ -151,6 +151,22 @@ if( $varcomparacion == null || $varcomparacion == ''){
   </div>
 
 
+<?php 
+    $rfc = $varcomparacion;
+
+    require_once __DIR__.'/database/Connection.php';
+    require_once __DIR__.'/database/Funcion.php'; 
+    use PostgreSQLPHPconnect\Connection as Connection;
+    use PostgreSQLPHPconnect\Funcion as Funcion;
+    try{
+        // create a PostgreSQL database connection
+        $pdo = Connection::get()->connect("admin");
+        $funcion = new Funcion($pdo);
+        // get all stocks data
+        $result = $funcion->getAsistente($rfc);  ?>
+
+
+
   <!-- modal para ver datos del Asistente -->
 <div class="modal fade" id="modal-select-asistente">
     <div class="modal-dialog modal-lg"  role="document">
@@ -163,21 +179,21 @@ if( $varcomparacion == null || $varcomparacion == ''){
             <div class="form-group row">
               <div class="col-6 d-flex flex-column">
                 <label>RFC:</label>
-                <label  type="text" class="form-control" name="ced_prof"><?php echo trim($curp); ?></label>
+                <label  type="text" class="form-control" name="ced_prof"><?php echo trim($rfc); ?></label>
                 </div>
                 <div class="col-6 d-flex flex-column" >
                 <label>Nombre    :</label>
-                <label  type="text" class="form-control" name="Nombre"><?php echo $result[0]; echo $result[1]; echo $result[2];?></label>
+                <label  type="text" class="form-control" name="Nombre"><?php echo trim($result[0][1]); ?><?php echo trim($result[0][2]); ?><?php echo trim($result[0][3]); ?></label>
                 </div>
             </div>
             <div class="form-group row">
               <div class="col-6 d-flex flex-column">
               <label>Telefono  :</label>
-                <label type="text" class="form-control" name="Telefono"><?php echo $result[3]; ?></label>
+                <label type="text" class="form-control" name="Telefono"><?php echo trim($result[0][4]); ?></label>
                 </div>
                 <div class="col-6 d-flex flex-column">
                 <label>Direccion :</label>
-                <label type="text" class="form-control" name="Direccion"><?php echo $result[4]; ?></label>
+                <label type="text" class="form-control" name="Direccion"><?php echo trim($result[0][5]); ?></label>
                 </div>
             </div>        
           </form>

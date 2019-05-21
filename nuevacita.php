@@ -28,7 +28,7 @@
         <div class="col-4 container d-flex flex-column flex-md-row">
           
         </div>
-        <div class="col-8 container d-flex flex-column flex-md-row flex-md-row">
+        <div class="col-8 container d-flex flex-column flex-md-row flex-md-row justify-content-end">
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="medico.php">Agenda</a>
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cita.php">Regresar</a>
             <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="index.php">Cerrar sesion</a>
