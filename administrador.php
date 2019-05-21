@@ -41,20 +41,18 @@ if( $varcomparacion == null || $varcomparacion == ''){
     			<a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >Bienvenido: <?php echo $_SESSION['nombre'] ?>  </a>
     		</div>
     		<div class="col-8 container d-flex flex-column flex-md-row justify-content-end">
-    			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Medicos</a>
-      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Asistentes</a>
-      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Paciente</a>
-      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Administradores</a>
-      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Consultorios</a>
+    			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#medicos">Medicos</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#asistentes">Asistentes</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#pacientes">Paciente</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#administrador">Administradores</a>
+      			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#consultorios">Consultorios</a>
       			<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar Sesion</a>
     		</div>
     	</div>
   </nav>
 
-
-
-    <!--Tabla para mostrar a todos los medicos -->
- 	<div class="col-12 container d-flex flex-column flex-md-row">
+  <!--Carga de la tabla de medicos desde la bd-->
+ 	<div id="medicos" class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
  		<div class="col-9 container flex-md-row" id="tabla-medicos">
@@ -111,16 +109,12 @@ if( $varcomparacion == null || $varcomparacion == ''){
  		</div>
  	</div>
 
-
-
-
-
-   <!--Consulta de todos los asistentes -->
- 	<div class="col-12 container d-flex flex-column flex-md-row">
+<!--Carga de la tabla de asistentes desde la bd-->
+ 	<div id="asistentes" class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
  		<div class="col-9 container flex-md-row" id="tabla-Asistentes">
- 		<h4>Asistentes</h4>
+ 		<h4 >Asistentes</h4>
         <table class="table table-sm table-bordered" style=" background-color: white " cellspacing="0">
                 <thead>
                     <tr>
@@ -130,15 +124,9 @@ if( $varcomparacion == null || $varcomparacion == ''){
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                      require_once __DIR__.'/database/Connection.php';
-                      require_once __DIR__.'/database/Funcion.php'; 
-                      use PostgreSQLPHPconnect\Connection as Connection1;
-                      use PostgreSQLPHPconnect\Funcion as Funcion1;
+                <?php
+                      
                       try{
-                          // create a PostgreSQL database connection
-                          $pdo = Connection::get()->connect("admin");
-                          $funcion = new Funcion($pdo);
                           // get all stocks data
                           $result = $funcion->getAsistentes();  
 
@@ -149,7 +137,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
                       foreach ($result as $res) :
                     ?>
                       <tr>
-                        <td><a href="editarasistente.php?RFC=<?php echo $res[0]; ?>">
+                        <td><a href="editarasistente.php?rfc=<?php echo $res[0]; ?>">
                           <?php echo $res[0]; ?></a>
                         </td>
                         <td>
@@ -175,9 +163,8 @@ if( $varcomparacion == null || $varcomparacion == ''){
 
 
 
-
-  <!--Tabla para mostrar a los pacientes de la clinica--> 
- 	<div class="col-12 container d-flex flex-column flex-md-row">
+<!--Carga de la tabla de pacientes desde la bd-->
+ 	<div id="pacientes" class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
  		<div class="col-9 container flex-md-row" id="tabla-pacientes">
@@ -192,10 +179,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
                 </thead>
                 <tbody>
                     <?php
-                      require_once __DIR__.'/database/Connection.php';
-                      require_once __DIR__.'/database/Funcion.php'; 
-                      use PostgreSQLPHPconnect\Connection as Connection2;
-                      use PostgreSQLPHPconnect\Funcion as Funcion2;
+                      
                       try{
                           // create a PostgreSQL database connection
                           $pdo = Connection::get()->connect("admin");
@@ -210,7 +194,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
                       foreach ($result as $res) :
                     ?>
                       <tr>
-                        <td><a href="editarpaciente.php?RFC=<?php echo $res[0]; ?>">
+                        <td><a href="editarpaciente.php?CURP=<?php echo $res[0]; ?>">
                           <?php echo $res[0]; ?></a>
                         </td>
                         <td>
@@ -234,16 +218,12 @@ if( $varcomparacion == null || $varcomparacion == ''){
  		</div>		
  	</div>
 
-
-
-
-
-<!-- Tabla para mostrar a los administradores -->
- 	<div class="col-12 container d-flex flex-column flex-md-row">
+<!--Carga de la tabla de administradores desde la bd-->
+ 	<div  id="administrador" class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
  		<div class="col-9 container flex-md-row" id="tabla-administrador">
- 		<h4>Administrador</h4>
+ 		<h4>Administradores</h4>
         <table class="table table-sm table-bordered" style=" background-color: white " cellspacing="0">
                 <thead>
                     <tr>
@@ -254,10 +234,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
                 </thead>
                 <tbody>
                     <?php
-                      require_once __DIR__.'/database/Connection.php';
-                      require_once __DIR__.'/database/Funcion.php'; 
-                      use PostgreSQLPHPconnect\Connection as Connection3;
-                      use PostgreSQLPHPconnect\Funcion as Funcion3;
+                      
                       try{
                           // create a PostgreSQL database connection
                           $pdo = Connection::get()->connect("admin");
@@ -272,7 +249,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
                       foreach ($result as $res) :
                     ?>
                       <tr>
-                        <td><a href="editaradmin.php?RFC=<?php echo $res[0]; ?>">
+                        <td><a href="editaradmin.php?RFC=<?php echo $res[6]; ?>">
                           <?php echo $res[6]; ?></a>
                         </td>
                         <td>
@@ -296,8 +273,8 @@ if( $varcomparacion == null || $varcomparacion == ''){
  		</div>		
  	</div>
 
-   
- 	<div class="col-12 container d-flex flex-column flex-md-row">
+<!--Carga de la tabla de consultorios desde la bd-->
+ 	<div  id="consultorios" class="col-12 container d-flex flex-column flex-md-row">
  		<div class="col-1 container d-flex flex-column flex-md-row">
  		</div>
  		<div class="col-9 container flex-md-row" id="tabla-consultorio">
@@ -327,8 +304,6 @@ if( $varcomparacion == null || $varcomparacion == ''){
  			</div>
  		</div>		
  	</div>
-
-
 
   <!-- modal para insertar medico -->
 <div class="modal fade" id="modal-insert-medico">
@@ -419,55 +394,42 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo Asistente</h5>
         </div>
         <div class="modal-body">
-
-
-        <!-- AQUI XDXDXDXD --> 
-          <form id="c_form-h" action="prueba.php" method="POST">
+          <form id="c_form-h" action="func/insertarasistente.php" method="POST">
+            <div class="form-group row">
+              <div class="col-12">
+                <input type="text" class="form-control" name="inputrfc" placeholder="RFC" required> </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-12">
+                <input type="text" class="form-control" name="inputnombre" placeholder="Nombre" required> </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-12">
+                <input type="text" class="form-control" name="inputapaterno" placeholder="Apellido Paterno" required> </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-12">
+                <input type="text" class="form-control" name="inputamaterno" placeholder="Apellido Materno" required> </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-12">
+                <input type="numeric" class="form-control" name="inputtelefono" placeholder="Telefono" required> </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-12">
+                <input type="text" class="form-control" name="inputdireccion" placeholder="Direccion" required> </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-12">
+                <input type="password" class="form-control" name="inputpass" placeholder="Contraseña" required> </div>
+            </div>
           
-            
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="text" class="form-control" name="inputRFC" placeholder="RFC" required> </div>
-            </div>
-
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="text" class="form-control" name="inputNombre" placeholder="Nombre" required> </div>
-            </div>
-
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="text" class="form-control" name="inputAPaterno" placeholder="Apellido Paterno" required> </div>
-            </div>
-
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="text" class="form-control" name="inputAMaterno" placeholder="Apellido Materno" required> </div>
-            </div>
-
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="numeric" class="form-control" name="inputTelefono" placeholder="Telefono" required> </div>
-            </div>
-
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="text" class="form-control" name="inputDireccion" placeholder="Direccion" required> </div>
-            </div>
-
-
-            <div class="form-group row">
-              <div class="col-12">
-                <input type="password" class="form-control" name="inputPass" placeholder="Contraseña" required> </div>
-            </div>
-
-            
-          </form>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Guardar</button>
           <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
         </div>
+        </form>
       </div>
     </div>
   </div>
@@ -513,80 +475,82 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo Paciente</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="" action="../func/prueba">
+          <form id="c_form-h" class="" action="func/insertarpaciente.php" method="POST">
             
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="CURP" required> </div>
+                <input type="text" class="form-control" name="inputcurp" placeholder="CURP" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Nombre" required> </div>
+                <input type="text" class="form-control" name="nombre" placeholder="Nombre" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Apellido Paterno" required> </div>
+                <input type="text" class="form-control" name="apaterno" placeholder="Apellido Paterno" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Apellido Materno" required> </div>
+                <input type="text" class="form-control" name="amaterno" placeholder="Apellido Materno" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="numeric" class="form-control" name="" placeholder="Telefono" required> </div>
+                <input type="numeric" class="form-control" name="telefono" placeholder="Telefono" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Direccion" required> </div>
+                <input type="text" class="form-control" name="direccion" placeholder="Direccion" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="numeric" class="form-control" name="" placeholder="Edad" required> </div>
+                <input type="numeric" class="form-control" name="edad" placeholder="Edad" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Estado Civil" required> </div>
+                <input type="text" class="form-control" name="estadocivil" placeholder="Estado Civil" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Ocupacion" required> </div>
+                <input type="text" class="form-control" name="ocupacion" placeholder="Ocupacion" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Escolaridad" required> </div>
+                <input type="text" class="form-control" name="escolaridad" placeholder="Escolaridad" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Lugar de origen" required> </div>
+                <input type="text" class="form-control" name="lugardeorigen" placeholder="Lugar de origen" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Lugar de residencia" required> </div>
+                <input type="text" class="form-control" name="lugarderesidencia" placeholder="Lugar de residencia" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" name="" placeholder="Contraseña" required> </div>
+                <input type="password" class="form-control" name="pass" placeholder="Contraseña" required> </div>
             </div>
-
             
-          </form>
-        </div>
-        <div class="modal-footer">
+
+            <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Guardar</button>
           <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
         </div>
+            
+          </form>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -601,50 +565,51 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo administrador</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="">
+          <form id="c_form-h" class="" action="func/insertaradministrador.php" method="POST">
             
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="RFC" required> </div>
+                <input type="text" class="form-control" name="rfc" placeholder="RFC" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Nombre" required> </div>
+                <input type="text" class="form-control" name="nombre" placeholder="Nombre" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Apellido Paterno" required> </div>
+                <input type="text" class="form-control" name="apaterno" placeholder="Apellido Paterno" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Apellido Materno" required> </div>
+                <input type="text" class="form-control" name="amaterno" placeholder="Apellido Materno" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="numeric" class="form-control" name="" placeholder="Telefono" required> </div>
+                <input type="numeric" class="form-control" name="telefono" placeholder="Telefono" required> </div>
             </div>           
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Direccion" required> </div>
+                <input type="text" class="form-control" name="direccion" placeholder="Direccion" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" name="" placeholder="Contraseña" required> </div>
+                <input type="password" class="form-control" name="pass" placeholder="Contraseña" required> </div>
             </div>
-
             
-          </form>
-        </div>
-        <div class="modal-footer">
+            <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Guardar</button>
           <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
         </div>
+            
+          </form>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -717,7 +682,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
     </div>
   </div>
   
-    <!--Script alertas-->exitodelmedico
+    <!--Script alertas-->
     <?php
       if(isset($_GET["exitoinsmedico"])){
         if( $_GET["exitoinsmedico"]=='true'){echo "
@@ -736,6 +701,63 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <script > alert('Medico eliminado con exito!'); </script>";}
         else{echo "
           <script > alert('Medico no eliminado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitoinsasistente"])){
+        if( $_GET["exitoinsasistente"]=='true'){echo "
+          <script > alert('Asistente ingresado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Asistente no ingresado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitoeditasistente"])){
+        if( $_GET["exitoeditasistente"]=='true'){echo "
+          <script > alert('Asistente editado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Asistente no editado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitodelasistente"])){
+        if( $_GET["exitodelasistente"]=='true'){echo "
+          <script > alert('Asistente eliminado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Asistente no eliminado, revise su informacion.'); </script>";}
+      }
+
+      if(isset($_GET["exitoinspaciente"])){
+        if( $_GET["exitoinspaciente"]=='true'){echo "
+          <script > alert('Paciente ingresado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Paciente no ingresado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitoeditpaciente"])){
+        if( $_GET["exitoeditpaciente"]=='true'){echo "
+          <script > alert('Paciente editado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Paciente no editado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitodelpaciente"])){
+        if( $_GET["exitodelpaciente"]=='true'){echo "
+          <script > alert('Paciente eliminado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Paciente no eliminado, revise su informacion.'); </script>";}
+      }
+
+
+      if(isset($_GET["exitoinsadministrador"])){
+        if( $_GET["exitoinsadministrador"]=='true'){echo "
+          <script > alert('Admin ingresado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Admin no ingresado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitoeditadministrador"])){
+        if( $_GET["exitoeditadministrador"]=='true'){echo "
+          <script > alert('Admin editado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Admin no editado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitodeladministrador"])){
+        if( $_GET["exitodeladministrador"]=='true'){echo "
+          <script > alert('Admin eliminado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Admin no eliminado, revise su informacion.'); </script>";}
       }
     ?>
 

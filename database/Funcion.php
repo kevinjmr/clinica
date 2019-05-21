@@ -15,63 +15,8 @@ class Funcion{
         $this->pdo=$pdo;
     }
 
-    /*public function actualizarTodo($a, $b) {
-        $stmt = $this->pdo->prepare('SELECT actualizar(:a,:b)');
-        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
-        $stmt->execute([
-            ':a' => $a,
-            ':b' => $b
-        ]);
-        return $stmt->fetchColumn(0);
-    }
-
-    public function actualizar($tabla, $valor, $condicion) {
-        $stmt = $this->pdo->prepare('SELECT actualizar(:a,:b,:c)');
-        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
-        $stmt->execute([
-            ':a' => $tabla,
-            ':b' => $valor,
-            ':c' => $condicion
-        ]);
-        return $stmt->fetchColumn(0);
-    }
-    
-    public function eliminarCliente($cnombre,$cpaterno,$cmaterno){
-        $seleccion ="select borrarcliente(':a',':b',':c')";
-
-       
-        $stmt = $this->pdo->prepare($seleccion);
-        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
-        $stmt->execute([
-            ':a' => $cnombre,
-            ':b' => $cpaterno,
-            ':c' => $cmaterno
-        ]);
-        if($result = $pdo->query($seleccion)){
-            echo "Funcionó la sentencia";
-            header("Location: admin.php#clientes");
-        }
-        else{
-            echo "No funciono, error al ejecutar la sentencia: (".$pdo->error_log.")";
-        }
-    }
-    public function getDietas() {
-        
-        $q='select * from verdietase()';
-        $stmt = $this->pdo->query($q);
-        $result = [];
-        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-            $result[] = [
-                'nombred' => $row['nombred'],
-                'fechad' => $row['fechad'],
-                'creadord' => $row['creadord']
-            ];
-        }
-        return $result;
-    }*/
-
+    //Obtiene solo un medico
     public function getMedico($id) {
-        
         $q='select * from medico where "Ced_prof"= :id';
         $stmt=$this->pdo->prepare($q);	        
         $stmt->execute(array(":id"=>$id));
@@ -90,11 +35,8 @@ class Funcion{
         return $result;
     }
 
-
-
-     //Funcion para obtener todos los médicos en la página administrador
+    //Obtiene todos los medicos
     public function getMedicos() {
-        
         $q='select * from medico';
         $stmt = $this->pdo->query($q);
         $result = [];
@@ -114,10 +56,27 @@ class Funcion{
         return $result;
     }
 
+    //Obtiene solo un asistente
+    public function getAsistente($id) {
+        $q='select * from secretaria where "RFC"= :id';
+        $stmt=$this->pdo->prepare($q);	        
+        $stmt->execute(array(":id"=>$id));
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result[] = [
+                $row['RFC'],//0
+                $row['Nombre'],//1
+                $row['APaterno'],//2
+                $row['AMaterno'],//3
+                $row['Telefono'],//4
+                $row['Direccion'],//5
+                $row['pass']//6
+            ];
+        }
+        return $result;
+    }
 
-
-
-    //Función para obtener a todos los Asistentes o Secretarias disponibles
+    //Obtiene todos los asistentes
     public function getAsistentes() {
         
         $q='select * from secretaria';
@@ -137,9 +96,29 @@ class Funcion{
         return $result;
     }
 
-
-
-
+    public function getPaciente($id) {
+        $q='select * from paciente where "CURP"= :id';
+        $stmt=$this->pdo->prepare($q);	        
+        $stmt->execute(array(":id"=>$id));
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result = [
+            $row['Nombre'], //0
+            $row['APaterno'],//1
+            $row['AMaterno'],//2
+            $row['Telefono'],//3
+            $row['Direccion'],//4
+            $row['Edad'],//5
+            $row['Edo_civil'],//6
+            $row['Ocupacion'],//7
+            $row['Escolaridad'],//8
+            $row['Lugar_de_origen'],//9
+            $row['Lugar_de_residencia'],//10
+            $row['pass']//11
+            ];
+        }
+        return $result;
+    }
     //Función para obtener a todos los pacientes de la clinica
     public function getPacientes() {
         
@@ -190,5 +169,32 @@ class Funcion{
         }
         return $result;
     }
+
+
+
+    //Obtiene solo un Administrador
+    public function getAdmin($id) {
+        $q='select * from administracion where "RFC"= :id';
+        $stmt=$this->pdo->prepare($q);	        
+        $stmt->execute(array(":id"=>$id));
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result[] = [
+                $row['Nombre'],//1
+                $row['APaterno'],//2
+                $row['AMaterno'],//3
+                $row['Telefono'],//4
+                $row['Direccion'],//5
+                $row['pass']//6
+                
+            ];
+        }
+        return $result;
+    }
+
+
+
+
+
     
 }
