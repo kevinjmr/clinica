@@ -1,7 +1,7 @@
 <?php 
     $cedprof = $_GET['cedprof'];
     
-    require_once __DIR__.'\..\database\Connection.php'; 
+    require_once __DIR__.'../../database/Connection.php'; 
 
         use PostgreSQLPHPconnect\Connection as Connection;
 

@@ -1,6 +1,6 @@
 <?php
     //obtener datos para login
-    $rfc=$_POST["inputrfc"];
+    $RFC=$_POST["inputrfc"];
     $nombre=$_POST["inputnombre"];
     $apaterno=$_POST["inputapaterno"];
     $amaterno=$_POST["inputamaterno"];
@@ -17,35 +17,37 @@
         // create a PostgreSQL database connection
         $pdo = Connection::get()->connect("admin");
         if($pass!=''){
-            $sql='UPDATE public.secretaria
+            $sql='UPDATE public.administracion
             SET "Nombre"=:nombre, "APaterno"=:apaterno, "AMaterno"=:amaterno, "Telefono"=:telefono, "Direccion"=:direccion, pass=:pass
             WHERE "RFC"=:rfc';
             //Se crea la consulta preparada
             $resultado=$pdo->prepare($sql);	        
-            $resultado->execute(array(  ":rfc"=>$rfc,
+            $resultado->execute(array(  
                                         ":nombre"=>$nombre,
                                         ":apaterno"=>$apaterno,
                                         ":amaterno"=>$amaterno,
                                         ":telefono"=>$telefono,
                                         ":direccion"=>$direccion,
-                                        ":pass"=>$pass));
+                                        ":pass"=>$pass,
+                                        ":rfc"=>$RFC));
         }else{
-            $sql='UPDATE public.secretaria
-            SET "Nombre"=:nombre, "APaterno"=:apaterno, "AMaterno"=:amaterno, "Telefono"=:telefono, "Direccion"=:direccion
-            WHERE "RFC"=:rfc';
+            $sql='UPDATE public.medico
+            SET "Nombre"=:nombre, "APaterno"=:apaterno, "AMaterno"=:amaterno, "Telefono"=:telefono, "Direccion"=:direccion, "Especialidad"=:especialidad, "Escuela"=:escuela
+            WHERE "Ced_prof"=:cedprof';
             //Se crea la consulta preparada
             $resultado=$pdo->prepare($sql);	        
-            $resultado->execute(array(  ":rfc"=>$rfc,
+            $resultado->execute(array(  
                                         ":nombre"=>$nombre,
                                         ":apaterno"=>$apaterno,
                                         ":amaterno"=>$amaterno,
                                         ":telefono"=>$telefono,
-                                        ":direccion"=>$direccion));
-        }
+                                        ":direccion"=>$direccion,
+                                        ":rfc"=>$RFC));
+            }
         $row = $resultado->fetch(PDO::FETCH_ASSOC);  
         if(!$row){
             echo "Funcionó la sentencia";
-            header("Location: ../administrador.php?exitoeditasistente=true");
+            header("Location: ../administrador.php?exitoeditAdmin=true");
         }
         $resultado->closeCursor();             
             
@@ -54,7 +56,7 @@
         echo "Error en la ejecución de la consulta<br>".$e;
             echo "Mensaje: " . $e->GetMessage() . "<br>";
             echo "Línea: " . $e->getLine();
-        header("Location: ../administrador.php?exitoeditasistente=false");    
+        header("Location: ../administrador.php?exitoeditAdmin=false");    
     }
 
 ?>

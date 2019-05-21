@@ -1,5 +1,5 @@
 <?php 
-    $rfc = $_GET['rfc'];
+    $CURP = $_GET['CURP'];
     
     require_once __DIR__.'../../database/Connection.php'; 
 
@@ -8,16 +8,16 @@
     try{
         // create a PostgreSQL database connection
         $pdo = Connection::get()->connect("admin");
-            $sql='DELETE FROM public.secretaria
-            WHERE "RFC"=:rfc';
+            $sql='DELETE FROM public.paciente
+            WHERE "CURP"=:curp';
             //Se crea la consulta preparada
             $resultado=$pdo->prepare($sql);	        
-            $resultado->execute(array(":rfc"=>$rfc));
+            $resultado->execute(array(":curp"=>$CURP));
         
         $row = $resultado->fetch(PDO::FETCH_ASSOC);  
         if(!$row){
             echo "Funcionó la sentencia";
-            header("Location: ../administrador.php?exitodelasistente=true");
+            header("Location: ../administrador.php?exitodelpaciente=true");
         }
         $resultado->closeCursor();             
             
@@ -26,6 +26,6 @@
         echo "Error en la ejecución de la consulta<br>".$e;
             echo "Mensaje: " . $e->GetMessage() . "<br>";
             echo "Línea: " . $e->getLine();
-        header("Location: ../administrador.php?exitodelasistente=false");    
+        header("Location: ../administrador.php?exitodelpaciente=false");    
     }
 ?>

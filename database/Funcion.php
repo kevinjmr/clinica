@@ -56,7 +56,7 @@ class Funcion{
         return $result;
     }
 
-    //Obtiene solo un asistente especifico
+    //Obtiene solo un asistente
     public function getAsistente($id) {
         $q='select * from secretaria where "RFC"= :id';
         $stmt=$this->pdo->prepare($q);	        
@@ -198,4 +198,30 @@ class Funcion{
         }
         return $result;
     }
+
+    //Obtiene solo un Administrador
+    public function getAdmin($id) {
+        $q='select * from administracion where "RFC"= :id';
+        $stmt=$this->pdo->prepare($q);	        
+        $stmt->execute(array(":id"=>$id));
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result[] = [
+                $row['Nombre'],//1
+                $row['APaterno'],//2
+                $row['AMaterno'],//3
+                $row['Telefono'],//4
+                $row['Direccion'],//5
+                $row['pass']//6
+                
+            ];
+        }
+        return $result;
+    }
+
+
+
+
+
+    
 }

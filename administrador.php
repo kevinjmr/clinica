@@ -192,7 +192,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
                       foreach ($result as $res) :
                     ?>
                       <tr>
-                        <td><a href="editarpaciente.php?RFC=<?php echo $res[0]; ?>">
+                        <td><a href="editarpaciente.php?CURP=<?php echo $res[0]; ?>">
                           <?php echo $res[0]; ?></a>
                         </td>
                         <td>
@@ -247,7 +247,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
                       foreach ($result as $res) :
                     ?>
                       <tr>
-                        <td><a href="editaradmin.php?RFC=<?php echo $res[0]; ?>">
+                        <td><a href="editaradmin.php?RFC=<?php echo $res[6]; ?>">
                           <?php echo $res[6]; ?></a>
                         </td>
                         <td>
@@ -437,80 +437,82 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo Paciente</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="" action="../func/prueba">
+          <form id="c_form-h" class="" action="func/insertarpaciente.php" method="POST">
             
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="CURP" required> </div>
+                <input type="text" class="form-control" name="inputcurp" placeholder="CURP" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Nombre" required> </div>
+                <input type="text" class="form-control" name="nombre" placeholder="Nombre" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Apellido Paterno" required> </div>
+                <input type="text" class="form-control" name="apaterno" placeholder="Apellido Paterno" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Apellido Materno" required> </div>
+                <input type="text" class="form-control" name="amaterno" placeholder="Apellido Materno" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="numeric" class="form-control" name="" placeholder="Telefono" required> </div>
+                <input type="numeric" class="form-control" name="telefono" placeholder="Telefono" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Direccion" required> </div>
+                <input type="text" class="form-control" name="direccion" placeholder="Direccion" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="numeric" class="form-control" name="" placeholder="Edad" required> </div>
+                <input type="numeric" class="form-control" name="edad" placeholder="Edad" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Estado Civil" required> </div>
+                <input type="text" class="form-control" name="estadocivil" placeholder="Estado Civil" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Ocupacion" required> </div>
+                <input type="text" class="form-control" name="ocupacion" placeholder="Ocupacion" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Escolaridad" required> </div>
+                <input type="text" class="form-control" name="escolaridad" placeholder="Escolaridad" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Lugar de origen" required> </div>
+                <input type="text" class="form-control" name="lugardeorigen" placeholder="Lugar de origen" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Lugar de residencia" required> </div>
+                <input type="text" class="form-control" name="lugarderesidencia" placeholder="Lugar de residencia" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" name="" placeholder="Contraseña" required> </div>
+                <input type="password" class="form-control" name="pass" placeholder="Contraseña" required> </div>
             </div>
-
             
-          </form>
-        </div>
-        <div class="modal-footer">
+
+            <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Guardar</button>
           <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
         </div>
+            
+          </form>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -525,50 +527,51 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo administrador</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="">
+          <form id="c_form-h" class="" action="func/insertaradministrador.php" method="POST">
             
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="RFC" required> </div>
+                <input type="text" class="form-control" name="rfc" placeholder="RFC" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Nombre" required> </div>
+                <input type="text" class="form-control" name="nombre" placeholder="Nombre" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Apellido Paterno" required> </div>
+                <input type="text" class="form-control" name="apaterno" placeholder="Apellido Paterno" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Apellido Materno" required> </div>
+                <input type="text" class="form-control" name="amaterno" placeholder="Apellido Materno" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="numeric" class="form-control" name="" placeholder="Telefono" required> </div>
+                <input type="numeric" class="form-control" name="telefono" placeholder="Telefono" required> </div>
             </div>           
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="text" class="form-control" name="" placeholder="Direccion" required> </div>
+                <input type="text" class="form-control" name="direccion" placeholder="Direccion" required> </div>
             </div>
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="password" class="form-control" name="" placeholder="Contraseña" required> </div>
+                <input type="password" class="form-control" name="pass" placeholder="Contraseña" required> </div>
             </div>
-
             
-          </form>
-        </div>
-        <div class="modal-footer">
+            <div class="modal-footer">
           <button type="submit" class="btn btn-primary">Guardar</button>
           <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
         </div>
+            
+          </form>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -660,6 +663,45 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <script > alert('Consultorio eliminado con exito!'); </script>";}
         else{echo "
           <script > alert('Consultorio no eliminado, revise su informacion.'); </script>";}
+      }
+      
+      if(isset($_GET["exitoinspaciente"])){
+        if( $_GET["exitoinspaciente"]=='true'){echo "
+          <script > alert('Paciente ingresado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Paciente no ingresado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitoeditpaciente"])){
+        if( $_GET["exitoeditpaciente"]=='true'){echo "
+          <script > alert('Paciente editado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Paciente no editado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitodelpaciente"])){
+        if( $_GET["exitodelpaciente"]=='true'){echo "
+          <script > alert('Paciente eliminado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Paciente no eliminado, revise su informacion.'); </script>";}
+      }
+
+
+      if(isset($_GET["exitoinsadministrador"])){
+        if( $_GET["exitoinsadministrador"]=='true'){echo "
+          <script > alert('Admin ingresado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Admin no ingresado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitoeditadministrador"])){
+        if( $_GET["exitoeditadministrador"]=='true'){echo "
+          <script > alert('Admin editado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Admin no editado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitodeladministrador"])){
+        if( $_GET["exitodeladministrador"]=='true'){echo "
+          <script > alert('Admin eliminado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Admin no eliminado, revise su informacion.'); </script>";}
       }
     ?>
 

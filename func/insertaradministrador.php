@@ -1,14 +1,15 @@
 <?php
     //obtener datos para login
-    $rfc=$_POST["inputrfc"];
-    $nombre=$_POST["inputnombre"];
-    $apaterno=$_POST["inputapaterno"];
-    $amaterno=$_POST["inputamaterno"];
-    $telefono=$_POST["inputtelefono"];
-    $direccion=$_POST["inputdireccion"];
-    $pass=$_POST["inputpass"];
+    $nombre=$_POST["nombre"];
+    $apaterno=$_POST["apaterno"];
+    $amaterno=$_POST["amaterno"];
+    $telefono=$_POST["telefono"];
+    $direccion=$_POST["direccion"];
+    $pass=$_POST["pass"];
+    $RFC=$_POST["rfc"];
 
-    require_once __DIR__.'../../database/Connection.php'; 
+    require_once __DIR__.'../../database/Connection.php';
+     
 
         use PostgreSQLPHPconnect\Connection as Connection;
 
@@ -17,23 +18,29 @@
         // create a PostgreSQL database connection
         $pdo = Connection::get()->connect("admin");
 
-        $sql='INSERT INTO public.secretaria(
-            "RFC", "Nombre", "APaterno", "AMaterno", "Telefono", "Direccion", pass)
-            VALUES (:rfc, :nombre, :apaterno, :amaterno, :telefono, :direccion, :pass);';
+        $sql='INSERT INTO public.administracion(
+            "Nombre", "APaterno", "AMaterno", "Telefono", "Direccion", pass, 
+            "RFC")
+    VALUES (:nombre, :apaterno, :amaterno, :telefono, :direccion, :pass, 
+            :rfc)';
         //Se crea la consulta preparada
         $resultado=$pdo->prepare($sql);	        
-        $resultado->execute(array(  ":rfc"=>$rfc,
+        $resultado->execute(array( 
                                     ":nombre"=>$nombre,
                                     ":apaterno"=>$apaterno,
                                     ":amaterno"=>$amaterno,
                                     ":telefono"=>$telefono,
                                     ":direccion"=>$direccion,
-                                    ":pass"=>$pass));
+                                    ":pass"=>$pass,
+                                    ":rfc"=>$RFC,
+                                    
+                                    )
+                                );
 
         $row = $resultado->fetch(PDO::FETCH_ASSOC);  
         if(!$row){
             echo "Funcionó la sentencia";
-            header("Location: ../administrador.php?exitoinsasistente=true");
+            header("Location: ../administrador.php?exitoinsadministrador=true");
         }
         $resultado->closeCursor();             
             
@@ -42,7 +49,7 @@
         echo "Error en la ejecución de la consulta<br>".$e;
             echo "Mensaje: " . $e->GetMessage() . "<br>";
             echo "Línea: " . $e->getLine();
-        header("Location: ../administrador.php?exitoinsasistente=false");    
+        header("Location: ../administrador.php?exitoinsadministrador=false");    
     }
 
 ?>
