@@ -199,6 +199,43 @@ class Funcion{
         return $result;
     }
 
+    //Funcion para obtener a los Citas de la aplicación
+    public function getCitas() {
+        $q='select * from cita';
+        $stmt = $this->pdo->query($q);
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result = [
+                $row['Id'],//0
+                $row['CURP_paciente'],//1
+                $row['ced_prof_medico'],//2
+                $row['fecha'],//3
+                $row['descripcion']//4
+            ];
+        }
+        return $result;
+    }
+    //Obtiene solo una Cita
+    public function getCita($id,$fecha,$hora) {
+        $q='SELECT "CURP_paciente", descripcion, "Nombre", "APaterno", "AMaterno" 
+        FROM cita c inner join paciente p on c."CURP_paciente"=p."CURP" 
+        where ced_prof_medico= :id AND fecha= :fecha AND hora= :hora';
+        $stmt=$this->pdo->prepare($q);	        
+        $stmt->execute(array(":id"=>$id,
+                            ":fecha"=>$fecha,
+                            ":hora"=>$hora));
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result = [
+                $row['CURP_paciente'],//0
+                $row['descripcion'],//1
+                $row['Nombre'],//2
+                $row['APaterno'],//3
+                $row['AMaterno']//4
+            ];
+        }
+        return $result;
+    }
     //Obtiene solo un Administrador
     public function getAdmin($id) {
         $q='select * from administracion where "RFC"= :id';

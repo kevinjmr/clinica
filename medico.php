@@ -49,7 +49,12 @@ if( $varcomparacion == null || $varcomparacion == ''){
   </nav>
 <br>
 <br>
-
+<?php 
+  $date = date('Y-m-d');
+  if(isset($_GET["fecha"])){
+    $date = $_GET["fecha"];
+  }
+?>
   <div class="col-12 container d-flex flex-column flex-md-row">
     <div class="col-2 container d-flex flex-column flex-md-row">
     </div>  
@@ -57,7 +62,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
     <div class="col-2 container d-flex flex-column flex-md-row">
     </div>
     <div class="col-4 container d-flex flex-column flex-md-row">
-        <input type="date" style="border-radius: 5px;" name="">
+        <input type="date" value="<?php echo $date; ?>" onchange="cargar()" id="date" class="form-control" name="date">
       </div>
       <div class="col-2 container d-flex flex-column flex-md-row">
     </div>
@@ -80,69 +85,148 @@ if( $varcomparacion == null || $varcomparacion == ''){
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                      require_once __DIR__.'../database/Connection.php';
+                      require_once __DIR__.'../database/Funcion.php'; 
+                      use PostgreSQLPHPconnect\Connection as Connection;
+                      use PostgreSQLPHPconnect\Funcion as Funcion;
+                      try{
+                          // create a PostgreSQL database connection
+                          $pdo = Connection::get()->connect("admin");
+                          $funcion = new Funcion($pdo);
+
+                      }catch (PDOException $e){
+                          // report error message
+                          echo $e->getMessage();
+                      }
+                      ?>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">7:00 A.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                      <td><a href="cita.php?fecha=<?php echo $date;?>&hora=7:00">7:00 A.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "7:00"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">7:30 A.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                      <td><a href="cita.php?fecha=<?php echo $date;?>&hora=7:30">7:30 A.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "7:30"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">8:00 A.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                    <td><a href="cita.php?fecha=<?php echo $date;?>&hora=8:00">8:00 A.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "8:00"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">8:30 A.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                    <td><a href="cita.php?fecha=<?php echo $date;?>&hora=8:30">8:30 A.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "8:30"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">9:00 A.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                    <td><a href="cita.php?fecha=<?php echo $date;?>&hora=9:00">9:00 A.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "9:00"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">9:30 A.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                    <td><a href="cita.php?fecha=<?php echo $date;?>&hora=9:30">9:30 A.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "9:30"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">10:00 A.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                    <td><a href="cita.php?fecha=<?php echo $date;?>&hora=10:00">10:00 A.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "10:00"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">10:30 A.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                    <td><a href="cita.php?fecha=<?php echo $date;?>&hora=10:30">10:30 A.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "10:30"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">11:00 A.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                    <td><a href="cita.php?fecha=<?php echo $date;?>&hora=11:00">11:00 A.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "11:00"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">11:30 A.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                    <td><a href="cita.php?fecha=<?php echo $date;?>&hora=11:30">11:30 A.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "11:30"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">12:00 P.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                    <td><a href="cita.php?fecha=<?php echo $date;?>&hora=12:00">12:00 A.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "12:00"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">12:30 P.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                    <td><a href="cita.php?fecha=<?php echo $date;?>&hora=12:30">12:30 A.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "12:30"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">1:00 P.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                    <td><a href="cita.php?fecha=<?php echo $date;?>&hora=1:00">1:00 P.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "1:00"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">1:30 P.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                    <td><a href="cita.php?fecha=<?php echo $date;?>&hora=1:30">1:30 P.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "1:30"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">2:00 P.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                    <td><a href="cita.php?fecha=<?php echo $date;?>&hora=2:00">2:00 P.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "2:00"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">2:30 P.M.</a></td>
-                      <td>Mariana leal sandoval</td>
+                    <td><a href="cita.php?fecha=<?php echo $date;?>&hora=2:30">2:30 P.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "2:30"); ?>
+                      <td><?php if($result){  echo $result[2]; 
+                                              echo $result[3]; 
+                                              echo $result[4];}
+                                              else echo("Disponible");?></td>
                     </tr>
 
                 </tbody>
@@ -219,6 +303,12 @@ if( $varcomparacion == null || $varcomparacion == ''){
       fg: '#eceeef',
       text: 'Thumbnail'
     });
+  </script>
+  <script>
+    function cargar(){
+      fecha = document.getElementById('date').value;
+      window.location.replace("medico.php?fecha="+fecha);
+    }
   </script>
   <footer class="container py-5">
     <div class="row">

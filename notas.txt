@@ -1,4 +1,5 @@
 paciente:   solicite una cita y que se le asigne en auto
+            *****
 
 medico:     cargar citas de la tabla con datepicker (select)
             arrglar el modal de info (select)
@@ -22,3 +23,5 @@ medico:     cargar citas de la tabla con datepicker (select)
 asistente:  INFO, cargar los datos en el modal (select)
             cargar las citas de su medico -consultorio- (select)
             nueva cita, manda a nuevacita.php (route)
+
+
