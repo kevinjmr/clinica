@@ -22,7 +22,7 @@
     }
   </style>
 </head>
-<body>
+<body background="src/fondo.jpg">
 	<nav class="light-blue site-header py-1">
       <div class="col-12 container d-flex flex-column flex-md-row">
         <div class="col-9 container d-flex flex-column flex-md-row">
