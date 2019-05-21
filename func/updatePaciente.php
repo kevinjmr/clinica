@@ -45,7 +45,7 @@
         }else{
             $sql='UPDATE public.paciente
             SET "CURP"=:curp, "Nombre"=:nombre, "APaterno"=:apaterno, "AMaterno"=:amaterno, "Telefono"=:telefono, "Direccion"=:direccion, "Edad"=:edad, "Edo_civil"=:edocivil,
-            "Ocupacion"=:ocupacion, "Escolaridad"=:escolaridad, "Lugar_de_origen"=:lugardeorigen, "Lugar_de_residencia"=:lugarderesidencia, pass=:pass
+            "Ocupacion"=:ocupacion, "Escolaridad"=:escolaridad, "Lugar_de_origen"=:lugardeorigen, "Lugar_de_residencia"=:lugarderesidencia
             WHERE "CURP"=:curp';
             //Se crea la consulta preparada
             $resultado=$pdo->prepare($sql);	        

@@ -116,7 +116,7 @@
        
         <div class="form-group row">
           <div class="col-8">
-            <input type="password" class="form-control" name="inputpass" placeholder="Contraseña" required > </div>
+            <input type="password" class="form-control" name="inputpass" placeholder="Contraseña" > </div>
         </div>  
         <div class="form-group row">
           <div class="col-8">

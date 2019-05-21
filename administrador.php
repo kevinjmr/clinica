@@ -691,14 +691,14 @@ if( $varcomparacion == null || $varcomparacion == ''){
         else{echo "
           <script > alert('Admin no ingresado, revise su informacion.'); </script>";}
       }
-      if(isset($_GET["exitoeditadministrador"])){
-        if( $_GET["exitoeditadministrador"]=='true'){echo "
+      if(isset($_GET["exitoeditAdmin"])){
+        if( $_GET["exitoeditAdmin"]=='true'){echo "
           <script > alert('Admin editado con exito!'); </script>";}
         else{echo "
           <script > alert('Admin no editado, revise su informacion.'); </script>";}
       }
-      if(isset($_GET["exitodeladministrador"])){
-        if( $_GET["exitodeladministrador"]=='true'){echo "
+      if(isset($_GET["exitodelAdmin"])){
+        if( $_GET["exitodelAdmin"]=='true'){echo "
           <script > alert('Admin eliminado con exito!'); </script>";}
         else{echo "
           <script > alert('Admin no eliminado, revise su informacion.'); </script>";}

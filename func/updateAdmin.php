@@ -19,11 +19,10 @@
         if($pass!=''){
             $sql='UPDATE public.administracion
             SET "Nombre"=:nombre, "APaterno"=:apaterno, "AMaterno"=:amaterno, "Telefono"=:telefono, "Direccion"=:direccion, pass=:pass
-            WHERE "RFC"=:rfc';
+            WHERE "RFC"= :rfc';
             //Se crea la consulta preparada
             $resultado=$pdo->prepare($sql);	        
-            $resultado->execute(array(  
-                                        ":nombre"=>$nombre,
+            $resultado->execute(array(  ":nombre"=>$nombre,
                                         ":apaterno"=>$apaterno,
                                         ":amaterno"=>$amaterno,
                                         ":telefono"=>$telefono,
@@ -31,13 +30,12 @@
                                         ":pass"=>$pass,
                                         ":rfc"=>$RFC));
         }else{
-            $sql='UPDATE public.medico
-            SET "Nombre"=:nombre, "APaterno"=:apaterno, "AMaterno"=:amaterno, "Telefono"=:telefono, "Direccion"=:direccion, "Especialidad"=:especialidad, "Escuela"=:escuela
-            WHERE "Ced_prof"=:cedprof';
+            $sql='UPDATE public.administracion
+            SET "Nombre"=:nombre, "APaterno"=:apaterno, "AMaterno"=:amaterno, "Telefono"=:telefono, "Direccion"=:direccion
+            WHERE "RFC"=:rfc';
             //Se crea la consulta preparada
             $resultado=$pdo->prepare($sql);	        
-            $resultado->execute(array(  
-                                        ":nombre"=>$nombre,
+            $resultado->execute(array(  ":nombre"=>$nombre,
                                         ":apaterno"=>$apaterno,
                                         ":amaterno"=>$amaterno,
                                         ":telefono"=>$telefono,
