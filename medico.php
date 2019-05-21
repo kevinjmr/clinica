@@ -37,10 +37,10 @@ if( $varcomparacion == null || $varcomparacion == ''){
   <body>
       <nav class="light-blue site-header py-1">
       <div class="col-12 container d-flex flex-column flex-md-row">
-        <div class="col-10 container d-flex flex-column flex-md-row">
-          <h2 class="py-2 px-2 d-none d-md-inline-block" data-toggle="modal" >Medico</h2>
+        <div class="col-4 container d-flex flex-column flex-md-row">
+          <a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >Bienvenido: <?php echo $_SESSION['nombre'] ?> </a>
         </div>
-        <div class="col-3 container d-flex flex-column flex-md-row">
+        <div class="col-8 container d-flex flex-column flex-md-row flex-md-row">
         <button type="button" class="btn btn-sm btn-info" href="#modal-select-Medico" data-toggle="modal">INFO</button>
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Agenda</a>
             <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar sesion</a>
@@ -151,6 +151,10 @@ if( $varcomparacion == null || $varcomparacion == ''){
     <div class="col-3 container d-flex flex-column flex-md-row">
     </div>
   </div>
+
+
+
+
 
 
   </body>
