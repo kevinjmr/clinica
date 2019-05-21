@@ -26,9 +26,7 @@
 	<nav class="light-blue site-header py-1">
       <div class="col-12 container d-flex flex-column flex-md-row">
         <div class="col-9 container d-flex flex-column flex-md-row">
-          <h2 class="py-2 px-2 d-none d-md-inline-block" href="#modal-select-paciente" data-toggle="modal" >Medico</h2>
-          <button type="button" class="btn btn-info" style="max-width: 40%; max-height:  50%;" data-dismiss="modal">info</button>
-        </div>
+          </div>
         <div class="col-5 container d-flex flex-column flex-md-row">
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Agenda</a>
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Regresar</a>
@@ -36,166 +34,170 @@
         </div>
       </div>
   </nav>
-
+<br>
 <div class="col-12  flex-md-row">
-<h3>medico</h3>
+<h3 class="font-weight-bold px-2">Medico</h3>
+<br>
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-4 container d-flex flex-column flex-md-row">
-  	<h6>Nombre:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">medico Cesar Reynel Ortiz</a>
+  	<h6 class="font-weight-bold px-2">Nombre:</h6>
+  	<h6 name="">medico Cesar Reynel Ortiz</a>
   </div>
   <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Especialidad:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">especialidad</a>
+  <h6 class="font-weight-bold px-2">Especialidad:</h6>
+  	<h6 name="">especialidad</a>
   </div>
   <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Ced_Prof:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Ced_Profecional</a>
+  <h6 class="font-weight-bold px-2">Ced_Prof:</h6>
+  	<h6 name="">Ced_Profecional</a>
   </div>
   </div>
 
-
-
-  <div class="col-12 container d-flex flex-column flex-md-row">
-  	<div class="col-4 container d-flex flex-column flex-md-row">
-  	<h6>Escuela:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">medico escuela</a>
-  </div>
-  <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Domicilio:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">medico domicilio</a>
-  </div>
-  <div class="col-4 container d-flex flex-column flex-md-row">
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#"></a>
-  </div>
-  </div>
-<h3>Paciente:</h3>
-  <div class="col-12 container d-flex flex-column flex-md-row">
-  	<div class="col-4 container d-flex flex-column flex-md-row">
-  	<h6>Nombre:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente kevin</a>
-  </div>
-  <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Edad:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente edad</a>
-  </div>
-  <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Sexo:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente sexo</a>
-  </div>
-  </div>
-
-  <div class="col-12 container d-flex flex-column flex-md-row">
-  	<div class="col-4 container d-flex flex-column flex-md-row">
-  	<h6>Est. Civil.:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente estado civil</a>
-  </div>
-  <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Domicilio:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente domicilio</a>
-  </div>
-  <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Ocupacion:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente ocupacion</a>
-  </div>
-  </div>
 
 
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-4 container d-flex flex-column flex-md-row">
-  	<h6>Escolaridad:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente escolaridad</a>
+  	<h6 class="font-weight-bold px-2">Escuela:</h6>
+  	<h6 name="">medico escuela</a>
   </div>
   <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Origen:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente origen</a>
+  <h6 class="font-weight-bold px-2">Domicilio:</h6>
+  	<h6 name="">medico domicilio</a>
   </div>
   <div class="col-4 container d-flex flex-column flex-md-row">
-  <h6>Residencia:</h6>
-  	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  	<h6 name=""></a>
+  </div>
+  </div>
+  <br>
+<h3 class="font-weight-bold px-2">Paciente:</h3>
+<br>
+  <div class="col-12 container d-flex flex-column flex-md-row">
+  	<div class="col-4 container d-flex flex-column flex-md-row">
+  	<h6 class="font-weight-bold px-2">Nombre:</h6>
+  	<h6 name="">paciente kevin</a>
+  </div>
+  <div class="col-4 container d-flex flex-column flex-md-row">
+  <h6 class="font-weight-bold px-2">Edad:</h6>
+  	<h6 name="">paciente edad</a>
+  </div>
+  <div class="col-4 container d-flex flex-column flex-md-row">
+  <h6 class="font-weight-bold px-2">Sexo:</h6>
+  	<h6 name="">paciente sexo</a>
   </div>
   </div>
 
-<h3>Datos de la Cita</h3>
+  <div class="col-12 container d-flex flex-column flex-md-row">
+  	<div class="col-4 container d-flex flex-column flex-md-row">
+  	<h6 class="font-weight-bold px-2">Est. Civil.:</h6>
+  	<h6 name="">paciente estado civil</a>
+  </div>
+  <div class="col-4 container d-flex flex-column flex-md-row">
+  <h6 class="font-weight-bold px-2">Domicilio:</h6>
+  	<h6 name="">paciente domicilio</a>
+  </div>
+  <div class="col-4 container d-flex flex-column flex-md-row">
+  <h6 class="font-weight-bold px-2">Ocupacion:</h6>
+  	<h6 name="">paciente ocupacion</a>
+  </div>
+  </div>
+
+
+  <div class="col-12 container d-flex flex-column flex-md-row">
+  	<div class="col-4 container d-flex flex-column flex-md-row">
+  	<h6 class="font-weight-bold px-2">Escolaridad:</h6>
+  	<h6 name="">paciente escolaridad</a>
+  </div>
+  <div class="col-4 container d-flex flex-column flex-md-row">
+  <h6 class="font-weight-bold px-2">Origen:</h6>
+  	<h6 name="">paciente origen</a>
+  </div>
+  <div class="col-4 container d-flex flex-column flex-md-row">
+  <h6 class="font-weight-bold px-2">Residencia:</h6>
+  	<h6 name="">paciente residencia</a>
+  </div>
+  </div>
+<br>
+<h3 class="font-weight-bold px-2">Datos de la Cita</h3>
+<br>
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-3 container d-flex flex-column flex-md-row">
-    <h6>AP_No_P:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+    <h6 class="font-weight-bold px-2">AP_No_P:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  <h6>APP:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  <h6 class="font-weight-bold px-2">APP:</h6>
+    <h6 name="">paciente residencia</a>
   	
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  <h6>AHF:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  <h6 class="font-weight-bold px-2">AHF:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
    <div class="col-3 container d-flex flex-column flex-md-row">
-   <h6>AGO:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+   <h6 class="font-weight-bold px-2">AGO:</h6>
+    <h6 name="">paciente residencia</a>
   </div>
   </div>
   <br>
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-3 container d-flex flex-column flex-md-row">
-    <h6>Fecha:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+    <h6 class="font-weight-bold px-2">Fecha:</h6>
+    <h6 name="">paciente residencia</a>
   	
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  <h6>Menerca:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  <h6 class="font-weight-bold px-2">Menerca:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  <h6>Ritmo:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  <h6 class="font-weight-bold px-2">Ritmo:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
    <div class="col-3 container d-flex flex-column flex-md-row">
-   <h6>IVSA:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+   <h6 class="font-weight-bold px-2">IVSA:</h6>
+    <h6 name="">paciente residencia</a>
   </div>
   </div>
 <br>
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-3 container d-flex flex-column flex-md-row">
-    <h6>Cesarea:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+    <h6 class="font-weight-bold px-2">Cesarea:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  <h6>FUM:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  <h6 class="font-weight-bold px-2">FUM:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  <h6>FPP:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  <h6 class="font-weight-bold px-2">FPP:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
    <div class="col-3 container d-flex flex-column flex-md-row">
-   <h6>DIU:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+   <h6 class="font-weight-bold px-2">DIU:</h6>
+    <h6 name="">paciente residencia</a>
   </div>
   </div>
 <br>
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-3 container d-flex flex-column flex-md-row">
-    <h6>Hormonales:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+    <h6 class="font-weight-bold px-2">Hormonales:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
   <br>
   <div class="col-3 container d-flex flex-column flex-md-row">
-  <h6>Docma:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a> 
+  <h6 class="font-weight-bold px-2">Docma:</h6>
+    <h6 name="">paciente residencia</a> 
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  <h6>Papamicolau:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  <h6 class="font-weight-bold px-2">Papamicolau:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
    <div class="col-3 container d-flex flex-column flex-md-row">
   </div>
@@ -203,74 +205,74 @@
 <br>
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-12 container d-flex flex-column flex-md-row">
-    <h6>Padecimiento Actual:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+    <h6 class="font-weight-bold px-2">Padecimiento Actual:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
   </div>
 
   <br>
   <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-3 container d-flex flex-column flex-md-row">
-    <h6>T/A:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+    <h6 class="font-weight-bold px-2">T/A:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
   <br>
   <div class="col-3 container d-flex flex-column flex-md-row">
-  <h6>FC:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  <h6 class="font-weight-bold px-2">FC:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  <h6>FR:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  <h6 class="font-weight-bold px-2">FR:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
    <div class="col-3 container d-flex flex-column flex-md-row">
-   <h6>Temperatura:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+   <h6 class="font-weight-bold px-2">Temperatura:</h6>
+    <h6 name="">paciente residencia</a>
   </div>
   </div>
 <br>
 
 <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-3 container d-flex flex-column flex-md-row">
-    <h6>Peso:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+    <h6 class="font-weight-bold px-2">Peso:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
   <br>
   <div class="col-3 container d-flex flex-column flex-md-row">
-  <h6>Talla:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  <h6 class="font-weight-bold px-2">Talla:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  <h6>Cabeza:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  <h6 class="font-weight-bold px-2">Cabeza:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
    <div class="col-3 container d-flex flex-column flex-md-row">
-   <h6>Torax:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+   <h6 class="font-weight-bold px-2">Torax:</h6>
+    <h6 name="">paciente residencia</a>
   </div>
   </div>
 <br>
 
 <div class="col-12 container d-flex flex-column flex-md-row">
   	<div class="col-3 container d-flex flex-column flex-md-row">
-    <h6>Abdomen:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+    <h6 class="font-weight-bold px-2">Abdomen:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
   <br>
   <div class="col-3 container d-flex flex-column flex-md-row">
-  <h6>Extremidades:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a> 
+  <h6 class="font-weight-bold px-2">Extremidades:</h6>
+    <h6 name="">paciente residencia</a> 
   	</div>
   
   <div class="col-3 container d-flex flex-column flex-md-row">
-  <h6>Genitales:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+  <h6 class="font-weight-bold px-2">Genitales:</h6>
+    <h6 name="">paciente residencia</a>
   	</div>
    <div class="col-3 container d-flex flex-column flex-md-row">
-   <h6>Vascula Perifericos:</h6>
-    <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">paciente residencia</a>
+   <h6 class="font-weight-bold px-2">Vascula Perifericos:</h6>
+    <h6 name="">paciente residencia</a>
   </div>
   </div>
 <br>
