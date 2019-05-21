@@ -621,6 +621,8 @@ if( $varcomparacion == null || $varcomparacion == ''){
         else{echo "
           <script > alert('Medico no eliminado, revise su informacion.'); </script>";}
       }
+
+
       if(isset($_GET["exitoinsasistente"])){
         if( $_GET["exitoinsasistente"]=='true'){echo "
           <script > alert('Asistente ingresado con exito!'); </script>";}
@@ -638,6 +640,26 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <script > alert('Asistente eliminado con exito!'); </script>";}
         else{echo "
           <script > alert('Asistente no eliminado, revise su informacion.'); </script>";}
+      }
+
+
+      if(isset($_GET["exitoinsconsultorio"])){
+        if( $_GET["exitoinsconsultorio"]=='true'){echo "
+          <script > alert('Consultorio insertado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Consultorio no insertado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitoeditconsultorio"])){
+        if( $_GET["exitoeditconsultorio"]=='true'){echo "
+          <script > alert('Consultorio editado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Consultorio no editado, revise su informacion.'); </script>";}
+      }
+      if(isset($_GET["exitodelconsultorio"])){
+        if( $_GET["exitodelconsultorio"]=='true'){echo "
+          <script > alert('Consultorio eliminado con exito!'); </script>";}
+        else{echo "
+          <script > alert('Consultorio no eliminado, revise su informacion.'); </script>";}
       }
     ?>
 
