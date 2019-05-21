@@ -40,7 +40,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
         <div class="col-4 container d-flex flex-column flex-md-row">
           <a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >Bienvenido: <?php echo $_SESSION['nombre'] ?> </a>
         </div>
-        <div class="col-8 container d-flex flex-column flex-md-row flex-md-row">
+        <div class="col-8 container d-flex flex-column flex-md-row flex-md-row justify-content-end">
         <button type="button" class="btn btn-sm btn-info" href="#modal-select-Medico" data-toggle="modal">INFO</button>
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Agenda</a>
             <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar sesion</a>
@@ -155,7 +155,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
 
 
   <!-- modal para ver datos del Medico -->
-<div class="modal fade" id="modal-select-paciente">
+<div class="modal fade" id="modal-select-Medico">
     <div class="modal-dialog modal-lg"  role="document">
       <div class="modal-content">
         <div class="modal-header">

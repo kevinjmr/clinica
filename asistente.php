@@ -151,6 +151,46 @@ if( $varcomparacion == null || $varcomparacion == ''){
   </div>
 
 
+  <!-- modal para ver datos del Asistente -->
+<div class="modal fade" id="modal-select-asistente">
+    <div class="modal-dialog modal-lg"  role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalLabel">Datos del Asistente:</h5>
+        </div>
+        <div class="modal-body">
+          <form id="c_form-h" class="">
+            <div class="form-group row">
+              <div class="col-6 d-flex flex-column">
+                <label>RFC:</label>
+                <label  type="text" class="form-control" name="ced_prof"><?php echo trim($curp); ?></label>
+                </div>
+                <div class="col-6 d-flex flex-column" >
+                <label>Nombre    :</label>
+                <label  type="text" class="form-control" name="Nombre"><?php echo $result[0]; echo $result[1]; echo $result[2];?></label>
+                </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-6 d-flex flex-column">
+              <label>Telefono  :</label>
+                <label type="text" class="form-control" name="Telefono"><?php echo $result[3]; ?></label>
+                </div>
+                <div class="col-6 d-flex flex-column">
+                <label>Direccion :</label>
+                <label type="text" class="form-control" name="Direccion"><?php echo $result[4]; ?></label>
+                </div>
+            </div>        
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 
   </body>
   <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
