@@ -35,7 +35,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
       <nav class="light-blue site-header py-1">
       <div class="col-12 container d-flex flex-column flex-md-row">
         <div class="col-4 container d-flex flex-column flex-md-row">
-          <h2 class="py-2 px-2 d-none d-md-inline-block" data-toggle="modal" >Asistente</h2>
+          <a class="font-weight-bold py-2 px-2 d-none d-md-inline-block" >Bienvenido: <?php echo $_SESSION['nombre'] ?> </a>
         </div>
         <div class="col-8 container d-flex flex-column flex-md-row justify-content-end">
         <button type="button" class="btn btn-sm btn-info" href="#modal-select-asistente" data-toggle="modal">INFO</button>
