@@ -240,10 +240,6 @@ if( $varcomparacion == null || $varcomparacion == ''){
 <?php 
     $cedprof = $varcomparacion;
 
-    require_once __DIR__.'..\database\Connection.php';
-    require_once __DIR__.'..\database\Funcion.php'; 
-    use PostgreSQLPHPconnect\Connection as Connection;
-    use PostgreSQLPHPconnect\Funcion as Funcion;
     try{
         // create a PostgreSQL database connection
         $pdo = Connection::get()->connect("admin");
@@ -268,7 +264,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
                 </div>
                 <div class="col-6 d-flex flex-column" >
                 <label>Nombre    :</label>
-                <label  type="text" class="form-control" name="Nombre"><?php echo trim($result[0][0]); ?><?php echo trim($result[0][1]); ?><?php echo trim($result[0][2]); ?></label>
+                <label  type="text" class="form-control" name="Nombre"><?php echo $result[0][0]; ?><?php echo $result[0][1]; ?><?php echo $result[0][2]; ?></label>
                 </div>
             </div>
             <div class="form-group row">
@@ -300,6 +296,12 @@ if( $varcomparacion == null || $varcomparacion == ''){
     </div>
   </div>
 
+<?php 
+  }catch (PDOException $e){
+    // report error message
+    echo $e->getMessage();
+  }
+?>
 
 
   </body>

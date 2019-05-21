@@ -183,7 +183,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
                 </div>
                 <div class="col-6 d-flex flex-column" >
                 <label>Nombre    :</label>
-                <label  type="text" class="form-control" name="Nombre"><?php echo trim($result[0][1]); ?><?php echo trim($result[0][2]); ?><?php echo trim($result[0][3]); ?></label>
+                <label  type="text" class="form-control" name="Nombre"><?php echo trim($result[0][1]); echo $result[0][2]; echo $result[0][3]; ?></label>
                 </div>
             </div>
             <div class="form-group row">
@@ -204,9 +204,12 @@ if( $varcomparacion == null || $varcomparacion == ''){
       </div>
     </div>
   </div>
-
-
-
+  <?php 
+    }catch (PDOException $e){
+      // report error message
+      echo $e->getMessage();
+    }
+  ?>     
 
   </body>
   <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>

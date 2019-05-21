@@ -1,9 +1,9 @@
 paciente:   solicite una cita y que se le asigne en auto
             *****
 
-medico:     cargar citas de la tabla con datepicker (select)
-            arrglar el modal de info (select)
-            //cuando seleccion en la cita que lo mande a cita.php (route)
+medico:     +cargar citas de la tabla con datepicker (select)
+            +arrglar el modal de info (select)
+            +//cuando seleccion en la cita que lo mande a cita.php (route)
 
     Cita:   Cargar los datos de la cita (select)
             Guardar los detalles de la cita (insert historial)
