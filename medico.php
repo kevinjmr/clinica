@@ -52,38 +52,105 @@ if( $varcomparacion == null || $varcomparacion == ''){
 
   <div class="col-12 container d-flex flex-column flex-md-row">
     <div class="col-2 container d-flex flex-column flex-md-row">
+    </div>  
+    <div class="col-8 container d-flex flex-column flex-md-row">
+    <div class="col-2 container d-flex flex-column flex-md-row">
     </div>
-    <div class="col-8 container flex-md-row">
-    <div class="col-3 container flex-md-row"></div>
-    <div class="col-4 container flex-md-row">
-      <h3>Citas de la semana</h3>
+    <div class="col-4 container d-flex flex-column flex-md-row">
+        <input type="date" style="border-radius: 5px;" name="">
+      </div>
+      <div class="col-2 container d-flex flex-column flex-md-row">
     </div>
-    <div class="col-3 container flex-md-row"></div>
-        <table class="table table-sm table-bordered" style=" background-color: white " cellspacing="0">
+    </div>
+    
+    <div class="col-2 container d-flex flex-column flex-md-row">
+    </div>
+  </div>
+  <br>
+
+  <div class="col-12 container d-flex flex-column flex-md-row">
+    <div class="col-3 container d-flex flex-column flex-md-row">
+    </div>
+    <div class="col-6 container d-flex flex-column flex-md-row">
+       <table class="table table-sm table-bordered" style=" background-color: white " cellspacing="0">
                 <thead>
                     <tr>
-                      <th>Fecha</th>
-                      <th>Paciente</th>
-                      <th>Medico</th>
-                      <th>Descripcion</th>
+                      <th>HORA:</th>
+                      <th>PACIENTE:</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                      <td><a onclick="editarmedico('Work1')">1996/10/19 9:30</a></td>
+                      <td><a onclick="editarmedico('Work1')">7:00 A.M.</a></td>
                       <td>Mariana leal sandoval</td>
-                      <td>Cesar Reynel Ortiz</td>
-                      <td>♥</td>
                     </tr>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">7:30 A.M.</a></td>
+                      <td>Mariana leal sandoval</td>
+                    </tr>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">8:00 A.M.</a></td>
+                      <td>Mariana leal sandoval</td>
+                    </tr>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">8:30 A.M.</a></td>
+                      <td>Mariana leal sandoval</td>
+                    </tr>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">9:00 A.M.</a></td>
+                      <td>Mariana leal sandoval</td>
+                    </tr>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">9:30 A.M.</a></td>
+                      <td>Mariana leal sandoval</td>
+                    </tr>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">10:00 A.M.</a></td>
+                      <td>Mariana leal sandoval</td>
+                    </tr>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">10:30 A.M.</a></td>
+                      <td>Mariana leal sandoval</td>
+                    </tr>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">11:00 A.M.</a></td>
+                      <td>Mariana leal sandoval</td>
+                    </tr>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">11:30 A.M.</a></td>
+                      <td>Mariana leal sandoval</td>
+                    </tr>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">12:00 P.M.</a></td>
+                      <td>Mariana leal sandoval</td>
+                    </tr>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">12:30 P.M.</a></td>
+                      <td>Mariana leal sandoval</td>
+                    </tr>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">1:00 P.M.</a></td>
+                      <td>Mariana leal sandoval</td>
+                    </tr>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">1:30 P.M.</a></td>
+                      <td>Mariana leal sandoval</td>
+                    </tr>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">2:00 P.M.</a></td>
+                      <td>Mariana leal sandoval</td>
+                    </tr>
+                    <tr>
+                      <td><a onclick="editarmedico('Work1')">2:30 P.M.</a></td>
+                      <td>Mariana leal sandoval</td>
+                    </tr>
+
                 </tbody>
             </table>
-    
     </div>
-    <div class="col-2 container d-flex flex-column flex-md-row">
-    </div>    
-    
+    <div class="col-3 container d-flex flex-column flex-md-row">
+    </div>
   </div>
-
 
 
 

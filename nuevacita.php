@@ -25,11 +25,10 @@
 <body background="src/fondo.jpg">
 	<nav class="light-blue site-header py-1">
       <div class="col-12 container d-flex flex-column flex-md-row">
-        <div class="col-9 container d-flex flex-column flex-md-row">
-          <h2 class="py-2 px-2 d-none d-md-inline-block" href="#modal-select-paciente" data-toggle="modal" >Medico</h2>
-          <button type="button" class="btn btn-info" style="max-width: 40%; max-height:  50%;" data-dismiss="modal">info</button>
+        <div class="col-4 container d-flex flex-column flex-md-row">
+          
         </div>
-        <div class="col-5 container d-flex flex-column flex-md-row">
+        <div class="col-8 container d-flex flex-column flex-md-row flex-md-row">
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="medico.php">Agenda</a>
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cita.php">Regresar</a>
             <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="index.php">Cerrar sesion</a>
