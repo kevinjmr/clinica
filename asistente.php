@@ -38,7 +38,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h2 class="py-2 px-2 d-none d-md-inline-block" data-toggle="modal" >Asistente</h2>
         </div>
         <div class="col-8 container d-flex flex-column flex-md-row justify-content-end">
-        <button type="button" class="btn btn-sm btn-info" href="#modal-select-Paciente" data-toggle="modal">INFO</button>
+        <button type="button" class="btn btn-sm btn-info" href="#modal-select-asistente" data-toggle="modal">INFO</button>
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Agenda</a>
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Nueva Cita</a>
             <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar sesion</a>
