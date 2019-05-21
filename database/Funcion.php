@@ -171,10 +171,11 @@ class Funcion{
         $result = [];
         while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
             $result = [
-                $row['Medico'], //0
-                $row['Secretaria'] //1
+                $row['Medico'],//0
+                $row['Secretaria'],//1
             ];
         }
+        return $result;
     }
 
 

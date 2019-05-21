@@ -48,7 +48,7 @@
     <form id="c_form-h" action="func/updateconsultorio.php" method="POST">
       
       <div class="col-12">
-        <div class=" form-group row">
+        <div class="invisible form-group row">
           <div class="col-8">
             <input value="<?php echo trim($id); ?>" type="text" class="form-control" name="inputid" placeholder="Id del consultorio" required> </div>
         </div>
