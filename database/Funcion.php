@@ -236,6 +236,48 @@ class Funcion{
         }
         return $result;
     }
+
+
+    //Obtiene solo una Cita para detalle de la cita
+    public function getCita2($id,$fecha,$hora) {
+        $q='SELECT m."Nombre", m."APaterno", m."AMaterno", m."Especialidad", m."Ced_prof", m."Escuela", m."Direccion",
+        p."CURP", p."Nombre", p."APaterno", p."AMaterno", p."Edad", p."Edo_civil", p."Direccion", p."Ocupacion", p."Escolaridad", p."Lugar_de_origen", p."Lugar_de_residencia"
+        FROM cita c inner join paciente p on c."CURP_paciente"=p."CURP" inner join medico m
+        on m."Ced_prof" = c.ced_prof_medico where "Ced_prof"=:id AND fecha= :fecha AND hora= :hora';
+        $stmt=$this->pdo->prepare($q);	        
+        $stmt->execute(array(":id"=>$id,
+                            ":fecha"=>$fecha,
+                            ":hora"=>$hora));
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result = [
+                $row['Nombre'],//0
+                $row['APaterno'],//1
+                $row['AMaterno'],//2
+                $row['Especialidad'],//3
+                $row['Ced_prof'],//4
+                $row['Escuela'],//5
+                $row['Direccion'],//6
+
+                
+                $row['Nombre'],//7
+                $row['APaterno'],//8
+                $row['AMaterno'],//9  
+                $row['Edad'],//10  
+                $row['Edo_civil'],//11
+                $row['Direccion'],//12
+                $row['Ocupacion'],//13
+                $row['Escolaridad'],//14
+                $row['Lugar_de_origen'],//15
+                $row['Lugar_de_residencia'],//16
+                $row['CURP']//17
+            ];
+        }
+        return $result;
+    }
+
+
+
     //Obtiene solo un Administrador
     public function getAdmin($id) {
         $q='select * from administracion where "RFC"= :id';
