@@ -83,7 +83,7 @@
         $row = $resultado->fetch(PDO::FETCH_ASSOC);  
         if(!$row){
             echo "Funcionó la sentencia";
-            //header("Location: ../medico.php?exitoinshistorial=true");
+            header("Location: ../medico.php?exitoinshistorial=true");
         }
         $resultado->closeCursor();             
             
@@ -92,7 +92,7 @@
         echo "Error en la ejecución de la consulta<br>".$e;
             echo "Mensaje: " . $e->GetMessage() . "<br>";
             echo "Línea: " . $e->getLine();
-        //header("Location: ../medico.php?exitoinshistorial=false");    
+        header("Location: ../medico.php?exitoinshistorial=false");    
     }
 
 ?>

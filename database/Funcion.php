@@ -240,8 +240,8 @@ class Funcion{
 
     //Obtiene solo una Cita para detalle de la cita
     public function getCita2($id,$fecha,$hora) {
-        $q='SELECT m."Nombre", m."APaterno", m."AMaterno", m."Especialidad", m."Ced_prof", m."Escuela", m."Direccion",
-        p."CURP", p."Nombre", p."APaterno", p."AMaterno", p."Edad", p."Edo_civil", p."Direccion", p."Ocupacion", p."Escolaridad", p."Lugar_de_origen", p."Lugar_de_residencia"
+        $q='SELECT m."Nombre" AS nombrem, m."APaterno" AS paternom, m."AMaterno" AS maternom, m."Especialidad", m."Ced_prof", m."Escuela", m."Direccion" AS direccionm,
+        p."CURP", p."Nombre" AS nombrep, p."APaterno" AS paternop, p."AMaterno" AS maternop, p."Edad", p."Edo_civil", p."Direccion" AS direccionp, p."Ocupacion", p."Escolaridad", p."Lugar_de_origen", p."Lugar_de_residencia"
         FROM cita c inner join paciente p on c."CURP_paciente"=p."CURP" inner join medico m
         on m."Ced_prof" = c.ced_prof_medico where "Ced_prof"=:id AND fecha= :fecha AND hora= :hora';
         $stmt=$this->pdo->prepare($q);	        
@@ -251,21 +251,20 @@ class Funcion{
         $result = [];
         while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
             $result = [
-                $row['Nombre'],//0
-                $row['APaterno'],//1
-                $row['AMaterno'],//2
+                $row['nombrem'],//0
+                $row['paternom'],//1
+                $row['maternom'],//2
                 $row['Especialidad'],//3
                 $row['Ced_prof'],//4
                 $row['Escuela'],//5
-                $row['Direccion'],//6
+                $row['direccionm'],//6
 
-                
-                $row['Nombre'],//7
-                $row['APaterno'],//8
-                $row['AMaterno'],//9  
+                $row['nombrep'],//7
+                $row['paternop'],//8
+                $row['maternop'],//9  
                 $row['Edad'],//10  
                 $row['Edo_civil'],//11
-                $row['Direccion'],//12
+                $row['direccionp'],//12
                 $row['Ocupacion'],//13
                 $row['Escolaridad'],//14
                 $row['Lugar_de_origen'],//15
@@ -298,9 +297,103 @@ class Funcion{
         return $result;
     }
 
+    //Obtiene solo una Cita para detalle de la cita
+    public function getHistoriales($id) {
+        $q='SELECT m."Nombre", m."APaterno", m."AMaterno", "Fecha", "Padecimiento_actual", "CURP_paciente"
+        FROM historial h inner join medico m on m."Ced_prof" = h."Ced_prof_medico" WHERE h."CURP_paciente"= :id';
+        $stmt=$this->pdo->prepare($q);	        
+        $stmt->execute(array(":id"=>$id));
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result = [
+                $row['Nombre'],//0
+                $row['APaterno'],//1
+                $row['AMaterno'],//2
+                $row['Fecha'],//3
+                $row['Padecimiento_actual'],//4
+                $row['CURP_paciente']//5
+                
+            ];
+        }
+        return $result;
+    }
 
+    //Carga un historial
+    public function getHistorial($cedprof,$curp,$fecha) {
+        $q='SELECT h."Ced_prof_medico", h."Fecha", h."AP_No_P", h."APP", h."AHF", h."AGO", h."Menarca", h."Ritmo",
+        h."IVSA", h."Cesarea", h."FUM", h."FPP", h."DIU", h."Hormonales", h."Docma", h."Papamicolau", h."Padecimiento_actual",
+        h."T/A", h."FC", h."FR", h."Temperatura",h."Peso", h."Talla", h."Cabeza", h."Torax", h."Abdomen",
+        h."Extremidades", h."Genitales", h."Vascula_Perifericos", h."CURP_paciente",
+        m."Ced_prof", m."Nombre" AS nombrem, m."APaterno" AS paternom, m."AMaterno" AS maternom,
+        m."Telefono" AS telefonom, m."Direccion" AS direccionm, m."Especialidad", m."Escuela",
+        p."CURP", p."Nombre" AS nombrep, p."APaterno" AS paternop, p."AMaterno" AS maternop,
+        p."Telefono" AS telefonop, p."Direccion" AS direccionp, p."Edad", p."Edo_civil", p."Ocupacion",
+        p."Lugar_de_origen", p."Lugar_de_residencia", p."Escolaridad"
+        FROM historial h inner join medico m on m."Ced_prof" = h."Ced_prof_medico" 
+        inner join paciente p on h."CURP_paciente" = p."CURP"
+        WHERE h."CURP_paciente"=:curp and h."Fecha"=:fecha and h."Ced_prof_medico"=:cedprof';
+        $stmt=$this->pdo->prepare($q);	        
+        $stmt->execute(array(   ":curp"=>$curp,
+                                ":fecha"=>$fecha,
+                                ":cedprof"=>$cedprof
+                            ));
+        $result = [];
+        while($row = $stmt->fetch(\PDO::FETCH_ASSOC)){
+            $result = [
+                $row['Ced_prof_medico'],//0
+                $row['CURP_paciente'],//1
+                $row['Fecha'],//2
 
+                $row['AP_No_P'],//3
+                $row['APP'],//4
+                $row['AHF'],//5
+                $row['AGO'],//6
+                $row['Ritmo'],//7
+                $row['IVSA'],//8
+                $row['Cesarea'],//9
+                $row['FUM'],//10
+                $row['FPP'],//11
+                $row['DIU'],//12
+                $row['Hormonales'],//13
+                $row['Docma'],//14
+                $row['Papamicolau'],//15
+                $row['Padecimiento_actual'],//16
+                $row['T/A'],//17
+                $row['FC'],//18
+                $row['FR'],//19
+                $row['Temperatura'],//20
+                $row['Peso'],//21
+                $row['Talla'],//22
+                $row['Cabeza'],//23
+                $row['Torax'],//24
+                $row['Abdomen'],//25
+                $row['Extremidades'],//26
+                $row['Genitales'],//27
+                $row['Vascula_Perifericos'],//28
+                
+                $row['nombrem'],//29
+                $row['paternom'],//30
+                $row['maternom'],//31
+                $row['telefonom'],//32
+                $row['direccionm'],//33
+                $row['Especialidad'],//34
+                $row['Escuela'],//35
 
+                $row['nombrep'],//36
+                $row['paternop'],//37
+                $row['maternop'],//38
+                $row['telefonop'],//39
+                $row['direccionp'],//40
+                $row['Edad'],//41
+                $row['Edo_civil'],//42
+                $row['Ocupacion'],//43
+                $row['Lugar_de_origen'],//44
+                $row['Lugar_de_residencia'],//45
+                $row['Escolaridad'],//46
+                $row['Menarca'],//47
+            ];
+        }
+        return $result;
+    }
 
-    
 }

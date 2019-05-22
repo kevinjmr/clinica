@@ -23,22 +23,6 @@
   </style>
 </head>
 <body background="src/fondo.jpg">
-	<nav class="light-blue site-header py-1">
-      <div class="col-12 container d-flex flex-column flex-md-row">
-        <div class="col-4 container d-flex flex-column flex-md-row">
-        </div>
-        <div class="col-8 container d-flex flex-column flex-md-row justify-content-end">
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="medico.php">Agenda</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="expediente.php">Expediente</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#modal-receta" data-toggle="modal">Receta</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#modal-analisis" data-toggle="modal">Analisis</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="nuevacita.php">Nueva Cita</a>
-            <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="index.php">Cerrar sesion</a>
-        </div>
-      </div>
-  </nav>
-
-
   <?php 
     $fecha = $_GET['fecha'];
     $hora = $_GET['hora'];
@@ -52,8 +36,25 @@
         $pdo = Connection::get()->connect("admin");
         $funcion = new Funcion($pdo);
         // get all stocks data
-        $result = $funcion->getCita2($id,$fecha,$hora);  ?>
+        $result = $funcion->getCita2($id,$fecha,$hora);  
+        $curp = $result[17];
+        //$result2 = $funcion->getHistorial($id,$fecha,$hora,$curp); 
+        //revisar que este en historial si true entonces vercita.php sino continue ?>
 
+	<nav class="light-blue site-header py-1">
+      <div class="col-12 container d-flex flex-column flex-md-row">
+        <div class="col-4 container d-flex flex-column flex-md-row">
+        </div>
+        <div class="col-8 container d-flex flex-column flex-md-row justify-content-end">
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="medico.php">Agenda</a>
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="expediente.php?fecha=<?php echo $fecha;?>&hora=<?php echo($hora);?>&id=<?php echo($id);?>&curp=<?php echo $result[17];?>">Expediente</a>
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#modal-receta" data-toggle="modal">Receta</a>
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#modal-analisis" data-toggle="modal">Analisis</a>
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="nuevacita.php">Nueva Cita</a>
+            <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="index.php">Cerrar sesion</a>
+        </div>
+      </div>
+  </nav>
 <div class="col-12  flex-md-row">
 <h3 class="font-weight-bold px-2">medico</h3>
   <div class="col-12 container d-flex flex-column flex-md-row">
@@ -253,11 +254,11 @@
 <div class="col-12 container d-flex flex-column flex-md-row justify-content-end">
   	
     <div class="invisible col-1 container d-flex flex-column flex-md-row">
-  	<input value="<?php echo $result[4];?>" type="text" class="form-control" name="cedprof"> 
+  	<input value="<?php echo trim($result[4]);?>" type="text" class="form-control" name="cedprof"> 
   	</div><div class="invisible col-1 container d-flex flex-column flex-md-row">
-  	<input value="<?php echo $result[17];?>" type="text" class="form-control" name="curp"> 
+  	<input value="<?php echo trim($result[17]);?>" type="text" class="form-control" name="curp"> 
   	</div><div class="invisible col-1 container d-flex flex-column flex-md-row">
-  	<input value="<?php echo $fecha;?>" type="text" class="form-control" name="fecha"> 
+  	<input value="<?php echo trim($fecha);?>" type="text" class="form-control" name="fecha"> 
   	</div>
   
     <div class="form-group row col-8 justify-content-end">
@@ -344,28 +345,28 @@
     }
   ?>
 </body>
-<script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <script>
-    Holder.addTheme('thumb', {
-      bg: '#55595c',
-      fg: '#eceeef',
-      text: 'Thumbnail'
-    });
-  </script>
+  <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script>
+      Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+      });
+    </script>
 
-  <footer class="container py-5">
-    <div class="row">
-      <div class="col-12 col-md text-center">
-        <small class="d-block mb-3 text-muted">© 2019</small>
+    <footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md text-center">
+          <small class="d-block mb-3 text-muted">© 2019</small>
+        </div>
       </div>
-    </div>
-    
-  </footer>
+      
+    </footer>
 
 </html>

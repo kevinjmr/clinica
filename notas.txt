@@ -1,24 +1,17 @@
 paciente:   solicite una cita y que se le asigne en auto
             *****
 
-medico:     +cargar citas de la tabla con datepicker (select)
-            +arrglar el modal de info (select)
-            +//cuando seleccion en la cita que lo mande a cita.php (route)
+medico:   
 
-    Cita:   Cargar los datos de la cita (select)
-            Guardar los detalles de la cita (insert historial)
-            //selecciona en expediente manda a expediente.php (route)
-            hacer insert en receta (insert)
-            analisis hace insert en estudio (insert)
-            //al hacer click nueva cita manda a nuevacita.php (route)
+    Cita:   -Cargar los datos de la cita (select)
+                cuando la cita ya este en historial que o redireccione a vercita.php
+
+            !hacer insert en receta (insert)
+            !analisis hace insert en estudio (insert)
 
     nuevacita:  cargar las citas (select)
             al clickear en un hora disponible, insertar cita (insert)
 
-    Expediente: Cargar los datos de historial de ese paciente (select) 
-            //al seleccionar un historial mandar a vercita.php (route)
-
-    vercita:Cargar el historial correspondiente (select)
 
 asistente:  INFO, cargar los datos en el modal (select)
             cargar las citas de su medico -consultorio- (select)

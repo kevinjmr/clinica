@@ -22,14 +22,30 @@
   </style>
 </head>
 <body background="src/fondo.jpg">
+  <?php 
+    $fecha = $_GET['fecha'];
+    $hora = $_GET['hora'];
+    $id = $_GET['id'];
+    $curp = $_GET['curp'];
+    require_once __DIR__.'/database/Connection.php';
+    require_once __DIR__.'/database/Funcion.php'; 
+    use PostgreSQLPHPconnect\Connection as Connection;
+    use PostgreSQLPHPconnect\Funcion as Funcion;
+    try{
+        // create a PostgreSQL database connection
+        $pdo = Connection::get()->connect("admin");
+        $funcion = new Funcion($pdo);
+        // get all stocks data
+        $result = $funcion->getHistoriales(trim($curp));  ?>
+
 	<nav class="light-blue site-header py-1">
       <div class="col-12 container d-flex flex-column flex-md-row">
         <div class="col-9 container d-flex flex-column flex-md-row">
         </div>
         <div class="col-3 container d-flex flex-column flex-md-row">
           	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="medico.php">Agenda</a>
-          	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cita.php">Regresar</a>
-            <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="index.php">Cerrar sesion</a>
+          	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cita.php?fecha=<?php echo $fecha;?>&hora=<?php echo $hora;?>&id=<?php echo $id;?>">Regresar</a>
+            <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar sesion</a>
         </div>
       </div>
   </nav>
@@ -38,7 +54,7 @@
   <div class="col-8 containerflex-md-row">
   	<div class="container d-flex flex-column flex-md-row">
   		<h4 class="font-weight-bold px-2">Expediente: </h4>
-  		<h4>mario aguilar perez</h4>
+  		<h4><?php echo $curp;?></h4>
 
   	</div>
   	
@@ -53,15 +69,20 @@
                 </thead>
                 <tbody>
                       <tr>
-                        <td>1996/10/19 9:30</td>
-                        <td>jesus kevin martinez rico</td>
-                        <td>kevomitin ataco de nuevo en otra fiesta</td>
+                        <td><a href="vercita.php?fecha=<?php echo $fecha;?>&hora=<?php echo $hora;?>&id=<?php echo $id;?>&curp=<?php echo $result[5];?>"><?php echo $result[3];?></a></td>
+                        <td><?php echo $result[0]; echo $result[1]; echo $result[2];?></td>
+                        <td><?php echo $result[4];?></td>
                       </tr>
                 </tbody>
             </table>
   </div>
   <div class="col-2 container d-flex flex-column flex-md-row"></div>
 
-
+  <?php 
+    }catch (PDOException $e){
+      // report error message
+      echo $e->getMessage();
+    }
+  ?>
 </body>
 </html>
