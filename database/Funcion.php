@@ -32,6 +32,7 @@ class Funcion{
             $row['Escuela']//6
             ];
         }
+         
         return $result;
     }
 
@@ -53,6 +54,7 @@ class Funcion{
                 $row['pass']//8
             ];
         }
+         
         return $result;
     }
 
@@ -73,6 +75,7 @@ class Funcion{
                 $row['pass']//6
             ];
         }
+         
         return $result;
     }
 
@@ -93,6 +96,7 @@ class Funcion{
                 $row['pass']//6
             ];
         }
+         
         return $result;
     }
 
@@ -118,6 +122,7 @@ class Funcion{
             $row['pass']//11
             ];
         }
+         
         return $result;
     }
     //Función para obtener a todos los pacientes de la clinica
@@ -144,6 +149,7 @@ class Funcion{
 
             ];
         }
+         
         return $result;
     }
 
@@ -160,6 +166,7 @@ class Funcion{
 
             ];
         }
+         
         return $result;
     }
 
@@ -175,6 +182,7 @@ class Funcion{
                 $row['Secretaria'],//1
             ];
         }
+         
         return $result;
     }
 
@@ -196,6 +204,7 @@ class Funcion{
 
             ];
         }
+         
         return $result;
     }
 
@@ -213,6 +222,45 @@ class Funcion{
                 $row['descripcion']//4
             ];
         }
+         
+        return $result;
+    }
+    public function getCitas2($curp) {
+        $q='SELECT fecha, hora, "Nombre", "APaterno", "AMaterno"
+        FROM cita INNER JOIN medico ON "Ced_prof" = ced_prof_medico 
+        WHERE "CURP_paciente"=:curp ORDER BY fecha ASC';
+        $stmt=$this->pdo->prepare($q);	        
+        $stmt->execute(array(":curp"=>$curp));
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result[] = [
+                $row['fecha'],//0
+                $row['hora'],//1
+                $row['Nombre'],//2
+                $row['APaterno'],//3
+                $row['AMaterno']//4
+            ];
+        }
+         
+        return $result;
+    }
+    public function getReceta($curp) {
+        $q='SELECT fecha, descripcion, "Nombre", "APaterno", "AMaterno" 
+        FROM receta INNER JOIN medico ON "Ced_prof" = ced_prof_medico 
+        WHERE "CURP_paciente"=:curp ORDER BY fecha DESC LIMIT 1';
+        $stmt=$this->pdo->prepare($q);	        
+        $stmt->execute(array(":curp"=>$curp));
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result = [
+                $row['fecha'],//0
+                $row['descripcion'],//1
+                $row['Nombre'],//2
+                $row['APaterno'],//3
+                $row['AMaterno']//4
+            ];
+        }
+         
         return $result;
     }
     //Obtiene solo una Cita
@@ -234,6 +282,7 @@ class Funcion{
                 $row['AMaterno']//4
             ];
         }
+         
         return $result;
     }
 
@@ -272,6 +321,7 @@ class Funcion{
                 $row['CURP']//17
             ];
         }
+         
         return $result;
     }
 
@@ -294,6 +344,7 @@ class Funcion{
                 
             ];
         }
+         
         return $result;
     }
 
@@ -326,6 +377,7 @@ class Funcion{
                 
             ];
         }
+         
         return $result;
     }
 
@@ -404,6 +456,7 @@ class Funcion{
                 $row['Menarca'],//47
             ];
         }
+         
         return $result;
     }
 

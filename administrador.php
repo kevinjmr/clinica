@@ -606,6 +606,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
   
     <!--Script alertas-->
     <?php
+    $pdo=null; 
       if(isset($_GET["exitoinsmedico"])){
         if( $_GET["exitoinsmedico"]=='true'){echo "
           <script > alert('Medico ingresado con exito!'); </script>";}

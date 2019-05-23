@@ -34,6 +34,21 @@ if( $varcomparacion == null || $varcomparacion == ''){
 </head>
 
 <body background="src/fondo.jpg">
+
+  <!--Inicia la conexion de postgres-->
+  <?php
+    $curp = $_SESSION['nombre'];
+    require_once __DIR__.'..\database\Connection.php';
+    require_once __DIR__.'..\database\Funcion.php'; 
+    use PostgreSQLPHPconnect\Connection as Connection;
+    use PostgreSQLPHPconnect\Funcion as Funcion;
+    try{
+        // create a PostgreSQL database connection
+        $pdo = Connection::get()->connect("admin");
+        $funcion = new Funcion($pdo);
+        // get all stocks data
+         ?>
+
 <nav class="light-blue site-header py-1">
     	<div class="container d-flex flex-column flex-md-row">
     		<div class="col-4 container d-flex flex-column flex-md-row">
@@ -54,35 +69,40 @@ if( $varcomparacion == null || $varcomparacion == ''){
   		<div class="col-6 container  flex-md-row">
     	  <h4 class="py-2 px-2 d-none d-md-inline-block" >Ultima Receta</h4>		
         <div class="card">
-          <div class="box" id="ultima-receta">asoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd j
+          <div class="box" id="ultima-receta">
+            <?php 
+              $result = $funcion->getReceta($curp);
+            ?>
+              <div class="container">
+                <a><?php echo $result[0]; ?> / <?php echo $result[2]; echo $result[3]; echo $result[4];?></a>
+                <h6><?php echo $result[1]; ?></h6>
+              </div>
           </div>
 	      </div>
     	</div>
     	<div class="col-4 container flex-md-row ">
         <h4 class="py-2 px-2 d-none d-md-inline-block" >Citas</h4>
         <div class="py-2 card">
-          <div class="box" id="ultima-cita"> asoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd oasjd jasoidioasjdoijasodjasod ijasoidjioasjd jasoid jasiodj oasjd
+          <div class="box" id="ultima-cita">
+            <?php 
+              $result = $funcion->getCitas2($curp);
+              foreach ($result as $res) :
+            ?>
+              <div class="container">
+                <a><?php echo $res[0]; ?> / <?php echo $res[1]; ?></a>
+                <h6><?php echo $res[2]; echo $res[3]; echo $res[4];?></h6>
+              </div>
+            <?php endforeach; ?>
           </div>
 				</div>
-				<button class="py-2 btn btn-sm btn-blue btn-block">Agendar cita</button>
+				<button class="btn btn-sm btn-blue btn-block" onclick="agendar('<?php echo($curp);?>')">Agendar cita</button>
     	</div>
       <div class="col-1 container flex-md-row"></div>
   	</div>
   </nav>
 
-  <!--Inicia la conexion de postgres-->
-<?php
-  $curp = $_SESSION['nombre'];
-  require_once __DIR__.'..\database\Connection.php';
-  require_once __DIR__.'..\database\Funcion.php'; 
-  use PostgreSQLPHPconnect\Connection as Connection;
-  use PostgreSQLPHPconnect\Funcion as Funcion;
-  try{
-      // create a PostgreSQL database connection
-      $pdo = Connection::get()->connect("admin");
-      $funcion = new Funcion($pdo);
-      // get all stocks data
-      $result = $funcion->getPaciente($curp);  ?>
+  
+  <?php $result = $funcion->getPaciente($curp);  ?>
 
 <!-- modal para ver datos del paciente -->
 <div class="modal fade" id="modal-select-paciente">
@@ -96,7 +116,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
             <div class="form-group row">
               <div class="col-6  flex-column">
                 <label>CURP      :</label>
-                <label  type="text" class="form-control" name="curp"><?php echo trim($curp); ?></label>
+                <label  type="text" class="form-control" id="curp" name="curp"><?php echo trim($curp); ?></label>
                 </div>
                 <div class="col-6 d-flex flex-column" >
                 <label>Nombre    :</label>
@@ -152,7 +172,8 @@ if( $varcomparacion == null || $varcomparacion == ''){
     </div>
   </div>
 
-  <?php    
+  <?php 
+    $pdo=null;   
     }catch (PDOException $e){
         // report error message
         echo $e->getMessage();
@@ -177,6 +198,22 @@ if( $varcomparacion == null || $varcomparacion == ''){
       text: 'Thumbnail'
     });
   </script>
+  <script>
+  function agendar(curp){
+    if (confirm('¿Estas seguro de que quieres agendar una cita? \nLas citas se asignan en automatico.')){
+      window.location.href='func/insertarcitaauto.php?curp='+curp;
+    }
+  }
+  </script>
+  <!--Alertas-->
+  <?php 
+  if(isset($_GET["exitoinscita"])){
+    if( $_GET["exitoinscita"]=='true'){
+      echo "<script> alert('Cita agregada con exito!'); </script>";}
+    else{
+      echo "<script> alert('Cita no agregada, revise su informacion.\nNo se puede programar a un mismo paciente dos veces en un mismo dia.'); </script>";}
+  }
+  ?>
   <footer class="container py-5">
     <div class="row">
       <div class="col-12 col-md text-center">

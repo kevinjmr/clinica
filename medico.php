@@ -102,38 +102,38 @@ if( $varcomparacion == null || $varcomparacion == ''){
                       ?>
                     <tr>
                     
-                      <?php $result=$funcion->getCita($varcomparacion, $date, "7:00"); 
-                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=7:00&id=<?php echo($varcomparacion);?>">7:00 A.M.</a></td>
+                      <?php $result=$funcion->getCita($varcomparacion, $date, "07:00"); 
+                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=07:00&id=<?php echo($varcomparacion);?>">7:00 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
                         else{?> <td><a >7:00 A.M.</a></td><td> <?php echo("Disponible");}?></td>
                     </tr>
                     <tr>
-                    <?php $result=$funcion->getCita($varcomparacion, $date, "7:30"); 
-                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=7:30&id=<?php echo($varcomparacion);?>">7:30 A.M.</a></td>
+                    <?php $result=$funcion->getCita($varcomparacion, $date, "07:30"); 
+                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=07:30&id=<?php echo($varcomparacion);?>">7:30 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
                         else{?> <td><a >7:30 A.M.</a></td><td> <?php echo("Disponible");}?></td>
                     </tr>
                     <tr>
-                    <?php $result=$funcion->getCita($varcomparacion, $date, "8:00"); 
-                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=8:00&id=<?php echo($varcomparacion);?>">8:00 A.M.</a></td>
+                    <?php $result=$funcion->getCita($varcomparacion, $date, "08:00"); 
+                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=08:00&id=<?php echo($varcomparacion);?>">8:00 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
                         else{?> <td><a >8:00 A.M.</a></td><td> <?php echo("Disponible");}?></td>
                     </tr>
                     <tr>
-                    <?php $result=$funcion->getCita($varcomparacion, $date, "8:30"); 
-                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=8:30&id=<?php echo($varcomparacion);?>">8:30 A.M.</a></td>
+                    <?php $result=$funcion->getCita($varcomparacion, $date, "08:30"); 
+                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=08:30&id=<?php echo($varcomparacion);?>">8:30 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
                         else{?> <td><a >8:30 A.M.</a></td><td> <?php echo("Disponible");}?></td>
                     </tr>
                     <tr>
-                    <?php $result=$funcion->getCita($varcomparacion, $date, "9:00"); 
-                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=9:00&id=<?php echo($varcomparacion);?>">9:00 A.M.</a></td>
+                    <?php $result=$funcion->getCita($varcomparacion, $date, "09:00"); 
+                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=09:00&id=<?php echo($varcomparacion);?>">9:00 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
                         else{?> <td><a >9:00 A.M.</a></td><td> <?php echo("Disponible");}?></td>
                     </tr>
                     <tr>
-                    <?php $result=$funcion->getCita($varcomparacion, $date, "9:30"); 
-                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=9:30&id=<?php echo($varcomparacion);?>">9:30 A.M.</a></td>
+                    <?php $result=$funcion->getCita($varcomparacion, $date, "09:30"); 
+                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=09:30&id=<?php echo($varcomparacion);?>">9:30 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
                         else{?> <td><a >9:30 A.M.</a></td><td> <?php echo("Disponible");}?></td>
                     </tr>
@@ -174,26 +174,26 @@ if( $varcomparacion == null || $varcomparacion == ''){
                         else{?> <td><a >12:30 P.M.</a></td><td> <?php echo("Disponible");}?></td>
                     </tr>
                     <tr>
-                    <?php $result=$funcion->getCita($varcomparacion, $date, "1:00"); 
-                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=1:00&id=<?php echo($varcomparacion);?>">1:00 P.M.</a></td>
+                    <?php $result=$funcion->getCita($varcomparacion, $date, "01:00"); 
+                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=01:00&id=<?php echo($varcomparacion);?>">1:00 P.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
                         else{?> <td><a >1:00 P.M.</a></td><td> <?php echo("Disponible");}?></td>
                     </tr>
                     <tr>
-                    <?php $result=$funcion->getCita($varcomparacion, $date, "1:30"); 
-                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=1:30&id=<?php echo($varcomparacion);?>">1:30 P.M.</a></td>
+                    <?php $result=$funcion->getCita($varcomparacion, $date, "01:30"); 
+                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=01:30&id=<?php echo($varcomparacion);?>">1:30 P.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
                         else{?> <td><a >1:30 P.M.</a></td><td> <?php echo("Disponible");}?></td>
                     </tr>
                     <tr>
-                    <?php $result=$funcion->getCita($varcomparacion, $date, "2:00"); 
-                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=2:00&id=<?php echo($varcomparacion);?>">2:00 P.M.</a></td>
+                    <?php $result=$funcion->getCita($varcomparacion, $date, "02:00"); 
+                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=02:00&id=<?php echo($varcomparacion);?>">2:00 P.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
                         else{?> <td><a >2:00 P.M.</a></td><td> <?php echo("Disponible");}?></td>
                     </tr>
                     <tr>
-                    <?php $result=$funcion->getCita($varcomparacion, $date, "2:30"); 
-                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=2:30&id=<?php echo($varcomparacion);?>">2:30 P.M.</a></td>
+                    <?php $result=$funcion->getCita($varcomparacion, $date, "02:30"); 
+                        if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=02:30&id=<?php echo($varcomparacion);?>">2:30 P.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
                         else{?> <td><a >2:30 P.M.</a></td><td> <?php echo("Disponible");}?></td>
                     </tr>
@@ -314,6 +314,18 @@ if( $varcomparacion == null || $varcomparacion == ''){
         <script > alert('Cita concluida y agregada al historial!'); </script>";}
       else{echo "
         <script > alert('Cita no concluida, revise su informacion.'); </script>";}
+    }
+    if(isset($_GET["exitoinscita"])){
+      if( $_GET["exitoinscita"]=='true'){echo "
+        <script > alert('Cita agregada con exito!'); </script>";}
+      else{echo "
+        <script > alert('Cita no agregada, revise su informacion.\nNo se puede programar a un mismo paciente dos veces en un mismo dia.'); </script>";}
+    }
+    if(isset($_GET["exitodelcita"])){
+      if( $_GET["exitodelcita"]=='true'){echo "
+        <script > alert('Cita eliminada con exito!'); </script>";}
+      else{echo "
+        <script > alert('Cita no eliminada, revise su informacion.\nNo se puede programar a un mismo paciente dos veces en un mismo dia.'); </script>";}
     }
 
     ?>

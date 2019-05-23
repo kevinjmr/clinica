@@ -60,7 +60,7 @@
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="expediente.php?fecha=<?php echo $fecha;?>&hora=<?php echo($hora);?>&id=<?php echo($id);?>&curp=<?php echo $result[17];?>">Expediente</a>
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#modal-receta" data-toggle="modal">Receta</a>
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#modal-analisis" data-toggle="modal">Analisis</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="nuevacita.php">Nueva Cita</a>
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="nuevacita.php?curp=<?php echo trim($curp);?>&cedprof=<?php echo trim($id);?>">Nueva Cita</a>
             <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar sesion</a>
         </div>
       </div>
