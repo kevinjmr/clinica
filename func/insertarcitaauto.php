@@ -60,6 +60,7 @@
                 echo "Funcionó la sentencia";
                 header("Location: ../paciente.php?exitoinscita=true");
             }
+            $try=3;
             $resultado->closeCursor();             
             
         }catch(Exception $e){

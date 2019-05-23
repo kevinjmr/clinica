@@ -73,10 +73,17 @@ if( $varcomparacion == null || $varcomparacion == ''){
             <?php 
               $result = $funcion->getReceta($curp);
             ?>
+              <?php if($result){?>
               <div class="container">
                 <a><?php echo $result[0]; ?> / <?php echo $result[2]; echo $result[3]; echo $result[4];?></a>
                 <h6><?php echo $result[1]; ?></h6>
               </div>
+              <?php} else {?>
+              <div class="container">
+                <a></a>
+                <h6><?php ?></h6>
+              </div>
+              <?php }?>
           </div>
 	      </div>
     	</div>
@@ -214,12 +221,6 @@ if( $varcomparacion == null || $varcomparacion == ''){
       echo "<script> alert('Cita no agregada, revise su informacion.\nNo se puede programar a un mismo paciente dos veces en un mismo dia.'); </script>";}
   }
   ?>
-  <footer class="container py-5">
-    <div class="row">
-      <div class="col-12 col-md text-center">
-        <small class="d-block mb-3 text-muted">© 2019</small>
-      </div>
-    </div>
-  </footer>
+  
 
 </html>
