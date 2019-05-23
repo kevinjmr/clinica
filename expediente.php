@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
+  <title>Expediente</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -69,9 +71,9 @@
                 </thead>
                 <tbody>
                       <tr>
-                        <td><a href="vercita.php?fecha=<?php echo $fecha;?>&hora=<?php echo $hora;?>&id=<?php echo $id;?>&curp=<?php echo $result[5];?>"><?php echo $result[3];?></a></td>
-                        <td><?php echo $result[0]; echo $result[1]; echo $result[2];?></td>
-                        <td><?php echo $result[4];?></td>
+                        <td value=""><a id="a" href="vercita.php?fecha=<?php echo $fecha;?>&hora=<?php echo $hora;?>&id=<?php echo $id;?>&curp=<?php echo $result[5];?>"><?php echo $result[3];?></a></td>
+                        <td id="b"><?php echo $result[0]; echo $result[1]; echo $result[2];?></td>
+                        <td id="c"><?php echo $result[4];?></td>
                       </tr>
                 </tbody>
             </table>

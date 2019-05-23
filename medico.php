@@ -294,6 +294,30 @@ if( $varcomparacion == null || $varcomparacion == ''){
       window.location.replace("medico.php?fecha="+fecha);
     }
   </script>
+
+  <!--Alertas-->
+  <?php
+    if(isset($_GET["exitoinsreceta"])){
+        if( $_GET["exitoinsreceta"]=='true'){echo "
+          <script > alert('Receta creada con exito!'); </script>";}
+        else{echo "
+          <script > alert('Receta no creada, revise su informacion.'); </script>";}
+    }
+    if(isset($_GET["exitoinsestudio"])){
+      if( $_GET["exitoinsestudio"]=='true'){echo "
+        <script > alert('Estudios creados con exito!'); </script>";}
+      else{echo "
+        <script > alert('Estudios no creados, revise su informacion.'); </script>";}
+    }
+    if(isset($_GET["exitoinshistorial"])){
+      if( $_GET["exitoinshistorial"]=='true'){echo "
+        <script > alert('Cita concluida y agregada al historial!'); </script>";}
+      else{echo "
+        <script > alert('Cita no concluida, revise su informacion.'); </script>";}
+    }
+
+    ?>
+
   <footer class="container py-5">
     <div class="row">
       <div class="col-12 col-md text-center">

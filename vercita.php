@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Informacion de cita</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -47,8 +47,7 @@
           </div>
         <div class="col-8 container d-flex flex-column flex-md-row justify-content-end">
           <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="medico.php">Agenda</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="expediente.php?fecha=<?php echo $fecha;?>&hora=<?php echo $hora;?>&id=<?php echo($cedprof);?>&curp=<?php echo $curp;?>">Regresar</a>
-            <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#">Cerrar sesion</a>
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar sesion</a>
         </div>
       </div>
   </nav>

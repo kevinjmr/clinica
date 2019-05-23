@@ -2,13 +2,6 @@ paciente:   solicite una cita y que se le asigne en auto
             *****
 
 medico:   
-
-    Cita:   -Cargar los datos de la cita (select)
-                cuando la cita ya este en historial que o redireccione a vercita.php
-
-            !hacer insert en receta (insert)
-            !analisis hace insert en estudio (insert)
-
     nuevacita:  cargar las citas (select)
             al clickear en un hora disponible, insertar cita (insert)
 

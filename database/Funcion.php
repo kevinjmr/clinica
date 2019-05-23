@@ -304,7 +304,8 @@ class Funcion{
         $stmt=$this->pdo->prepare($q);	        
         $stmt->execute(array(":id"=>$id));
         $result = [];
-        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+        if ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            while($row){
             $result = [
                 $row['Nombre'],//0
                 $row['APaterno'],//1
@@ -312,6 +313,16 @@ class Funcion{
                 $row['Fecha'],//3
                 $row['Padecimiento_actual'],//4
                 $row['CURP_paciente']//5
+                
+            ];}
+        }else {
+            $result = [
+                "",//0
+                "",//1
+                "",//2
+                "Vacio",//3
+                "",//4
+                ""//5
                 
             ];
         }
