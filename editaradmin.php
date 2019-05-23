@@ -45,7 +45,7 @@
     		</div>
     	</div>
     </nav>
-    <form id="c_form-h" action="func/updateAdmin.php" method="POST">
+    <form autocomplete="off" id="c_form-h" action="func/updateAdmin.php" method="POST">
       
       <div class="col-12">
         
@@ -102,7 +102,7 @@
         // report error message
         echo $e->getMessage();
     } 
-
+    $pdo=null;
     
 ?>
 

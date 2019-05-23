@@ -51,7 +51,7 @@
     <div class="row">
       <div class="col-2"></div>
       <div class="col-8">
-        <form action="func/updatemedico.php" method="POST">
+        <form autocomplete="off" action="func/updatemedico.php" method="POST">
         <div class="invisible form-group">
             <input value="<?php echo trim($cedprof); ?>" type="text" class="form-control" name="inputcedprof" placeholder="Cedula Profecional" required>
         </div>
@@ -106,7 +106,7 @@
         // report error message
         echo $e->getMessage();
     } 
-
+    $pdo=null;
     
 ?>
 

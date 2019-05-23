@@ -26,14 +26,13 @@
         //Se crea la consulta preparada
         $resultado=$pdo->prepare($sql);	        
         $resultado->execute(array( 
-                                    ":nombre"=>$nombre,
-                                    ":apaterno"=>$apaterno,
-                                    ":amaterno"=>$amaterno,
-                                    ":telefono"=>$telefono,
-                                    ":direccion"=>$direccion,
-                                    ":pass"=>$pass,
-                                    ":rfc"=>$RFC
-                                    
+                                    ":nombre"=>trim($nombre),
+                                    ":apaterno"=>trim($apaterno),
+                                    ":amaterno"=>trim($amaterno),
+                                    ":telefono"=>trim($telefono),
+                                    ":direccion"=>trim($direccion),
+                                    ":pass"=>trim($pass),
+                                    ":rfc"=>trim($RFC)
                                     )
                                 );
 

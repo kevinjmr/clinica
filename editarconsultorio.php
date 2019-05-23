@@ -45,7 +45,7 @@
     		</div>
     	</div>
     </nav>
-    <form id="c_form-h" action="func/updateconsultorio.php" method="POST">
+    <form autocomplete="off" id="c_form-h" action="func/updateconsultorio.php" method="POST">
       
       <div class="col-12">
         <div class="invisible form-group row">
@@ -77,7 +77,7 @@
         // report error message
         echo $e->getMessage();
     } 
-
+    $pdo=null;
     
 ?>
 

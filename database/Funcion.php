@@ -285,6 +285,28 @@ class Funcion{
          
         return $result;
     }
+    public function getCitaA($id,$fecha,$hora) {
+        $q='SELECT "CURP_paciente", descripcion, "Nombre", "APaterno", "AMaterno" 
+        FROM cita c inner join paciente p on c."CURP_paciente"=p."CURP" 
+        where ced_prof_medico = (SELECT "Medico" FROM consultorio where "Secretaria"= :id) 
+        AND fecha= :fecha AND hora= :hora';
+        $stmt=$this->pdo->prepare($q);	        
+        $stmt->execute(array(":id"=>$id,
+                            ":fecha"=>$fecha,
+                            ":hora"=>$hora));
+        $result = [];
+        while ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+            $result = [
+                $row['CURP_paciente'],//0
+                $row['descripcion'],//1
+                $row['Nombre'],//2
+                $row['APaterno'],//3
+                $row['AMaterno']//4
+            ];
+        }
+         
+        return $result;
+    }
 
 
     //Obtiene solo una Cita para detalle de la cita
@@ -355,28 +377,18 @@ class Funcion{
         $stmt=$this->pdo->prepare($q);	        
         $stmt->execute(array(":id"=>$id));
         $result = [];
-        if ($row = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-            while($row){
-            $result = [
-                $row['Nombre'],//0
-                $row['APaterno'],//1
-                $row['AMaterno'],//2
-                $row['Fecha'],//3
-                $row['Padecimiento_actual'],//4
-                $row['CURP_paciente']//5
-                
-            ];}
-        }else {
-            $result = [
-                "",//0
-                "",//1
-                "",//2
-                "Vacio",//3
-                "",//4
-                ""//5
-                
-            ];
-        }
+        
+        while($row = $stmt->fetch(\PDO::FETCH_ASSOC)){
+        $result = [
+            $row['Nombre'],//0
+            $row['APaterno'],//1
+            $row['AMaterno'],//2
+            $row['Fecha'],//3
+            $row['Padecimiento_actual'],//4
+            $row['CURP_paciente']//5
+            
+        ];}
+        
          
         return $result;
     }

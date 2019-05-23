@@ -47,7 +47,7 @@
                               ));
         $row = $result2->fetch(PDO::FETCH_ASSOC);
         if($row){
-          header("Location: vercita.php?fecha=$fecha&hora=$hora&id=$id&curp=$curp");
+          header("Location: vercitaA.php?fecha=$fecha&hora=$hora&id=$id&curp=$curp");
         }else{
           //revisar que este en historial si true entonces vercita.php sino continue ?>
 
@@ -56,11 +56,8 @@
         <div class="col-4 container d-flex flex-column flex-md-row">
         </div>
         <div class="col-8 container d-flex flex-column flex-md-row justify-content-end">
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="medico.php">Agenda</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="expediente.php?fecha=<?php echo $fecha;?>&hora=<?php echo($hora);?>&id=<?php echo($id);?>&curp=<?php echo $result[17];?>">Expediente</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#modal-receta" data-toggle="modal">Receta</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="#modal-analisis" data-toggle="modal">Analisis</a>
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="nuevacita.php?curp=<?php echo trim($curp);?>&cedprof=<?php echo trim($id);?>">Nueva Cita</a>
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="asistente.php">Agenda</a>
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="nuevacitaA.php?curp=<?php echo trim($curp);?>&cedprof=<?php echo trim($id);?>">Nueva Cita</a>
             <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar sesion</a>
         </div>
       </div>
@@ -272,8 +269,8 @@
   	</div>
   
     <div class="form-group row col-8 justify-content-end">
-        <button type="submit" class="px-4 btn btn-primary">Guardar</button>
-        <button type="button" class="px-4 btn btn-info" onclick="window.location.href='medico.php'">Cancelar</button>
+        <button type="submit" disabled="true" class="px-4 btn btn-primary">Guardar</button>
+        <button type="button" class="px-4 btn btn-info" onclick="window.location.href='asistente.php'">Cancelar</button>
         <button type="button" class="px-4 btn btn-secondary" onclick="eliminar()">Eliminar</button>
     </div>
     
@@ -281,73 +278,7 @@
 <br>
  </div>
 </form>
- <!-- modal para receta -->
-<div class="modal fade" id="modal-receta">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="myModalLabel">Crear Receta</h5>
-        </div>
-        <div class="modal-body">
-          <form autocomplete="off" id="c_form-h" action="func/insertarreceta.php" method="POST">
-            <div class="form-group">
-              <div class="col-12">
-                <h6 href="">Introduce los datos para le receta:</h6>
-            </div>
-            </div>
-            <div class="form-group row">
-              <div class="col-12">
-                <textarea row="5" type="textarea" class="form-control" name="inputreceta" placeholder="Detalles" required></textarea>
-              </div>
-              <div class="invisible col-12">
-                <input value="<?php echo trim($result[4]);?>" row="1" type="textarea" class="form-control" name="cedprof" placeholder="Receta" required>
-              </div>
-              <div class="invisible col-12">
-                <input value="<?php echo trim($curp);?>"  row="1" type="textarea" class="form-control" name="curp" placeholder="Receta" required>
-              </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Guardar</button>
-          <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
-        </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-<!-- modal para analisis -->
-<div class="modal fade" id="modal-analisis">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="myModalLabel">Crear analisis medico</h5>
-        </div>
-        <div class="modal-body">
-          <form autocomplete="off" id="c_form-h" action="func/insertarestudio.php" method="POST">
-            
-            <div class="form-group row">
-              <div class="col-12">
-                <h6 href="">Descripcion de analisis:</h6>
-            </div>
-            </div>
-            <div class="form-group row">
-              <div class="col-12">
-                <textarea row="5" type="textarea" class="form-control" name="inputestudio" placeholder="Detalles" required></textarea>
-              </div>
-              <div class="invisible col-12">
-                <input value="<?php echo trim($curp);?>"  row="1" type="textarea" class="form-control" name="curp" placeholder="Receta" required>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Guardar</button>
-            <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+ 
   <?php 
         }
     }catch (PDOException $e){
@@ -376,7 +307,7 @@
       fecha = document.getElementById('fecha').value; 
       curp = document.getElementById('curp').value; 
         if (confirm('¿Estas seguro de eliminar esta cita?')){
-          window.location.href='func/eliminarcita.php?fecha='+fecha+'&curp='+curp;
+          window.location.href='func/eliminarcitaA.php?fecha='+fecha+'&curp='+curp;
         }
     } 
     </script>

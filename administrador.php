@@ -437,7 +437,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo Paciente</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="" action="func/insertarpaciente.php" method="POST">
+          <form autocomplete="off" id="c_form-h" class="" action="func/insertarpaciente.php" method="POST">
             
             <div class="form-group row">
               <div class="col-12">
@@ -527,7 +527,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Insertar Nuevo administrador</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="" action="func/insertaradministrador.php" method="POST">
+          <form autocomplete="off" id="c_form-h" class="" action="func/insertaradministrador.php" method="POST">
             
             <div class="form-group row">
               <div class="col-12">
@@ -730,9 +730,4 @@ if( $varcomparacion == null || $varcomparacion == ''){
     </div>
     
   </footer>
-
-
-
-
-
 </html>

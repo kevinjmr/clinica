@@ -173,12 +173,12 @@ if( $varcomparacion == null || $varcomparacion == ''){
   </div>
 
   <?php 
-    $pdo=null;   
+    
     }catch (PDOException $e){
         // report error message
         echo $e->getMessage();
     } 
-
+  $pdo=null;   
 ?>
 
 

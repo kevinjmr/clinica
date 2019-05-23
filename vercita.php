@@ -317,6 +317,7 @@
       // report error message
       echo $e->getMessage();
     }
+    $pdo=null;
   ?>
 </body>
 <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>

@@ -1,9 +1,0 @@
-paciente:   solicite una cita y que se le asigne en auto
-            *****
-
-
-asistente:  INFO, cargar los datos en el modal (select)
-            cargar las citas de su medico -consultorio- (select)
-            nueva cita, manda a nuevacita.php (route)
-
-

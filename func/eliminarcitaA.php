@@ -18,7 +18,7 @@
         $row = $resultado->fetch(PDO::FETCH_ASSOC);  
         if(!$row){
             echo "Funcionó la sentencia";
-            header("Location: ../medico.php?exitodelcita=true");
+            header("Location: ../asistente.php?exitodelcita=true");
         }
         $resultado->closeCursor();             
             
@@ -27,6 +27,6 @@
         echo "Error en la ejecución de la consulta<br>".$e;
             echo "Mensaje: " . $e->GetMessage() . "<br>";
             echo "Línea: " . $e->getLine();
-        header("Location: ../medico.php?exitodelcita=false");    
+        header("Location: ../asistente.php?exitodelcita=false");    
     }
 ?>

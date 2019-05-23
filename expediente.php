@@ -42,9 +42,9 @@
 
 	<nav class="light-blue site-header py-1">
       <div class="col-12 container d-flex flex-column flex-md-row">
-        <div class="col-9 container d-flex flex-column flex-md-row">
-        </div>
         <div class="col-3 container d-flex flex-column flex-md-row">
+        </div>
+        <div class="col-9 container d-flex flex-column flex-md-row justify-content-end">
           	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="medico.php">Agenda</a>
           	<a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cita.php?fecha=<?php echo $fecha;?>&hora=<?php echo $hora;?>&id=<?php echo $id;?>">Regresar</a>
             <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar sesion</a>
@@ -71,9 +71,15 @@
                 </thead>
                 <tbody>
                       <tr>
+                      <?php if($result){?>
                         <td value=""><a id="a" href="vercita.php?fecha=<?php echo $fecha;?>&hora=<?php echo $hora;?>&id=<?php echo $id;?>&curp=<?php echo $result[5];?>"><?php echo $result[3];?></a></td>
                         <td id="b"><?php echo $result[0]; echo $result[1]; echo $result[2];?></td>
                         <td id="c"><?php echo $result[4];?></td>
+                      <?php }else{?> 
+                        <td value=""><a id="a">Vacio</td>
+                        <td id="b"></td>
+                        <td id="c"></td>
+                      <?php }?>
                       </tr>
                 </tbody>
             </table>
@@ -85,6 +91,30 @@
       // report error message
       echo $e->getMessage();
     }
+    $pdo=null;
   ?>
 </body>
+
+<script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script>
+  Holder.addTheme('thumb', {
+    bg: '#55595c',
+    fg: '#eceeef',
+    text: 'Thumbnail'
+  });
+</script>
+<footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md text-center">
+          <small class="d-block mb-3 text-muted">© 2019</small>
+        </div>
+      </div>
+      
+    </footer>
 </html>

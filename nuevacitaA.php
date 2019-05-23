@@ -27,8 +27,16 @@
   if(isset($_GET["fecha"])){
     $date = $_GET["fecha"];
   }
-  $curp=$_GET['curp'];
-  $cedprof=$_GET['cedprof'];
+  if(isset($_GET["curp"])){
+    $curp=$_GET['curp'];
+  }else{
+    $curp=$_POST['curp']; 
+  }
+  if(isset($_GET["cedprof"])){
+    $cedprof=$_GET['cedprof'];
+  }else{
+    $cedprof=$_POST['cedprof']; 
+  }
 ?>
 <body background="src/fondo.jpg">
 	<nav class="light-blue site-header py-1">
@@ -42,7 +50,7 @@
         </div>
         </div>
         <div class="col-8 container d-flex flex-column flex-md-row flex-md-row justify-content-end">
-          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="medico.php">Agenda</a>
+          <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="asistente.php">Agenda</a>
             <a class="text-dark py-2 px-2 d-none d-md-inline-block" href="cerrar.php">Cerrar sesion</a>
         </div>
       </div>
@@ -93,97 +101,97 @@
                       <?php $result=$funcion->getCita($varcomparacion, $date, "07:00"); 
                         if($result){ ?> <td><a >7:00 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >7:00 A.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=07:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >7:00 A.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=07:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                     <tr>
                     <?php $result=$funcion->getCita($varcomparacion, $date, "07:30"); 
                         if($result){ ?> <td><a>7:30 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >7:30 A.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=07:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >7:30 A.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=07:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                     <tr>
                     <?php $result=$funcion->getCita($varcomparacion, $date, "08:00"); 
                         if($result){ ?> <td><a>8:00 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >8:00 A.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=08:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >8:00 A.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=08:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                     <tr>
                     <?php $result=$funcion->getCita($varcomparacion, $date, "08:30"); 
                         if($result){ ?> <td><a>8:30 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >8:30 A.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=08:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >8:30 A.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=08:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                     <tr>
                     <?php $result=$funcion->getCita($varcomparacion, $date, "09:00"); 
                         if($result){ ?> <td><a>9:00 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >9:00 A.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=09:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >9:00 A.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=09:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                     <tr>
                     <?php $result=$funcion->getCita($varcomparacion, $date, "09:30"); 
                         if($result){ ?> <td><a>9:30 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >9:30 A.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=09:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >9:30 A.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=09:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                     <tr>
                     <?php $result=$funcion->getCita($varcomparacion, $date, "10:00"); 
                         if($result){ ?> <td><a>10:00 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >10:00 A.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=10:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >10:00 A.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=10:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                     <tr>
                     <?php $result=$funcion->getCita($varcomparacion, $date, "10:30"); 
                         if($result){ ?> <td><a>10:30 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >10:30 A.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=10:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >10:30 A.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=10:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                     <tr>
                     <?php $result=$funcion->getCita($varcomparacion, $date, "11:00"); 
                         if($result){ ?> <td><a>11:00 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >11:00 A.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=11:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >11:00 A.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=11:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                     <tr>
                     <?php $result=$funcion->getCita($varcomparacion, $date, "11:30"); 
                         if($result){ ?> <td><a>11:30 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >11:30 A.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=11:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >11:30 A.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=11:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                     <tr>
                     <?php $result=$funcion->getCita($varcomparacion, $date, "12:00"); 
                         if($result){ ?> <td><a>12:00 P.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >12:00 P.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=12:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >12:00 P.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=12:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                     <tr>
                     <?php $result=$funcion->getCita($varcomparacion, $date, "12:30"); 
                         if($result){ ?> <td><a></a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >12:30 P.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=12:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >12:30 P.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=12:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                     <tr>
                     <?php $result=$funcion->getCita($varcomparacion, $date, "01:00"); 
                         if($result){ ?> <td><a>1:00 P.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >1:00 P.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=01:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >1:00 P.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=01:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                     <tr>
                     <?php $result=$funcion->getCita($varcomparacion, $date, "01:30"); 
                         if($result){ ?> <td><a>1:30 P.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >1:30 P.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=01:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >1:30 P.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=01:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                     <tr>
                     <?php $result=$funcion->getCita($varcomparacion, $date, "02:00"); 
                         if($result){ ?> <td><a>2:00 P.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >2:00 P.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=02:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >2:00 P.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=02:00&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                     <tr>
                     <?php $result=$funcion->getCita($varcomparacion, $date, "02:30"); 
                         if($result){ ?> <td><a>2:30 P.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
-                        else{?> <td><a >2:30 P.M.</a></td><td> <a href="func/insertarcita.php?fecha=<?php echo $date;?>&hora=02:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
+                        else{?> <td><a >2:30 P.M.</a></td><td> <a href="func/insertarcitaA.php?fecha=<?php echo $date;?>&hora=02:30&id=<?php echo($varcomparacion);?>&curp=<?php echo trim($curp);?>"><?php echo("Disponible");}?></a></td>
                     </tr>
                 </tbody>
             </table>
@@ -191,7 +199,7 @@
   	<div class="col-3 container d-flex flex-column flex-md-row">
   	</div>
   </div>
-<?php 
+  <?php 
 }catch (PDOException $e){
     // report error message
     echo $e->getMessage();
@@ -219,7 +227,7 @@ $pdo=null;
       fecha = document.getElementById('date').value;
       curp = document.getElementById('curp').value;
       cedprof = document.getElementById('cedprof').value;
-      window.location.replace("nuevacita.php?fecha="+fecha+"&curp="+curp+"&cedprof="+cedprof);
+      window.location.replace("nuevacitaA.php?fecha="+fecha+"&curp="+curp+"&cedprof="+cedprof);
     }
   </script>
   

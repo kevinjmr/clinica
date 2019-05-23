@@ -45,7 +45,7 @@
     		</div>
     	</div>
     </nav>
-    <form id="c_form-h" action="func/updateasistente.php" method="POST">
+    <form autocomplete="off" id="c_form-h" action="func/updateasistente.php" method="POST">
             <div class="col-12">
             <div class="invisible form-group row">
               <div class="col-8">
@@ -92,7 +92,7 @@
         // report error message
         echo $e->getMessage();
     } 
-
+    $pdo = null;
     
 ?>
 

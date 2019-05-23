@@ -22,7 +22,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
+  <link href="css/mdb.min.css" rel="stylesheet"> 
   <!-- Your custom styles (optional) -->
   <link href="css/my.css" rel="stylesheet">
   <link href="./Product example for Bootstrap_files/product.css" rel="stylesheet">
@@ -101,7 +101,6 @@ if( $varcomparacion == null || $varcomparacion == ''){
                       }
                       ?>
                     <tr>
-                    
                       <?php $result=$funcion->getCita($varcomparacion, $date, "07:00"); 
                         if($result){ ?> <td><a href="cita.php?fecha=<?php echo $date;?>&hora=07:00&id=<?php echo($varcomparacion);?>">7:00 A.M.</a></td>
                                     <td> <?php echo $result[2]; echo $result[3]; echo $result[4];}
@@ -224,7 +223,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
           <h5 class="modal-title" id="myModalLabel">Datos del Medico:</h5>
         </div>
         <div class="modal-body">
-          <form id="c_form-h" class="">
+          <form autocomplete="off" id="c_form-h" class="">
             <div class="form-group row">
               <div class="col-6 d-flex flex-column">
                 <label>Ced_Prof:</label>
@@ -269,6 +268,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
     // report error message
     echo $e->getMessage();
   }
+  $pdo=null;
 ?>
 
 
