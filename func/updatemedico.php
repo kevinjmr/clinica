@@ -32,7 +32,7 @@
                                         ":direccion"=>$direccion,
                                         ":especialidad"=>$especialidad,
                                         ":escuela"=>$escuela,
-                                        ":pass"=>$pass));
+                                        ":pass"=>md5(trim($pass))));
         }else{
             $sql='UPDATE public.medico
             SET "Nombre"=:nombre, "APaterno"=:apaterno, "AMaterno"=:amaterno, "Telefono"=:telefono, "Direccion"=:direccion, "Especialidad"=:especialidad, "Escuela"=:escuela

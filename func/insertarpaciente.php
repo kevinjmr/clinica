@@ -45,7 +45,7 @@
                                     ":escolaridad"=>$escolaridad,
                                     ":lugardeorigen"=>$lugardeorigen,
                                     ":lugarderesidencia"=>$lugarderesidencia,
-                                    ":pass"=>$pass));
+                                    ":pass"=>md5(trim($pass))));
 
         $row = $resultado->fetch(PDO::FETCH_ASSOC);  
         if(!$row){

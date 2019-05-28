@@ -28,7 +28,7 @@
                                         ":amaterno"=>$amaterno,
                                         ":telefono"=>$telefono,
                                         ":direccion"=>$direccion,
-                                        ":pass"=>$pass));
+                                        ":pass"=>md5(trim($pass))));
         }else{
             $sql='UPDATE public.secretaria
             SET "Nombre"=:nombre, "APaterno"=:apaterno, "AMaterno"=:amaterno, "Telefono"=:telefono, "Direccion"=:direccion

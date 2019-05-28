@@ -27,7 +27,7 @@
                                         ":amaterno"=>$amaterno,
                                         ":telefono"=>$telefono,
                                         ":direccion"=>$direccion,
-                                        ":pass"=>$pass,
+                                        ":pass"=>md5(trim($pass)),
                                         ":rfc"=>$RFC));
         }else{
             $sql='UPDATE public.administracion

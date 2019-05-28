@@ -352,7 +352,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="numer" class="form-control" name="inputtelefono" placeholder="Telefono" required> </div>
+                <input type="number" class="form-control" name="inputtelefono" placeholder="Telefono" required> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
@@ -408,7 +408,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
             </div>
             <div class="form-group row">
               <div class="col-12">
-                <input type="numeric" class="form-control" name="inputtelefono" placeholder="Telefono" required> </div>
+                <input type="number" class="form-control" name="inputtelefono" placeholder="Telefono" required> </div>
             </div>
             <div class="form-group row">
               <div class="col-12">
@@ -461,7 +461,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="numeric" class="form-control" name="telefono" placeholder="Telefono" required> </div>
+                <input type="number" class="form-control" name="telefono" placeholder="Telefono" required> </div>
             </div>
 
             <div class="form-group row">
@@ -471,7 +471,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="numeric" class="form-control" name="edad" placeholder="Edad" required> </div>
+                <input type="number" class="form-control" name="edad" placeholder="Edad" required> </div>
             </div>
 
             <div class="form-group row">
@@ -551,7 +551,7 @@ if( $varcomparacion == null || $varcomparacion == ''){
 
             <div class="form-group row">
               <div class="col-12">
-                <input type="numeric" class="form-control" name="telefono" placeholder="Telefono" required> </div>
+                <input type="number" class="form-control" name="telefono" placeholder="Telefono" required> </div>
             </div>           
 
             <div class="form-group row">

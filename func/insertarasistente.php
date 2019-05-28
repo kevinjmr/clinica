@@ -28,7 +28,8 @@
                                     ":amaterno"=>$amaterno,
                                     ":telefono"=>$telefono,
                                     ":direccion"=>$direccion,
-                                    ":pass"=>$pass));
+                                    ":pass"=>md5(trim($pass))
+                                ));
 
         $row = $resultado->fetch(PDO::FETCH_ASSOC);  
         if(!$row){

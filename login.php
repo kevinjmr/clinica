@@ -13,27 +13,19 @@
 		// create a PostgreSQL database connection
 		$pdo = Connection::get()->connect("admin");
             
-		if($logintype==="4"){
-            $sql='select * from administracion where administracion."RFC"= :user';
-            //Se crea la consulta preparada
-            $resultado=$pdo->prepare($sql);	        
-            $resultado->execute(array(":user"=>$user));
-    
-            $row = $resultado->fetch(PDO::FETCH_ASSOC);
-            $real = $row['pass'];    
-            if(trim($real)==trim($pass)) {
-                session_start();
-                $_SESSION['nombre']= $user;
-                $_SESSION['contrasenia']= $pass;
-                header("location:administrador.php");
-            }else{
-                echo"<script>alert('Contraseña incorrecta')</script>";
-                header("location:index.php?fallopass=true");
-            }
-            $resultado->closeCursor();
-        
-        }else if($logintype==="1"){
-              
+        $sql='select * from administracion where administracion."RFC"= :user';
+        //Se crea la consulta preparada
+        $resultado=$pdo->prepare($sql);	        
+        $resultado->execute(array(":user"=>$user));
+
+        $row = $resultado->fetch(PDO::FETCH_ASSOC);
+        $real = $row['pass'];    
+        if(trim($real)==md5($pass)) {
+            session_start();
+            $_SESSION['nombre']= $user;
+            $_SESSION['contrasenia']= $pass;
+            header("location:administrador.php");
+        }else {
             $sql='select * from medico where medico."Ced_prof"= :user';
             //Se crea la consulta preparada
             $resultado=$pdo->prepare($sql);	        
@@ -41,58 +33,49 @@
     
             $row = $resultado->fetch(PDO::FETCH_ASSOC);
             $real = $row['pass'];    
-            if(trim($real)==trim($pass)) {
+            if(trim($real)==md5($pass)) {
 
                 session_start();
                 $_SESSION['nombre']= $user;
                 $_SESSION['contrasenia']= $pass;
                 header("location:medico.php");
             }else{
-                echo"<script>alert('Contraseña incorrecta')</script>";
-                header("location:index.php?fallopass=true");
-            }
-            $resultado->closeCursor();             
-        }elseif($logintype==="2"){
+                $sql='select * from secretaria where secretaria."RFC"= :user';
+                //Se crea la consulta preparada
+                $resultado=$pdo->prepare($sql);	        
+                $resultado->execute(array(":user"=>$user));
+        
+                $row = $resultado->fetch(PDO::FETCH_ASSOC);
+                $real = $row['pass'];    
+                if(trim($real)==md5($pass)) {
+                    session_start();
+                    $_SESSION['nombre']= $user;
+                    $_SESSION['contrasenia']= $pass;
+                    header("location:asistente.php");
+                }else{
+                    $sql='select * from paciente where paciente."CURP"= :user';
+                    //Se crea la consulta preparada
+                    $resultado=$pdo->prepare($sql);	        
+                    $resultado->execute(array(":user"=>$user));
             
-            $sql='select * from secretaria where secretaria."RFC"= :user';
-            //Se crea la consulta preparada
-            $resultado=$pdo->prepare($sql);	        
-            $resultado->execute(array(":user"=>$user));
-    
-            $row = $resultado->fetch(PDO::FETCH_ASSOC);
-            $real = $row['pass'];    
-            if(trim($real)==trim($pass)) {
-                session_start();
-                $_SESSION['nombre']= $user;
-                $_SESSION['contrasenia']= $pass;
-                header("location:asistente.php");
-            }else{
-                echo"<script>alert('Contraseña incorrecta')</script>";
-                header("location:index.php?fallopass=true");
+                    $row = $resultado->fetch(PDO::FETCH_ASSOC);
+                    $real = $row['pass'];    
+                    if(trim($real)==md5($pass)) {
+                        session_start();
+                        $_SESSION['nombre']= $user;
+                        $_SESSION['contrasenia']= $pass;
+                        header("location:paciente.php");
+                    }else{
+                        echo"<script>alert('Contraseña incorrecta')</script>";
+                        header("location:index.php?fallopass=true");
+                    }
+                }
             }
-            $resultado->closeCursor();      
-        }else {
-            
-            $sql='select * from paciente where paciente."CURP"= :user';
-            //Se crea la consulta preparada
-            $resultado=$pdo->prepare($sql);	        
-            $resultado->execute(array(":user"=>$user));
-    
-            $row = $resultado->fetch(PDO::FETCH_ASSOC);
-            $real = $row['pass'];    
-            if(trim($real)==trim($pass)) {
-                session_start();
-                $_SESSION['nombre']= $user;
-                $_SESSION['contrasenia']= $pass;
-                header("location:paciente.php");
-            }else{
-                echo"<script>alert('Contraseña incorrecta')</script>";
-                header("location:index.php?fallopass=true");
-            }
-            $resultado->closeCursor();      
         }
 
-	}catch(Exception $e){
+        $resultado->closeCursor();
+        
+    }catch(Exception $e){
 		echo "Error en la ejecución de la consulta<br>".$e;
 			echo "Mensaje: " . $e->GetMessage() . "<br>";
 			echo "Línea: " . $e->getLine();

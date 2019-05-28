@@ -41,7 +41,7 @@
                                         ":escolaridad"=>$escolaridad,
                                         ":lugardeorigen"=>$lugardeorigen,
                                         ":lugarderesidencia"=>$lugarderesidencia,
-                                        ":pass"=>$pass));
+                                        ":pass"=>md5(trim($pass))));
         }else{
             $sql='UPDATE public.paciente
             SET "CURP"=:curp, "Nombre"=:nombre, "APaterno"=:apaterno, "AMaterno"=:amaterno, "Telefono"=:telefono, "Direccion"=:direccion, "Edad"=:edad, "Edo_civil"=:edocivil,

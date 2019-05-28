@@ -31,7 +31,7 @@
                                     ":amaterno"=>trim($amaterno),
                                     ":telefono"=>trim($telefono),
                                     ":direccion"=>trim($direccion),
-                                    ":pass"=>trim($pass),
+                                    ":pass"=>md5(trim($pass)),
                                     ":rfc"=>trim($RFC)
                                     )
                                 );
@@ -39,7 +39,7 @@
         $row = $resultado->fetch(PDO::FETCH_ASSOC);  
         if(!$row){
             echo "Funcionó la sentencia";
-            //header("Location: ../administrador.php?exitoinsadministrador=true");
+            header("Location: ../administrador.php?exitoinsadministrador=true");
         }
         $resultado->closeCursor();             
             
@@ -48,7 +48,7 @@
         echo "Error en la ejecución de la consulta<br>".$e;
             echo "Mensaje: " . $e->GetMessage() . "<br>";
             echo "Línea: " . $e->getLine();
-        //header("Location: ../administrador.php?exitoinsadministrador=false");    
+        header("Location: ../administrador.php?exitoinsadministrador=false");    
     }
 
 ?>
